@@ -15,7 +15,7 @@ class OrderModel {
   int Status;
   String Remark;
   int CreationTime;
-  int Type;
+  int OrderType;
   int Payment;
   int Review;
 
@@ -32,7 +32,7 @@ class OrderModel {
     this.Status = 0,
     this.Remark = "",
     this.CreationTime = 0,
-    this.Type = 0,
+    this.OrderType = 0,
     this.Payment = 0,
     this.Review = 0,
   });
@@ -51,7 +51,7 @@ class OrderModel {
       Status: json["Status"],
       Remark: json["Remark"],
       CreationTime: json["CreationTime"],
-      Type: json["Type"],
+      OrderType: json["OrderType"],
       Payment: json["Payment"],
       Review: json["Review"],
     );

@@ -9,9 +9,9 @@ import 'package:app/model/ResultListModel.dart';
 
 class AdminApi extends BaseApi {
   Future<ResultModel> AdminSignIn([
-    dynamic URL = "",
-    dynamic Account = "",
-    dynamic Password = "",
+    dynamic URL,
+    dynamic Account,
+    dynamic Password,
   ]) async {
     Response response = await post(
       Uri.http(URL, "/admin/sign/in"),

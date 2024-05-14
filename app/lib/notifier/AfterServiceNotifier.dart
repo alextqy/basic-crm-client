@@ -1,9 +1,6 @@
 // ignore_for_file: file_names, non_constant_identifier_names
 
-import 'dart:html';
-
 import 'package:app/notifier/BaseNotifier.dart';
-import 'package:http/http.dart';
 
 class AfterServiceNotifier extends BaseNotifier {
   void AfterServiceNew({

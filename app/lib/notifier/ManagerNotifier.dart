@@ -17,13 +17,13 @@ class ManagerNotifier extends BaseNotifier {
     OperationData = Null;
     try {
       await managerApi.ManagerNew(
-        URL,
-        Account,
-        Password,
-        Name,
-        Remark,
-        GroupID,
-        ID,
+        URL: URL,
+        Account: Account,
+        Password: Password,
+        Name: Name,
+        Remark: Remark,
+        GroupID: GroupID,
+        ID: ID,
       ).then((Value) {
         OperationStatus = Value.State;
         OperationMemo = Value.Message;
@@ -51,14 +51,14 @@ class ManagerNotifier extends BaseNotifier {
     OperationData = Null;
     try {
       await managerApi.ManagerList(
-        URL,
-        Page,
-        PageSize,
-        Order,
-        Stext,
-        Level,
-        Status,
-        GroupID,
+        URL: URL,
+        Page: Page,
+        PageSize: PageSize,
+        Order: Order,
+        Stext: Stext,
+        Level: Level,
+        Status: Status,
+        GroupID: GroupID,
       ).then((Value) {
         OperationStatus = Value.State;
         OperationMemo = Value.Message;
@@ -84,12 +84,12 @@ class ManagerNotifier extends BaseNotifier {
     OperationData = Null;
     try {
       await managerApi.ManagerAll(
-        URL,
-        Order,
-        Stext,
-        Level,
-        Status,
-        GroupID,
+        URL: URL,
+        Order: Order,
+        Stext: Stext,
+        Level: Level,
+        Status: Status,
+        GroupID: GroupID,
       ).then((Value) {
         OperationStatus = Value.State;
         OperationMemo = Value.Message;
@@ -111,8 +111,8 @@ class ManagerNotifier extends BaseNotifier {
     OperationData = Null;
     try {
       await managerApi.ManagerData(
-        URL,
-        ID,
+        URL: URL,
+        ID: ID,
       ).then((Value) {
         OperationStatus = Value.State;
         OperationMemo = Value.Message;
@@ -134,8 +134,8 @@ class ManagerNotifier extends BaseNotifier {
     OperationData = Null;
     try {
       await managerApi.ManagerDel(
-        URL,
-        ID,
+        URL: URL,
+        ID: ID,
       ).then((Value) {
         OperationStatus = Value.State;
         OperationMemo = Value.Message;
@@ -157,8 +157,8 @@ class ManagerNotifier extends BaseNotifier {
     OperationData = Null;
     try {
       await managerApi.ManagerStatus(
-        URL,
-        ID,
+        URL: URL,
+        ID: ID,
       ).then((Value) {
         OperationStatus = Value.State;
         OperationMemo = Value.Message;
@@ -181,9 +181,9 @@ class ManagerNotifier extends BaseNotifier {
     OperationData = Null;
     try {
       await managerApi.ManagerSignIn(
-        URL,
-        Account,
-        Password,
+        URL: URL,
+        Account: Account,
+        Password: Password,
       ).then((Value) {
         OperationStatus = Value.State;
         OperationMemo = Value.Message;
@@ -204,7 +204,7 @@ class ManagerNotifier extends BaseNotifier {
     OperationData = Null;
     try {
       await managerApi.ManagerSignOut(
-        URL,
+        URL: URL,
       ).then((Value) {
         OperationStatus = Value.State;
         OperationMemo = Value.Message;
@@ -229,11 +229,11 @@ class ManagerNotifier extends BaseNotifier {
     OperationData = Null;
     try {
       await managerApi.ManagerUpdate(
-        URL,
-        Password,
-        Name,
-        Remark,
-        GroupID,
+        URL: URL,
+        Password: Password,
+        Name: Name,
+        Remark: Remark,
+        GroupID: GroupID,
       ).then((Value) {
         OperationStatus = Value.State;
         OperationMemo = Value.Message;

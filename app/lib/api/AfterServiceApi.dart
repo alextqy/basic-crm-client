@@ -8,14 +8,14 @@ import 'package:app/model/ResultModel.dart';
 import 'package:app/model/ResultListModel.dart';
 
 class AfterServiceApi extends BaseApi {
-  Future<ResultModel> AfterServiceNew([
-    dynamic URL,
-    dynamic Account,
-    dynamic Password,
-    dynamic Name,
-    dynamic Remark,
-    dynamic ID,
-  ]) async {
+  Future<ResultModel> AfterServiceNew({
+    required URL,
+    required Account,
+    required Password,
+    required Name,
+    required Remark,
+    required ID,
+  }) async {
     Response response = await post(
       Uri.http(URL, "/after/service/new"),
       body: {
@@ -32,15 +32,15 @@ class AfterServiceApi extends BaseApi {
     return ResultModel.fromJson(jsonDecode(Decoder.convert(response.bodyBytes)));
   }
 
-  Future<ResultListModel> AfterServiceList([
-    dynamic URL,
-    dynamic Page,
-    dynamic PageSize,
-    dynamic Order,
-    dynamic Stext,
-    dynamic Level,
-    dynamic Status,
-  ]) async {
+  Future<ResultListModel> AfterServiceList({
+    required URL,
+    required Page,
+    required PageSize,
+    required Order,
+    required Stext,
+    required Level,
+    required Status,
+  }) async {
     Response response = await post(
       Uri.http(URL, "/after/service/list"),
       body: {
@@ -58,13 +58,13 @@ class AfterServiceApi extends BaseApi {
     return ResultListModel.fromJson(jsonDecode(Decoder.convert(response.bodyBytes)));
   }
 
-  Future<ResultModel> AfterServiceAll([
-    dynamic URL,
-    dynamic Order,
-    dynamic Stext,
-    dynamic Level,
-    dynamic Status,
-  ]) async {
+  Future<ResultModel> AfterServiceAll({
+    required URL,
+    required Order,
+    required Stext,
+    required Level,
+    required Status,
+  }) async {
     Response response = await post(
       Uri.http(URL, "/after/service/all"),
       body: {
@@ -80,10 +80,10 @@ class AfterServiceApi extends BaseApi {
     return ResultModel.fromJson(jsonDecode(Decoder.convert(response.bodyBytes)));
   }
 
-  Future<ResultModel> AfterServiceData([
-    dynamic URL,
-    dynamic ID,
-  ]) async {
+  Future<ResultModel> AfterServiceData({
+    required URL,
+    required ID,
+  }) async {
     Response response = await post(
       Uri.http(URL, "/after/service/data"),
       body: {
@@ -96,10 +96,10 @@ class AfterServiceApi extends BaseApi {
     return ResultModel.fromJson(jsonDecode(Decoder.convert(response.bodyBytes)));
   }
 
-  Future<ResultModel> AfterServiceDel([
-    dynamic URL,
-    dynamic ID,
-  ]) async {
+  Future<ResultModel> AfterServiceDel({
+    required URL,
+    required ID,
+  }) async {
     Response response = await post(
       Uri.http(URL, "/after/service/del"),
       body: {
@@ -112,10 +112,10 @@ class AfterServiceApi extends BaseApi {
     return ResultModel.fromJson(jsonDecode(Decoder.convert(response.bodyBytes)));
   }
 
-  Future<ResultModel> AfterServiceStatus([
-    dynamic URL,
-    dynamic ID,
-  ]) async {
+  Future<ResultModel> AfterServiceStatus({
+    required URL,
+    required ID,
+  }) async {
     Response response = await post(
       Uri.http(URL, "/after/service/status"),
       body: {
@@ -128,11 +128,11 @@ class AfterServiceApi extends BaseApi {
     return ResultModel.fromJson(jsonDecode(Decoder.convert(response.bodyBytes)));
   }
 
-  Future<ResultModel> AfterServiceSignIn([
-    dynamic URL,
-    dynamic Account,
-    dynamic Password,
-  ]) async {
+  Future<ResultModel> AfterServiceSignIn({
+    required URL,
+    required Account,
+    required Password,
+  }) async {
     Response response = await post(
       Uri.http(URL, "/after/service/sign/in"),
       body: {
@@ -145,9 +145,9 @@ class AfterServiceApi extends BaseApi {
     return ResultModel.fromJson(jsonDecode(Decoder.convert(response.bodyBytes)));
   }
 
-  Future<ResultModel> AfterServiceSignOut([
-    dynamic URL,
-  ]) async {
+  Future<ResultModel> AfterServiceSignOut({
+    required URL,
+  }) async {
     Response response = await post(
       Uri.http(URL, "/after/service/sign/out"),
       body: {
@@ -159,12 +159,12 @@ class AfterServiceApi extends BaseApi {
     return ResultModel.fromJson(jsonDecode(Decoder.convert(response.bodyBytes)));
   }
 
-  Future<ResultModel> AfterServiceUpdate([
-    dynamic URL,
-    dynamic Password,
-    dynamic Name,
-    dynamic Remark,
-  ]) async {
+  Future<ResultModel> AfterServiceUpdate({
+    required URL,
+    required Password,
+    required Name,
+    required Remark,
+  }) async {
     Response response = await post(
       Uri.http(URL, "/after/service/update"),
       body: {

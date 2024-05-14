@@ -8,12 +8,12 @@ import 'package:app/model/ResultModel.dart';
 import 'package:app/model/ResultListModel.dart';
 
 class GroupApi extends BaseApi {
-  Future<ResultModel> GroupNew([
-    dynamic URL,
-    dynamic GroupName,
-    dynamic Remark,
-    dynamic ID,
-  ]) async {
+  Future<ResultModel> GroupNew({
+    required URL,
+    required GroupName,
+    required Remark,
+    required ID,
+  }) async {
     Response response = await post(
       Uri.http(URL, "/group/new"),
       body: {
@@ -28,13 +28,13 @@ class GroupApi extends BaseApi {
     return ResultModel.fromJson(jsonDecode(Decoder.convert(response.bodyBytes)));
   }
 
-  Future<ResultListModel> GroupList([
-    dynamic URL,
-    dynamic Page,
-    dynamic PageSize,
-    dynamic Order,
-    dynamic Stext,
-  ]) async {
+  Future<ResultListModel> GroupList({
+    required URL,
+    required Page,
+    required PageSize,
+    required Order,
+    required Stext,
+  }) async {
     Response response = await post(
       Uri.http(URL, "/group/list"),
       body: {
@@ -50,11 +50,11 @@ class GroupApi extends BaseApi {
     return ResultListModel.fromJson(jsonDecode(Decoder.convert(response.bodyBytes)));
   }
 
-  Future<ResultModel> GroupAll([
-    dynamic URL,
-    dynamic Order,
-    dynamic Stext,
-  ]) async {
+  Future<ResultModel> GroupAll({
+    required URL,
+    required Order,
+    required Stext,
+  }) async {
     Response response = await post(
       Uri.http(URL, "/group/all"),
       body: {
@@ -68,10 +68,10 @@ class GroupApi extends BaseApi {
     return ResultModel.fromJson(jsonDecode(Decoder.convert(response.bodyBytes)));
   }
 
-  Future<ResultModel> GroupData([
-    dynamic URL,
-    dynamic ID,
-  ]) async {
+  Future<ResultModel> GroupData({
+    required URL,
+    required ID,
+  }) async {
     Response response = await post(
       Uri.http(URL, "/group/data"),
       body: {
@@ -84,10 +84,10 @@ class GroupApi extends BaseApi {
     return ResultModel.fromJson(jsonDecode(Decoder.convert(response.bodyBytes)));
   }
 
-  Future<ResultModel> GroupDel([
-    dynamic URL,
-    dynamic ID,
-  ]) async {
+  Future<ResultModel> GroupDel({
+    required URL,
+    required ID,
+  }) async {
     Response response = await post(
       Uri.http(URL, "/group/del"),
       body: {

@@ -16,12 +16,12 @@ class SalesPlanNotifier extends BaseNotifier {
     OperationData = Null;
     try {
       await salesPlanApi.SalesPlanNew(
-        URL,
-        PlanName,
-        TargetID,
-        PlanContent,
-        Budget,
-        ID,
+        URL: URL,
+        PlanName: PlanName,
+        TargetID: TargetID,
+        PlanContent: PlanContent,
+        Budget: Budget,
+        ID: ID,
       ).then((Value) {
         OperationStatus = Value.State;
         OperationMemo = Value.Message;
@@ -49,14 +49,14 @@ class SalesPlanNotifier extends BaseNotifier {
     OperationData = Null;
     try {
       await salesPlanApi.SalesPlanList(
-        URL,
-        Page,
-        PageSize,
-        Order,
-        Stext,
-        TargetID,
-        Status,
-        ManagerID,
+        URL: URL,
+        Page: Page,
+        PageSize: PageSize,
+        Order: Order,
+        Stext: Stext,
+        TargetID: TargetID,
+        Status: Status,
+        ManagerID: ManagerID,
       ).then((Value) {
         OperationStatus = Value.State;
         OperationMemo = Value.Message;
@@ -82,12 +82,12 @@ class SalesPlanNotifier extends BaseNotifier {
     OperationData = Null;
     try {
       await salesPlanApi.SalesPlanAll(
-        URL,
-        Order,
-        Stext,
-        TargetID,
-        Status,
-        ManagerID,
+        URL: URL,
+        Order: Order,
+        Stext: Stext,
+        TargetID: TargetID,
+        Status: Status,
+        ManagerID: ManagerID,
       ).then((Value) {
         OperationStatus = Value.State;
         OperationMemo = Value.Message;
@@ -109,8 +109,8 @@ class SalesPlanNotifier extends BaseNotifier {
     OperationData = Null;
     try {
       await salesPlanApi.SalesPlanData(
-        URL,
-        ID,
+        URL: URL,
+        ID: ID,
       ).then((Value) {
         OperationStatus = Value.State;
         OperationMemo = Value.Message;
@@ -132,8 +132,8 @@ class SalesPlanNotifier extends BaseNotifier {
     OperationData = Null;
     try {
       await salesPlanApi.SalesPlanDel(
-        URL,
-        ID,
+        URL: URL,
+        ID: ID,
       ).then((Value) {
         OperationStatus = Value.State;
         OperationMemo = Value.Message;

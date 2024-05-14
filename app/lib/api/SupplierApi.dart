@@ -8,15 +8,15 @@ import 'package:app/model/ResultModel.dart';
 import 'package:app/model/ResultListModel.dart';
 
 class SupplierApi extends BaseApi {
-  Future<ResultModel> SupplierNew([
-    dynamic URL,
-    dynamic Name,
-    dynamic Email,
-    dynamic Tel,
-    dynamic Address,
-    dynamic SupplierInfo,
-    dynamic ID,
-  ]) async {
+  Future<ResultModel> SupplierNew({
+    required URL,
+    required Name,
+    required Email,
+    required Tel,
+    required Address,
+    required SupplierInfo,
+    required ID,
+  }) async {
     Response response = await post(
       Uri.http(URL, "/supplier/new"),
       body: {
@@ -34,13 +34,13 @@ class SupplierApi extends BaseApi {
     return ResultModel.fromJson(jsonDecode(Decoder.convert(response.bodyBytes)));
   }
 
-  Future<ResultListModel> SupplierList([
-    dynamic URL,
-    dynamic Page,
-    dynamic PageSize,
-    dynamic Order,
-    dynamic Stext,
-  ]) async {
+  Future<ResultListModel> SupplierList({
+    required URL,
+    required Page,
+    required PageSize,
+    required Order,
+    required Stext,
+  }) async {
     Response response = await post(
       Uri.http(URL, "/supplier/list"),
       body: {
@@ -56,11 +56,11 @@ class SupplierApi extends BaseApi {
     return ResultListModel.fromJson(jsonDecode(Decoder.convert(response.bodyBytes)));
   }
 
-  Future<ResultModel> SupplierAll([
-    dynamic URL,
-    dynamic Order,
-    dynamic Stext,
-  ]) async {
+  Future<ResultModel> SupplierAll({
+    required URL,
+    required Order,
+    required Stext,
+  }) async {
     Response response = await post(
       Uri.http(URL, "/supplier/all"),
       body: {
@@ -74,10 +74,10 @@ class SupplierApi extends BaseApi {
     return ResultModel.fromJson(jsonDecode(Decoder.convert(response.bodyBytes)));
   }
 
-  Future<ResultModel> SupplierData([
-    dynamic URL,
-    dynamic ID,
-  ]) async {
+  Future<ResultModel> SupplierData({
+    required URL,
+    required ID,
+  }) async {
     Response response = await post(
       Uri.http(URL, "/supplier/data"),
       body: {
@@ -90,10 +90,10 @@ class SupplierApi extends BaseApi {
     return ResultModel.fromJson(jsonDecode(Decoder.convert(response.bodyBytes)));
   }
 
-  Future<ResultModel> SupplierDel([
-    dynamic URL,
-    dynamic ID,
-  ]) async {
+  Future<ResultModel> SupplierDel({
+    required URL,
+    required ID,
+  }) async {
     Response response = await post(
       Uri.http(URL, "/supplier/del"),
       body: {

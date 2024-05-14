@@ -16,12 +16,12 @@ class ProductNotifier extends BaseNotifier {
     OperationData = Null;
     try {
       await productApi.ProductNew(
-        URL,
-        ProductName,
-        Price,
-        Cost,
-        Remark,
-        ID,
+        URL: URL,
+        ProductName: ProductName,
+        Price: Price,
+        Cost: Cost,
+        Remark: Remark,
+        ID: ID,
       ).then((Value) {
         OperationStatus = Value.State;
         OperationMemo = Value.Message;
@@ -47,12 +47,12 @@ class ProductNotifier extends BaseNotifier {
     OperationData = Null;
     try {
       await productApi.ProductList(
-        URL,
-        Page,
-        PageSize,
-        Order,
-        Stext,
-        Status,
+        URL: URL,
+        Page: Page,
+        PageSize: PageSize,
+        Order: Order,
+        Stext: Stext,
+        Status: Status,
       ).then((Value) {
         OperationStatus = Value.State;
         OperationMemo = Value.Message;
@@ -76,10 +76,10 @@ class ProductNotifier extends BaseNotifier {
     OperationData = Null;
     try {
       await productApi.ProductAll(
-        URL,
-        Order,
-        Stext,
-        Status,
+        URL: URL,
+        Order: Order,
+        Stext: Stext,
+        Status: Status,
       ).then((Value) {
         OperationStatus = Value.State;
         OperationMemo = Value.Message;
@@ -101,8 +101,8 @@ class ProductNotifier extends BaseNotifier {
     OperationData = Null;
     try {
       await productApi.ProductData(
-        URL,
-        ID,
+        URL: URL,
+        ID: ID,
       ).then((Value) {
         OperationStatus = Value.State;
         OperationMemo = Value.Message;
@@ -124,8 +124,8 @@ class ProductNotifier extends BaseNotifier {
     OperationData = Null;
     try {
       await productApi.ProductDel(
-        URL,
-        ID,
+        URL: URL,
+        ID: ID,
       ).then((Value) {
         OperationStatus = Value.State;
         OperationMemo = Value.Message;

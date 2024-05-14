@@ -8,18 +8,18 @@ import 'package:app/model/ResultModel.dart';
 import 'package:app/model/ResultListModel.dart';
 
 class DistributorApi extends BaseApi {
-  Future<ResultModel> DistributorNew([
-    dynamic URL,
-    dynamic Name,
-    dynamic Email,
-    dynamic Tel,
-    dynamic DistributorInfo,
-    dynamic CompanyID,
-    dynamic ManagerID,
-    dynamic AfterServiceID,
-    dynamic Level,
-    dynamic ID,
-  ]) async {
+  Future<ResultModel> DistributorNew({
+    required URL,
+    required Name,
+    required Email,
+    required Tel,
+    required DistributorInfo,
+    required CompanyID,
+    required ManagerID,
+    required AfterServiceID,
+    required Level,
+    required ID,
+  }) async {
     Response response = await post(
       Uri.http(URL, "/distributor/new"),
       body: {
@@ -40,17 +40,17 @@ class DistributorApi extends BaseApi {
     return ResultModel.fromJson(jsonDecode(Decoder.convert(response.bodyBytes)));
   }
 
-  Future<ResultListModel> DistributorList([
-    dynamic URL,
-    dynamic Page,
-    dynamic PageSize,
-    dynamic Order,
-    dynamic Stext,
-    dynamic CompanyID,
-    dynamic ManagerID,
-    dynamic AfterServiceID,
-    dynamic Level,
-  ]) async {
+  Future<ResultListModel> DistributorList({
+    required URL,
+    required Page,
+    required PageSize,
+    required Order,
+    required Stext,
+    required CompanyID,
+    required ManagerID,
+    required AfterServiceID,
+    required Level,
+  }) async {
     Response response = await post(
       Uri.http(URL, "/distributor/list"),
       body: {
@@ -70,15 +70,15 @@ class DistributorApi extends BaseApi {
     return ResultListModel.fromJson(jsonDecode(Decoder.convert(response.bodyBytes)));
   }
 
-  Future<ResultModel> DistributorAll([
-    dynamic URL,
-    dynamic Order,
-    dynamic Stext,
-    dynamic CompanyID,
-    dynamic ManagerID,
-    dynamic AfterServiceID,
-    dynamic Level,
-  ]) async {
+  Future<ResultModel> DistributorAll({
+    required URL,
+    required Order,
+    required Stext,
+    required CompanyID,
+    required ManagerID,
+    required AfterServiceID,
+    required Level,
+  }) async {
     Response response = await post(
       Uri.http(URL, "/distributor/all"),
       body: {
@@ -96,10 +96,10 @@ class DistributorApi extends BaseApi {
     return ResultModel.fromJson(jsonDecode(Decoder.convert(response.bodyBytes)));
   }
 
-  Future<ResultModel> DistributorData([
-    dynamic URL,
-    dynamic ID,
-  ]) async {
+  Future<ResultModel> DistributorData({
+    required URL,
+    required ID,
+  }) async {
     Response response = await post(
       Uri.http(URL, "/distributor/data"),
       body: {
@@ -112,10 +112,10 @@ class DistributorApi extends BaseApi {
     return ResultModel.fromJson(jsonDecode(Decoder.convert(response.bodyBytes)));
   }
 
-  Future<ResultModel> DistributorDel([
-    dynamic URL,
-    dynamic ID,
-  ]) async {
+  Future<ResultModel> DistributorDel({
+    required URL,
+    required ID,
+  }) async {
     Response response = await post(
       Uri.http(URL, "/distributor/del"),
       body: {

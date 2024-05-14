@@ -16,12 +16,12 @@ class SalesTargetNotifier extends BaseNotifier {
     OperationData = Null;
     try {
       await salesTargetApi.SalesTargetNew(
-        URL,
-        TargetName,
-        ExpirationDate,
-        CustomerID,
-        Remark,
-        ID,
+        URL: URL,
+        TargetName: TargetName,
+        ExpirationDate: ExpirationDate,
+        CustomerID: CustomerID,
+        Remark: Remark,
+        ID: ID,
       ).then((Value) {
         OperationStatus = Value.State;
         OperationMemo = Value.Message;
@@ -48,13 +48,13 @@ class SalesTargetNotifier extends BaseNotifier {
     OperationData = Null;
     try {
       await salesTargetApi.SalesTargetList(
-        URL,
-        Page,
-        PageSize,
-        Order,
-        Stext,
-        CustomerID,
-        ManagerID,
+        URL: URL,
+        Page: Page,
+        PageSize: PageSize,
+        Order: Order,
+        Stext: Stext,
+        CustomerID: CustomerID,
+        ManagerID: ManagerID,
       ).then((Value) {
         OperationStatus = Value.State;
         OperationMemo = Value.Message;
@@ -79,11 +79,11 @@ class SalesTargetNotifier extends BaseNotifier {
     OperationData = Null;
     try {
       await salesTargetApi.SalesTargetAll(
-        URL,
-        Order,
-        Stext,
-        CustomerID,
-        ManagerID,
+        URL: URL,
+        Order: Order,
+        Stext: Stext,
+        CustomerID: CustomerID,
+        ManagerID: ManagerID,
       ).then((Value) {
         OperationStatus = Value.State;
         OperationMemo = Value.Message;
@@ -105,8 +105,8 @@ class SalesTargetNotifier extends BaseNotifier {
     OperationData = Null;
     try {
       await salesTargetApi.SalesTargetData(
-        URL,
-        ID,
+        URL: URL,
+        ID: ID,
       ).then((Value) {
         OperationStatus = Value.State;
         OperationMemo = Value.Message;
@@ -128,8 +128,8 @@ class SalesTargetNotifier extends BaseNotifier {
     OperationData = Null;
     try {
       await salesTargetApi.SalesTargetDel(
-        URL,
-        ID,
+        URL: URL,
+        ID: ID,
       ).then((Value) {
         OperationStatus = Value.State;
         OperationMemo = Value.Message;

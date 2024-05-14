@@ -8,14 +8,14 @@ import 'package:app/model/ResultModel.dart';
 import 'package:app/model/ResultListModel.dart';
 
 class SalesTargetApi extends BaseApi {
-  Future<ResultModel> SalesTargetNew([
-    dynamic URL,
-    dynamic TargetName,
-    dynamic ExpirationDate,
-    dynamic CustomerID,
-    dynamic Remark,
-    dynamic ID,
-  ]) async {
+  Future<ResultModel> SalesTargetNew({
+    required URL,
+    required TargetName,
+    required ExpirationDate,
+    required CustomerID,
+    required Remark,
+    required ID,
+  }) async {
     Response response = await post(
       Uri.http(URL, "/sales/target/new"),
       body: {
@@ -32,15 +32,15 @@ class SalesTargetApi extends BaseApi {
     return ResultModel.fromJson(jsonDecode(Decoder.convert(response.bodyBytes)));
   }
 
-  Future<ResultListModel> SalesTargetList([
-    dynamic URL,
-    dynamic Page,
-    dynamic PageSize,
-    dynamic Order,
-    dynamic Stext,
-    dynamic CustomerID,
-    dynamic ManagerID,
-  ]) async {
+  Future<ResultListModel> SalesTargetList({
+    required URL,
+    required Page,
+    required PageSize,
+    required Order,
+    required Stext,
+    required CustomerID,
+    required ManagerID,
+  }) async {
     Response response = await post(
       Uri.http(URL, "/sales/target/list"),
       body: {
@@ -58,13 +58,13 @@ class SalesTargetApi extends BaseApi {
     return ResultListModel.fromJson(jsonDecode(Decoder.convert(response.bodyBytes)));
   }
 
-  Future<ResultModel> SalesTargetAll([
-    dynamic URL,
-    dynamic Order,
-    dynamic Stext,
-    dynamic CustomerID,
-    dynamic ManagerID,
-  ]) async {
+  Future<ResultModel> SalesTargetAll({
+    required URL,
+    required Order,
+    required Stext,
+    required CustomerID,
+    required ManagerID,
+  }) async {
     Response response = await post(
       Uri.http(URL, "/sales/target/all"),
       body: {
@@ -80,10 +80,10 @@ class SalesTargetApi extends BaseApi {
     return ResultModel.fromJson(jsonDecode(Decoder.convert(response.bodyBytes)));
   }
 
-  Future<ResultModel> SalesTargetData([
-    dynamic URL,
-    dynamic ID,
-  ]) async {
+  Future<ResultModel> SalesTargetData({
+    required URL,
+    required ID,
+  }) async {
     Response response = await post(
       Uri.http(URL, "/sales/target/data"),
       body: {
@@ -96,10 +96,10 @@ class SalesTargetApi extends BaseApi {
     return ResultModel.fromJson(jsonDecode(Decoder.convert(response.bodyBytes)));
   }
 
-  Future<ResultModel> SalesTargetDel([
-    dynamic URL,
-    dynamic ID,
-  ]) async {
+  Future<ResultModel> SalesTargetDel({
+    required URL,
+    required ID,
+  }) async {
     Response response = await post(
       Uri.http(URL, "/sales/target/del"),
       body: {

@@ -8,20 +8,20 @@ import 'package:app/model/ResultModel.dart';
 import 'package:app/model/ResultListModel.dart';
 
 class CustomerApi extends BaseApi {
-  Future<ResultModel> CustomerNew([
-    dynamic URL,
-    dynamic Name,
-    dynamic Birthday,
-    dynamic Gender,
-    dynamic Email,
-    dynamic Tel,
-    dynamic CustomerInfo,
-    dynamic Priority,
-    dynamic CompanyID,
-    dynamic AfterServiceID,
-    dynamic Level,
-    dynamic ID,
-  ]) async {
+  Future<ResultModel> CustomerNew({
+    required URL,
+    required Name,
+    required Birthday,
+    required Gender,
+    required Email,
+    required Tel,
+    required CustomerInfo,
+    required Priority,
+    required CompanyID,
+    required AfterServiceID,
+    required Level,
+    required ID,
+  }) async {
     Response response = await post(
       Uri.http(URL, "/customer/new"),
       body: {
@@ -44,19 +44,19 @@ class CustomerApi extends BaseApi {
     return ResultModel.fromJson(jsonDecode(Decoder.convert(response.bodyBytes)));
   }
 
-  Future<ResultListModel> CustomerList([
-    dynamic URL,
-    dynamic Page,
-    dynamic PageSize,
-    dynamic Order,
-    dynamic Stext,
-    dynamic Gender,
-    dynamic Priority,
-    dynamic CompanyID,
-    dynamic ManagerID,
-    dynamic AfterServiceID,
-    dynamic Level,
-  ]) async {
+  Future<ResultListModel> CustomerList({
+    required URL,
+    required Page,
+    required PageSize,
+    required Order,
+    required Stext,
+    required Gender,
+    required Priority,
+    required CompanyID,
+    required ManagerID,
+    required AfterServiceID,
+    required Level,
+  }) async {
     Response response = await post(
       Uri.http(URL, "/customer/list"),
       body: {
@@ -78,17 +78,17 @@ class CustomerApi extends BaseApi {
     return ResultListModel.fromJson(jsonDecode(Decoder.convert(response.bodyBytes)));
   }
 
-  Future<ResultModel> CustomerAll([
-    dynamic URL,
-    dynamic Order,
-    dynamic Stext,
-    dynamic Gender,
-    dynamic Priority,
-    dynamic CompanyID,
-    dynamic ManagerID,
-    dynamic AfterServiceID,
-    dynamic Level,
-  ]) async {
+  Future<ResultModel> CustomerAll({
+    required URL,
+    required Order,
+    required Stext,
+    required Gender,
+    required Priority,
+    required CompanyID,
+    required ManagerID,
+    required AfterServiceID,
+    required Level,
+  }) async {
     Response response = await post(
       Uri.http(URL, "/customer/all"),
       body: {
@@ -108,10 +108,10 @@ class CustomerApi extends BaseApi {
     return ResultModel.fromJson(jsonDecode(Decoder.convert(response.bodyBytes)));
   }
 
-  Future<ResultModel> CustomerData([
-    dynamic URL,
-    dynamic ID,
-  ]) async {
+  Future<ResultModel> CustomerData({
+    required URL,
+    required ID,
+  }) async {
     Response response = await post(
       Uri.http(URL, "/customer/data"),
       body: {
@@ -124,10 +124,10 @@ class CustomerApi extends BaseApi {
     return ResultModel.fromJson(jsonDecode(Decoder.convert(response.bodyBytes)));
   }
 
-  Future<ResultModel> CustomerDel([
-    dynamic URL,
-    dynamic ID,
-  ]) async {
+  Future<ResultModel> CustomerDel({
+    required URL,
+    required ID,
+  }) async {
     Response response = await post(
       Uri.http(URL, "/customer/del"),
       body: {

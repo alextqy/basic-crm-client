@@ -8,14 +8,14 @@ import 'package:app/model/ResultModel.dart';
 import 'package:app/model/ResultListModel.dart';
 
 class ProductApi extends BaseApi {
-  Future<ResultModel> ProductNew([
-    dynamic URL,
-    dynamic ProductName,
-    dynamic Price,
-    dynamic Cost,
-    dynamic Remark,
-    dynamic ID,
-  ]) async {
+  Future<ResultModel> ProductNew({
+    required URL,
+    required ProductName,
+    required Price,
+    required Cost,
+    required Remark,
+    required ID,
+  }) async {
     Response response = await post(
       Uri.http(URL, "/product/new"),
       body: {
@@ -32,14 +32,14 @@ class ProductApi extends BaseApi {
     return ResultModel.fromJson(jsonDecode(Decoder.convert(response.bodyBytes)));
   }
 
-  Future<ResultListModel> ProductList([
-    dynamic URL,
-    dynamic Page,
-    dynamic PageSize,
-    dynamic Order,
-    dynamic Stext,
-    dynamic Status,
-  ]) async {
+  Future<ResultListModel> ProductList({
+    required URL,
+    required Page,
+    required PageSize,
+    required Order,
+    required Stext,
+    required Status,
+  }) async {
     Response response = await post(
       Uri.http(URL, "/product/list"),
       body: {
@@ -56,12 +56,12 @@ class ProductApi extends BaseApi {
     return ResultListModel.fromJson(jsonDecode(Decoder.convert(response.bodyBytes)));
   }
 
-  Future<ResultModel> ProductAll([
-    dynamic URL,
-    dynamic Order,
-    dynamic Stext,
-    dynamic Status,
-  ]) async {
+  Future<ResultModel> ProductAll({
+    required URL,
+    required Order,
+    required Stext,
+    required Status,
+  }) async {
     Response response = await post(
       Uri.http(URL, "/product/all"),
       body: {
@@ -76,10 +76,10 @@ class ProductApi extends BaseApi {
     return ResultModel.fromJson(jsonDecode(Decoder.convert(response.bodyBytes)));
   }
 
-  Future<ResultModel> ProductData([
-    dynamic URL,
-    dynamic ID,
-  ]) async {
+  Future<ResultModel> ProductData({
+    required URL,
+    required ID,
+  }) async {
     Response response = await post(
       Uri.http(URL, "/product/data"),
       body: {
@@ -92,10 +92,10 @@ class ProductApi extends BaseApi {
     return ResultModel.fromJson(jsonDecode(Decoder.convert(response.bodyBytes)));
   }
 
-  Future<ResultModel> ProductDel([
-    dynamic URL,
-    dynamic ID,
-  ]) async {
+  Future<ResultModel> ProductDel({
+    required URL,
+    required ID,
+  }) async {
     Response response = await post(
       Uri.http(URL, "/product/del"),
       body: {

@@ -14,10 +14,10 @@ class GroupNotifier extends BaseNotifier {
     OperationData = Null;
     try {
       await managerGroupApi.GroupNew(
-        URL,
-        GroupName,
-        Remark,
-        ID,
+        URL: URL,
+        GroupName: GroupName,
+        Remark: Remark,
+        ID: ID,
       ).then((Value) {
         OperationStatus = Value.State;
         OperationMemo = Value.Message;
@@ -42,11 +42,11 @@ class GroupNotifier extends BaseNotifier {
     OperationData = Null;
     try {
       await managerGroupApi.GroupList(
-        URL,
-        Page,
-        PageSize,
-        Order,
-        Stext,
+        URL: URL,
+        Page: Page,
+        PageSize: PageSize,
+        Order: Order,
+        Stext: Stext,
       ).then((Value) {
         OperationStatus = Value.State;
         OperationMemo = Value.Message;
@@ -69,9 +69,9 @@ class GroupNotifier extends BaseNotifier {
     OperationData = Null;
     try {
       await managerGroupApi.GroupAll(
-        URL,
-        Order,
-        Stext,
+        URL: URL,
+        Order: Order,
+        Stext: Stext,
       ).then((Value) {
         OperationStatus = Value.State;
         OperationMemo = Value.Message;
@@ -93,8 +93,8 @@ class GroupNotifier extends BaseNotifier {
     OperationData = Null;
     try {
       await managerGroupApi.GroupData(
-        URL,
-        ID,
+        URL: URL,
+        ID: ID,
       ).then((Value) {
         OperationStatus = Value.State;
         OperationMemo = Value.Message;
@@ -116,8 +116,8 @@ class GroupNotifier extends BaseNotifier {
     OperationData = Null;
     try {
       await managerGroupApi.GroupDel(
-        URL,
-        ID,
+        URL: URL,
+        ID: ID,
       ).then((Value) {
         OperationStatus = Value.State;
         OperationMemo = Value.Message;

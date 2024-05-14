@@ -14,10 +14,10 @@ class AnnouncementNotifier extends BaseNotifier {
     OperationData = Null;
     try {
       await announcementApi.AnnouncementNew(
-        URL,
-        Title,
-        Content,
-        ID,
+        URL: URL,
+        Title: Title,
+        Content: Content,
+        ID: ID,
       ).then((Value) {
         OperationStatus = Value.State;
         OperationMemo = Value.Message;
@@ -44,13 +44,13 @@ class AnnouncementNotifier extends BaseNotifier {
     OperationData = Null;
     try {
       await announcementApi.AnnouncementList(
-        URL,
-        Page,
-        PageSize,
-        Order,
-        Stext,
-        AuthorID,
-        Display,
+        URL: URL,
+        Page: Page,
+        PageSize: PageSize,
+        Order: Order,
+        Stext: Stext,
+        AuthorID: AuthorID,
+        Display: Display,
       ).then((Value) {
         OperationStatus = Value.State;
         OperationMemo = Value.Message;
@@ -75,11 +75,11 @@ class AnnouncementNotifier extends BaseNotifier {
     OperationData = Null;
     try {
       await announcementApi.AnnouncementAll(
-        URL,
-        Order,
-        Stext,
-        AuthorID,
-        Display,
+        URL: URL,
+        Order: Order,
+        Stext: Stext,
+        AuthorID: AuthorID,
+        Display: Display,
       ).then((Value) {
         OperationStatus = Value.State;
         OperationMemo = Value.Message;
@@ -101,8 +101,8 @@ class AnnouncementNotifier extends BaseNotifier {
     OperationData = Null;
     try {
       await announcementApi.AnnouncementData(
-        URL,
-        ID,
+        URL: URL,
+        ID: ID,
       ).then((Value) {
         OperationStatus = Value.State;
         OperationMemo = Value.Message;
@@ -124,8 +124,8 @@ class AnnouncementNotifier extends BaseNotifier {
     OperationData = Null;
     try {
       await announcementApi.AnnouncementDel(
-        URL,
-        ID,
+        URL: URL,
+        ID: ID,
       ).then((Value) {
         OperationStatus = Value.State;
         OperationMemo = Value.Message;
@@ -147,8 +147,8 @@ class AnnouncementNotifier extends BaseNotifier {
     OperationData = Null;
     try {
       await announcementApi.AnnouncementDisplay(
-        URL,
-        ID,
+        URL: URL,
+        ID: ID,
       ).then((Value) {
         OperationStatus = Value.State;
         OperationMemo = Value.Message;

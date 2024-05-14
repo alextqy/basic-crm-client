@@ -8,14 +8,14 @@ import 'package:app/model/ResultModel.dart';
 import 'package:app/model/ResultListModel.dart';
 
 class SalesPlanApi extends BaseApi {
-  Future<ResultModel> SalesPlanNew([
-    dynamic URL,
-    dynamic PlanName,
-    dynamic TargetID,
-    dynamic PlanContent,
-    dynamic Budget,
-    dynamic ID,
-  ]) async {
+  Future<ResultModel> SalesPlanNew({
+    required URL,
+    required PlanName,
+    required TargetID,
+    required PlanContent,
+    required Budget,
+    required ID,
+  }) async {
     Response response = await post(
       Uri.http(URL, "/sales/plan/new"),
       body: {
@@ -32,16 +32,16 @@ class SalesPlanApi extends BaseApi {
     return ResultModel.fromJson(jsonDecode(Decoder.convert(response.bodyBytes)));
   }
 
-  Future<ResultListModel> SalesPlanList([
-    dynamic URL,
-    dynamic Page,
-    dynamic PageSize,
-    dynamic Order,
-    dynamic Stext,
-    dynamic TargetID,
-    dynamic Status,
-    dynamic ManagerID,
-  ]) async {
+  Future<ResultListModel> SalesPlanList({
+    required URL,
+    required Page,
+    required PageSize,
+    required Order,
+    required Stext,
+    required TargetID,
+    required Status,
+    required ManagerID,
+  }) async {
     Response response = await post(
       Uri.http(URL, "/sales/plan/list"),
       body: {
@@ -60,14 +60,14 @@ class SalesPlanApi extends BaseApi {
     return ResultListModel.fromJson(jsonDecode(Decoder.convert(response.bodyBytes)));
   }
 
-  Future<ResultModel> SalesPlanAll([
-    dynamic URL,
-    dynamic Order,
-    dynamic Stext,
-    dynamic TargetID,
-    dynamic Status,
-    dynamic ManagerID,
-  ]) async {
+  Future<ResultModel> SalesPlanAll({
+    required URL,
+    required Order,
+    required Stext,
+    required TargetID,
+    required Status,
+    required ManagerID,
+  }) async {
     Response response = await post(
       Uri.http(URL, "/sales/plan/all"),
       body: {
@@ -84,10 +84,10 @@ class SalesPlanApi extends BaseApi {
     return ResultModel.fromJson(jsonDecode(Decoder.convert(response.bodyBytes)));
   }
 
-  Future<ResultModel> SalesPlanData([
-    dynamic URL,
-    dynamic ID,
-  ]) async {
+  Future<ResultModel> SalesPlanData({
+    required URL,
+    required ID,
+  }) async {
     Response response = await post(
       Uri.http(URL, "/sales/plan/data"),
       body: {
@@ -100,10 +100,10 @@ class SalesPlanApi extends BaseApi {
     return ResultModel.fromJson(jsonDecode(Decoder.convert(response.bodyBytes)));
   }
 
-  Future<ResultModel> SalesPlanDel([
-    dynamic URL,
-    dynamic ID,
-  ]) async {
+  Future<ResultModel> SalesPlanDel({
+    required URL,
+    required ID,
+  }) async {
     Response response = await post(
       Uri.http(URL, "/sales/plan/del"),
       body: {

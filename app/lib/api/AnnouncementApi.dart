@@ -8,12 +8,12 @@ import 'package:app/model/ResultModel.dart';
 import 'package:app/model/ResultListModel.dart';
 
 class AnnouncementApi extends BaseApi {
-  Future<ResultModel> AnnouncementNew([
-    dynamic URL,
-    dynamic Title,
-    dynamic Content,
-    dynamic ID,
-  ]) async {
+  Future<ResultModel> AnnouncementNew({
+    required URL,
+    required Title,
+    required Content,
+    required ID,
+  }) async {
     Response response = await post(
       Uri.http(URL, "/announcement/new"),
       body: {
@@ -28,15 +28,15 @@ class AnnouncementApi extends BaseApi {
     return ResultModel.fromJson(jsonDecode(Decoder.convert(response.bodyBytes)));
   }
 
-  Future<ResultListModel> AnnouncementList([
-    dynamic URL,
-    dynamic Page,
-    dynamic PageSize,
-    dynamic Order,
-    dynamic Stext,
-    dynamic AuthorID,
-    dynamic Display,
-  ]) async {
+  Future<ResultListModel> AnnouncementList({
+    required URL,
+    required Page,
+    required PageSize,
+    required Order,
+    required Stext,
+    required AuthorID,
+    required Display,
+  }) async {
     Response response = await post(
       Uri.http(URL, "/announcement/list"),
       body: {
@@ -54,13 +54,13 @@ class AnnouncementApi extends BaseApi {
     return ResultListModel.fromJson(jsonDecode(Decoder.convert(response.bodyBytes)));
   }
 
-  Future<ResultModel> AnnouncementAll([
-    dynamic URL,
-    dynamic Order,
-    dynamic Stext,
-    dynamic AuthorID,
-    dynamic Display,
-  ]) async {
+  Future<ResultModel> AnnouncementAll({
+    required URL,
+    required Order,
+    required Stext,
+    required AuthorID,
+    required Display,
+  }) async {
     Response response = await post(
       Uri.http(URL, "/announcement/all"),
       body: {
@@ -76,10 +76,10 @@ class AnnouncementApi extends BaseApi {
     return ResultModel.fromJson(jsonDecode(Decoder.convert(response.bodyBytes)));
   }
 
-  Future<ResultModel> AnnouncementData([
-    dynamic URL,
-    dynamic ID,
-  ]) async {
+  Future<ResultModel> AnnouncementData({
+    required URL,
+    required ID,
+  }) async {
     Response response = await post(
       Uri.http(URL, "/announcement/data"),
       body: {
@@ -92,10 +92,10 @@ class AnnouncementApi extends BaseApi {
     return ResultModel.fromJson(jsonDecode(Decoder.convert(response.bodyBytes)));
   }
 
-  Future<ResultModel> AnnouncementDel([
-    dynamic URL,
-    dynamic ID,
-  ]) async {
+  Future<ResultModel> AnnouncementDel({
+    required URL,
+    required ID,
+  }) async {
     Response response = await post(
       Uri.http(URL, "/announcement/del"),
       body: {
@@ -108,10 +108,10 @@ class AnnouncementApi extends BaseApi {
     return ResultModel.fromJson(jsonDecode(Decoder.convert(response.bodyBytes)));
   }
 
-  Future<ResultModel> AnnouncementDisplay([
-    dynamic URL,
-    dynamic ID,
-  ]) async {
+  Future<ResultModel> AnnouncementDisplay({
+    required URL,
+    required ID,
+  }) async {
     Response response = await post(
       Uri.http(URL, "/announcement/display"),
       body: {

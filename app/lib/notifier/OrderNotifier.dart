@@ -22,18 +22,18 @@ class OrderNotifier extends BaseNotifier {
     OperationData = Null;
     try {
       await orderApi.OrderNew(
-        URL,
-        OrderNo,
-        ProductID,
-        ManagerID,
-        CustomerID,
-        DistributorID,
-        OrderPrice,
-        Remark,
-        OrderType,
-        Payment,
-        Review,
-        ID,
+        URL: URL,
+        OrderNo: OrderNo,
+        ProductID: ProductID,
+        ManagerID: ManagerID,
+        CustomerID: CustomerID,
+        DistributorID: DistributorID,
+        OrderPrice: OrderPrice,
+        Remark: Remark,
+        OrderType: OrderType,
+        Payment: Payment,
+        Review: Review,
+        ID: ID,
       ).then((Value) {
         OperationStatus = Value.State;
         OperationMemo = Value.Message;
@@ -66,19 +66,19 @@ class OrderNotifier extends BaseNotifier {
     OperationData = Null;
     try {
       await orderApi.OrderList(
-        URL,
-        Page,
-        PageSize,
-        Order,
-        Stext,
-        ProductID,
-        ManagerID,
-        CustomerID,
-        DistributorID,
-        Status,
-        OrderType,
-        Payment,
-        Review,
+        URL: URL,
+        Page: Page,
+        PageSize: PageSize,
+        Order: Order,
+        Stext: Stext,
+        ProductID: ProductID,
+        ManagerID: ManagerID,
+        CustomerID: CustomerID,
+        DistributorID: DistributorID,
+        Status: Status,
+        OrderType: OrderType,
+        Payment: Payment,
+        Review: Review,
       ).then((Value) {
         OperationStatus = Value.State;
         OperationMemo = Value.Message;
@@ -109,17 +109,17 @@ class OrderNotifier extends BaseNotifier {
     OperationData = Null;
     try {
       await orderApi.OrderAll(
-        URL,
-        Order,
-        Stext,
-        ProductID,
-        ManagerID,
-        CustomerID,
-        DistributorID,
-        Status,
-        OrderType,
-        Payment,
-        Review,
+        URL: URL,
+        Order: Order,
+        Stext: Stext,
+        ProductID: ProductID,
+        ManagerID: ManagerID,
+        CustomerID: CustomerID,
+        DistributorID: DistributorID,
+        Status: Status,
+        OrderType: OrderType,
+        Payment: Payment,
+        Review: Review,
       ).then((Value) {
         OperationStatus = Value.State;
         OperationMemo = Value.Message;
@@ -141,8 +141,8 @@ class OrderNotifier extends BaseNotifier {
     OperationData = Null;
     try {
       await orderApi.OrderData(
-        URL,
-        ID,
+        URL: URL,
+        ID: ID,
       ).then((Value) {
         OperationStatus = Value.State;
         OperationMemo = Value.Message;
@@ -164,8 +164,8 @@ class OrderNotifier extends BaseNotifier {
     OperationData = Null;
     try {
       await orderApi.OrderDel(
-        URL,
-        ID,
+        URL: URL,
+        ID: ID,
       ).then((Value) {
         OperationStatus = Value.State;
         OperationMemo = Value.Message;

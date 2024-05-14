@@ -14,10 +14,10 @@ class CustomerQANotifier extends BaseNotifier {
     OperationData = Null;
     try {
       await customerQAApi.CustomerQANew(
-        URL,
-        Title,
-        Content,
-        ID,
+        URL: URL,
+        Title: Title,
+        Content: Content,
+        ID: ID,
       ).then((Value) {
         OperationStatus = Value.State;
         OperationMemo = Value.Message;
@@ -43,12 +43,12 @@ class CustomerQANotifier extends BaseNotifier {
     OperationData = Null;
     try {
       await customerQAApi.CustomerQAList(
-        URL,
-        Page,
-        PageSize,
-        Order,
-        Stext,
-        Display,
+        URL: URL,
+        Page: Page,
+        PageSize: PageSize,
+        Order: Order,
+        Stext: Stext,
+        Display: Display,
       ).then((Value) {
         OperationStatus = Value.State;
         OperationMemo = Value.Message;
@@ -72,10 +72,10 @@ class CustomerQANotifier extends BaseNotifier {
     OperationData = Null;
     try {
       await customerQAApi.CustomerQAAll(
-        URL,
-        Order,
-        Stext,
-        Display,
+        URL: URL,
+        Order: Order,
+        Stext: Stext,
+        Display: Display,
       ).then((Value) {
         OperationStatus = Value.State;
         OperationMemo = Value.Message;
@@ -97,8 +97,8 @@ class CustomerQANotifier extends BaseNotifier {
     OperationData = Null;
     try {
       await customerQAApi.CustomerQAData(
-        URL,
-        ID,
+        URL: URL,
+        ID: ID,
       ).then((Value) {
         OperationStatus = Value.State;
         OperationMemo = Value.Message;
@@ -120,8 +120,8 @@ class CustomerQANotifier extends BaseNotifier {
     OperationData = Null;
     try {
       await customerQAApi.CustomerQADel(
-        URL,
-        ID,
+        URL: URL,
+        ID: ID,
       ).then((Value) {
         OperationStatus = Value.State;
         OperationMemo = Value.Message;
@@ -143,8 +143,8 @@ class CustomerQANotifier extends BaseNotifier {
     OperationData = Null;
     try {
       await customerQAApi.CustomerQADisplay(
-        URL,
-        ID,
+        URL: URL,
+        ID: ID,
       ).then((Value) {
         OperationStatus = Value.State;
         OperationMemo = Value.Message;

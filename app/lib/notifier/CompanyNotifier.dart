@@ -14,10 +14,10 @@ class CompanyNotifier extends BaseNotifier {
     OperationData = Null;
     try {
       await companyApi.CompanyNew(
-        URL,
-        CompanyName,
-        Remark,
-        ID,
+        URL: URL,
+        CompanyName: CompanyName,
+        Remark: Remark,
+        ID: ID,
       ).then((Value) {
         OperationStatus = Value.State;
         OperationMemo = Value.Message;
@@ -42,11 +42,11 @@ class CompanyNotifier extends BaseNotifier {
     OperationData = Null;
     try {
       await companyApi.CompanyList(
-        URL,
-        Page,
-        PageSize,
-        Order,
-        Stext,
+        URL: URL,
+        Page: Page,
+        PageSize: PageSize,
+        Order: Order,
+        Stext: Stext,
       ).then((Value) {
         OperationStatus = Value.State;
         OperationMemo = Value.Message;
@@ -69,9 +69,9 @@ class CompanyNotifier extends BaseNotifier {
     OperationData = Null;
     try {
       await companyApi.CompanyAll(
-        URL,
-        Order,
-        Stext,
+        URL: URL,
+        Order: Order,
+        Stext: Stext,
       ).then((Value) {
         OperationStatus = Value.State;
         OperationMemo = Value.Message;
@@ -93,8 +93,8 @@ class CompanyNotifier extends BaseNotifier {
     OperationData = Null;
     try {
       await companyApi.CompanyData(
-        URL,
-        ID,
+        URL: URL,
+        ID: ID,
       ).then((Value) {
         OperationStatus = Value.State;
         OperationMemo = Value.Message;
@@ -116,8 +116,8 @@ class CompanyNotifier extends BaseNotifier {
     OperationData = Null;
     try {
       await companyApi.CompanyDel(
-        URL,
-        ID,
+        URL: URL,
+        ID: ID,
       ).then((Value) {
         OperationStatus = Value.State;
         OperationMemo = Value.Message;

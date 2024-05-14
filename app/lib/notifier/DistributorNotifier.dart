@@ -20,16 +20,16 @@ class DistributorNotifier extends BaseNotifier {
     OperationData = Null;
     try {
       await distributorApi.DistributorNew(
-        URL,
-        Name,
-        Email,
-        Tel,
-        DistributorInfo,
-        CompanyID,
-        ManagerID,
-        AfterServiceID,
-        Level,
-        ID,
+        URL: URL,
+        Name: Name,
+        Email: Email,
+        Tel: Tel,
+        DistributorInfo: DistributorInfo,
+        CompanyID: CompanyID,
+        ManagerID: ManagerID,
+        AfterServiceID: AfterServiceID,
+        Level: Level,
+        ID: ID,
       ).then((Value) {
         OperationStatus = Value.State;
         OperationMemo = Value.Message;
@@ -58,15 +58,15 @@ class DistributorNotifier extends BaseNotifier {
     OperationData = Null;
     try {
       await distributorApi.DistributorList(
-        URL,
-        Page,
-        PageSize,
-        Order,
-        Stext,
-        CompanyID,
-        ManagerID,
-        AfterServiceID,
-        Level,
+        URL: URL,
+        Page: Page,
+        PageSize: PageSize,
+        Order: Order,
+        Stext: Stext,
+        CompanyID: CompanyID,
+        ManagerID: ManagerID,
+        AfterServiceID: AfterServiceID,
+        Level: Level,
       ).then((Value) {
         OperationStatus = Value.State;
         OperationMemo = Value.Message;
@@ -93,13 +93,13 @@ class DistributorNotifier extends BaseNotifier {
     OperationData = Null;
     try {
       await distributorApi.DistributorAll(
-        URL,
-        Order,
-        Stext,
-        CompanyID,
-        ManagerID,
-        AfterServiceID,
-        Level,
+        URL: URL,
+        Order: Order,
+        Stext: Stext,
+        CompanyID: CompanyID,
+        ManagerID: ManagerID,
+        AfterServiceID: AfterServiceID,
+        Level: Level,
       ).then((Value) {
         OperationStatus = Value.State;
         OperationMemo = Value.Message;
@@ -121,8 +121,8 @@ class DistributorNotifier extends BaseNotifier {
     OperationData = Null;
     try {
       await distributorApi.DistributorData(
-        URL,
-        ID,
+        URL: URL,
+        ID: ID,
       ).then((Value) {
         OperationStatus = Value.State;
         OperationMemo = Value.Message;
@@ -144,8 +144,8 @@ class DistributorNotifier extends BaseNotifier {
     OperationData = Null;
     try {
       await distributorApi.DistributorDel(
-        URL,
-        ID,
+        URL: URL,
+        ID: ID,
       ).then((Value) {
         OperationStatus = Value.State;
         OperationMemo = Value.Message;

@@ -22,18 +22,18 @@ class CustomerNotifier extends BaseNotifier {
     OperationData = Null;
     try {
       await customerApi.CustomerNew(
-        URL,
-        Name,
-        Birthday,
-        Gender,
-        Email,
-        Tel,
-        CustomerInfo,
-        Priority,
-        CompanyID,
-        AfterServiceID,
-        Level,
-        ID,
+        URL: URL,
+        Name: Name,
+        Birthday: Birthday,
+        Gender: Gender,
+        Email: Email,
+        Tel: Tel,
+        CustomerInfo: CustomerInfo,
+        Priority: Priority,
+        CompanyID: CompanyID,
+        AfterServiceID: AfterServiceID,
+        Level: Level,
+        ID: ID,
       ).then((Value) {
         OperationStatus = Value.State;
         OperationMemo = Value.Message;
@@ -64,17 +64,17 @@ class CustomerNotifier extends BaseNotifier {
     OperationData = Null;
     try {
       await customerApi.CustomerList(
-        URL,
-        Page,
-        PageSize,
-        Order,
-        Stext,
-        Gender,
-        Priority,
-        CompanyID,
-        ManagerID,
-        AfterServiceID,
-        Level,
+        URL: URL,
+        Page: Page,
+        PageSize: PageSize,
+        Order: Order,
+        Stext: Stext,
+        Gender: Gender,
+        Priority: Priority,
+        CompanyID: CompanyID,
+        ManagerID: ManagerID,
+        AfterServiceID: AfterServiceID,
+        Level: Level,
       ).then((Value) {
         OperationStatus = Value.State;
         OperationMemo = Value.Message;
@@ -103,15 +103,15 @@ class CustomerNotifier extends BaseNotifier {
     OperationData = Null;
     try {
       await customerApi.CustomerAll(
-        URL,
-        Order,
-        Stext,
-        Gender,
-        Priority,
-        CompanyID,
-        ManagerID,
-        AfterServiceID,
-        Level,
+        URL: URL,
+        Order: Order,
+        Stext: Stext,
+        Gender: Gender,
+        Priority: Priority,
+        CompanyID: CompanyID,
+        ManagerID: ManagerID,
+        AfterServiceID: AfterServiceID,
+        Level: Level,
       ).then((Value) {
         OperationStatus = Value.State;
         OperationMemo = Value.Message;
@@ -133,8 +133,8 @@ class CustomerNotifier extends BaseNotifier {
     OperationData = Null;
     try {
       await customerApi.CustomerData(
-        URL,
-        ID,
+        URL: URL,
+        ID: ID,
       ).then((Value) {
         OperationStatus = Value.State;
         OperationMemo = Value.Message;
@@ -156,8 +156,8 @@ class CustomerNotifier extends BaseNotifier {
     OperationData = Null;
     try {
       await customerApi.CustomerDel(
-        URL,
-        ID,
+        URL: URL,
+        ID: ID,
       ).then((Value) {
         OperationStatus = Value.State;
         OperationMemo = Value.Message;

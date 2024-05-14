@@ -17,13 +17,13 @@ class SupplierNotifier extends BaseNotifier {
     OperationData = Null;
     try {
       await supplierApi.SupplierNew(
-        URL,
-        Name,
-        Email,
-        Tel,
-        Address,
-        SupplierInfo,
-        ID,
+        URL: URL,
+        Name: Name,
+        Email: Email,
+        Tel: Tel,
+        Address: Address,
+        SupplierInfo: SupplierInfo,
+        ID: ID,
       ).then((Value) {
         OperationStatus = Value.State;
         OperationMemo = Value.Message;
@@ -48,11 +48,11 @@ class SupplierNotifier extends BaseNotifier {
     OperationData = Null;
     try {
       await supplierApi.SupplierList(
-        URL,
-        Page,
-        PageSize,
-        Order,
-        Stext,
+        URL: URL,
+        Page: Page,
+        PageSize: PageSize,
+        Order: Order,
+        Stext: Stext,
       ).then((Value) {
         OperationStatus = Value.State;
         OperationMemo = Value.Message;
@@ -75,9 +75,9 @@ class SupplierNotifier extends BaseNotifier {
     OperationData = Null;
     try {
       await supplierApi.SupplierAll(
-        URL,
-        Order,
-        Stext,
+        URL: URL,
+        Order: Order,
+        Stext: Stext,
       ).then((Value) {
         OperationStatus = Value.State;
         OperationMemo = Value.Message;
@@ -99,8 +99,8 @@ class SupplierNotifier extends BaseNotifier {
     OperationData = Null;
     try {
       await supplierApi.SupplierData(
-        URL,
-        ID,
+        URL: URL,
+        ID: ID,
       ).then((Value) {
         OperationStatus = Value.State;
         OperationMemo = Value.Message;
@@ -122,8 +122,8 @@ class SupplierNotifier extends BaseNotifier {
     OperationData = Null;
     try {
       await supplierApi.SupplierDel(
-        URL,
-        ID,
+        URL: URL,
+        ID: ID,
       ).then((Value) {
         OperationStatus = Value.State;
         OperationMemo = Value.Message;

@@ -13,9 +13,9 @@ class AdminNotifier extends BaseNotifier {
     OperationData = Null;
     try {
       await adminApi.AdminSignIn(
-        URL,
-        Account,
-        Password,
+        URL: URL,
+        Account: Account,
+        Password: Password,
       ).then((Value) {
         OperationStatus = Value.State;
         OperationMemo = Value.Message;
@@ -35,7 +35,9 @@ class AdminNotifier extends BaseNotifier {
     OperationMemo = "";
     OperationData = Null;
     try {
-      await adminApi.AdminSignOut(URL).then((Value) {
+      await adminApi.AdminSignOut(
+        URL: URL,
+      ).then((Value) {
         OperationStatus = Value.State;
         OperationMemo = Value.Message;
         OperationData = Value.Data;
@@ -60,12 +62,12 @@ class AdminNotifier extends BaseNotifier {
     OperationData = Null;
     try {
       await adminApi.AdminNew(
-        URL,
-        Account,
-        Password,
-        Name,
-        Remark,
-        ID,
+        URL: URL,
+        Account: Account,
+        Password: Password,
+        Name: Name,
+        Remark: Remark,
+        ID: ID,
       ).then((Value) {
         OperationStatus = Value.State;
         OperationMemo = Value.Message;
@@ -92,13 +94,13 @@ class AdminNotifier extends BaseNotifier {
     OperationData = Null;
     try {
       await adminApi.AdminList(
-        URL,
-        Page,
-        PageSize,
-        Order,
-        Stext,
-        Level,
-        Status,
+        URL: URL,
+        Page: Page,
+        PageSize: PageSize,
+        Order: Order,
+        Stext: Stext,
+        Level: Level,
+        Status: Status,
       ).then((Value) {
         OperationStatus = Value.State;
         OperationMemo = Value.Message;
@@ -123,11 +125,11 @@ class AdminNotifier extends BaseNotifier {
     OperationData = Null;
     try {
       await adminApi.AdminAll(
-        URL,
-        Order,
-        Stext,
-        Level,
-        Status,
+        URL: URL,
+        Order: Order,
+        Stext: Stext,
+        Level: Level,
+        Status: Status,
       ).then((Value) {
         OperationStatus = Value.State;
         OperationMemo = Value.Message;
@@ -149,8 +151,8 @@ class AdminNotifier extends BaseNotifier {
     OperationData = Null;
     try {
       await adminApi.AdminData(
-        URL,
-        ID,
+        URL: URL,
+        ID: ID,
       ).then((Value) {
         OperationStatus = Value.State;
         OperationMemo = Value.Message;
@@ -172,8 +174,8 @@ class AdminNotifier extends BaseNotifier {
     OperationData = Null;
     try {
       await adminApi.AdminDel(
-        URL,
-        ID,
+        URL: URL,
+        ID: ID,
       ).then((Value) {
         OperationStatus = Value.State;
         OperationMemo = Value.Message;
@@ -195,8 +197,8 @@ class AdminNotifier extends BaseNotifier {
     OperationData = Null;
     try {
       await adminApi.AdminStatus(
-        URL,
-        ID,
+        URL: URL,
+        ID: ID,
       ).then((Value) {
         OperationStatus = Value.State;
         OperationMemo = Value.Message;

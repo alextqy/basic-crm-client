@@ -8,12 +8,12 @@ import 'package:app/model/ResultModel.dart';
 import 'package:app/model/ResultListModel.dart';
 
 class CompanyApi extends BaseApi {
-  Future<ResultModel> CompanyNew([
-    dynamic URL,
-    dynamic CompanyName,
-    dynamic Remark,
-    dynamic ID,
-  ]) async {
+  Future<ResultModel> CompanyNew({
+    required URL,
+    required CompanyName,
+    required Remark,
+    required ID,
+  }) async {
     Response response = await post(
       Uri.http(URL, "/company/new"),
       body: {
@@ -28,13 +28,13 @@ class CompanyApi extends BaseApi {
     return ResultModel.fromJson(jsonDecode(Decoder.convert(response.bodyBytes)));
   }
 
-  Future<ResultListModel> CompanyList([
-    dynamic URL,
-    dynamic Page,
-    dynamic PageSize,
-    dynamic Order,
-    dynamic Stext,
-  ]) async {
+  Future<ResultListModel> CompanyList({
+    required URL,
+    required Page,
+    required PageSize,
+    required Order,
+    required Stext,
+  }) async {
     Response response = await post(
       Uri.http(URL, "/company/list"),
       body: {
@@ -50,11 +50,11 @@ class CompanyApi extends BaseApi {
     return ResultListModel.fromJson(jsonDecode(Decoder.convert(response.bodyBytes)));
   }
 
-  Future<ResultModel> CompanyAll([
-    dynamic URL,
-    dynamic Order,
-    dynamic Stext,
-  ]) async {
+  Future<ResultModel> CompanyAll({
+    required URL,
+    required Order,
+    required Stext,
+  }) async {
     Response response = await post(
       Uri.http(URL, "/company/all"),
       body: {
@@ -68,10 +68,10 @@ class CompanyApi extends BaseApi {
     return ResultModel.fromJson(jsonDecode(Decoder.convert(response.bodyBytes)));
   }
 
-  Future<ResultModel> CompanyData([
-    dynamic URL,
-    dynamic ID,
-  ]) async {
+  Future<ResultModel> CompanyData({
+    required URL,
+    required ID,
+  }) async {
     Response response = await post(
       Uri.http(URL, "/company/data"),
       body: {
@@ -84,10 +84,10 @@ class CompanyApi extends BaseApi {
     return ResultModel.fromJson(jsonDecode(Decoder.convert(response.bodyBytes)));
   }
 
-  Future<ResultModel> CompanyDel([
-    dynamic URL,
-    dynamic ID,
-  ]) async {
+  Future<ResultModel> CompanyDel({
+    required URL,
+    required ID,
+  }) async {
     Response response = await post(
       Uri.http(URL, "/company/del"),
       body: {

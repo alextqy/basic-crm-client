@@ -8,11 +8,11 @@ import 'package:app/model/ResultModel.dart';
 import 'package:app/model/ResultListModel.dart';
 
 class AdminApi extends BaseApi {
-  Future<ResultModel> AdminSignIn([
-    dynamic URL,
-    dynamic Account,
-    dynamic Password,
-  ]) async {
+  Future<ResultModel> AdminSignIn({
+    required URL,
+    required Account,
+    required Password,
+  }) async {
     Response response = await post(
       Uri.http(URL, "/admin/sign/in"),
       body: {
@@ -25,9 +25,9 @@ class AdminApi extends BaseApi {
     return ResultModel.fromJson(jsonDecode(Decoder.convert(response.bodyBytes)));
   }
 
-  Future<ResultModel> AdminSignOut([
-    dynamic URL,
-  ]) async {
+  Future<ResultModel> AdminSignOut({
+    required URL,
+  }) async {
     Response response = await post(
       Uri.http(URL, "/admin/sign/out"),
       body: {
@@ -39,14 +39,14 @@ class AdminApi extends BaseApi {
     return ResultModel.fromJson(jsonDecode(Decoder.convert(response.bodyBytes)));
   }
 
-  Future<ResultModel> AdminNew([
-    dynamic URL,
-    dynamic Account,
-    dynamic Password,
-    dynamic Name,
-    dynamic Remark,
-    dynamic ID,
-  ]) async {
+  Future<ResultModel> AdminNew({
+    required URL,
+    required Account,
+    required Password,
+    required Name,
+    required Remark,
+    required ID,
+  }) async {
     Response response = await post(
       Uri.http(URL, "/admin/new"),
       body: {
@@ -63,15 +63,15 @@ class AdminApi extends BaseApi {
     return ResultModel.fromJson(jsonDecode(Decoder.convert(response.bodyBytes)));
   }
 
-  Future<ResultListModel> AdminList([
-    dynamic URL,
-    dynamic Page,
-    dynamic PageSize,
-    dynamic Order,
-    dynamic Stext,
-    dynamic Level,
-    dynamic Status,
-  ]) async {
+  Future<ResultListModel> AdminList({
+    required URL,
+    required Page,
+    required PageSize,
+    required Order,
+    required Stext,
+    required Level,
+    required Status,
+  }) async {
     Response response = await post(
       Uri.http(URL, "/admin/list"),
       body: {
@@ -89,13 +89,13 @@ class AdminApi extends BaseApi {
     return ResultListModel.fromJson(jsonDecode(Decoder.convert(response.bodyBytes)));
   }
 
-  Future<ResultModel> AdminAll([
-    dynamic URL,
-    dynamic Order,
-    dynamic Stext,
-    dynamic Level,
-    dynamic Status,
-  ]) async {
+  Future<ResultModel> AdminAll({
+    required URL,
+    required Order,
+    required Stext,
+    required Level,
+    required Status,
+  }) async {
     Response response = await post(
       Uri.http(URL, "/admin/all"),
       body: {
@@ -111,10 +111,10 @@ class AdminApi extends BaseApi {
     return ResultModel.fromJson(jsonDecode(Decoder.convert(response.bodyBytes)));
   }
 
-  Future<ResultModel> AdminData([
-    dynamic URL,
-    dynamic ID,
-  ]) async {
+  Future<ResultModel> AdminData({
+    required URL,
+    required ID,
+  }) async {
     Response response = await post(
       Uri.http(URL, "/admin/data"),
       body: {
@@ -127,10 +127,10 @@ class AdminApi extends BaseApi {
     return ResultModel.fromJson(jsonDecode(Decoder.convert(response.bodyBytes)));
   }
 
-  Future<ResultModel> AdminDel([
-    dynamic URL,
-    dynamic ID,
-  ]) async {
+  Future<ResultModel> AdminDel({
+    required URL,
+    required ID,
+  }) async {
     Response response = await post(
       Uri.http(URL, "/admin/del"),
       body: {
@@ -143,10 +143,10 @@ class AdminApi extends BaseApi {
     return ResultModel.fromJson(jsonDecode(Decoder.convert(response.bodyBytes)));
   }
 
-  Future<ResultModel> AdminStatus([
-    dynamic URL,
-    dynamic ID,
-  ]) async {
+  Future<ResultModel> AdminStatus({
+    required URL,
+    required ID,
+  }) async {
     Response response = await post(
       Uri.http(URL, "/admin/status"),
       body: {

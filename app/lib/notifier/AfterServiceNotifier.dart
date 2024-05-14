@@ -16,12 +16,12 @@ class AfterServiceNotifier extends BaseNotifier {
     OperationData = Null;
     try {
       await afterServiceApi.AfterServiceNew(
-        URL,
-        Account,
-        Password,
-        Name,
-        Remark,
-        ID,
+        URL: URL,
+        Account: Account,
+        Password: Password,
+        Name: Name,
+        Remark: Remark,
+        ID: ID,
       ).then((Value) {
         OperationStatus = Value.State;
         OperationMemo = Value.Message;
@@ -48,13 +48,13 @@ class AfterServiceNotifier extends BaseNotifier {
     OperationData = Null;
     try {
       await afterServiceApi.AfterServiceList(
-        URL,
-        Page,
-        PageSize,
-        Order,
-        Stext,
-        Level,
-        Status,
+        URL: URL,
+        Page: Page,
+        PageSize: PageSize,
+        Order: Order,
+        Stext: Stext,
+        Level: Level,
+        Status: Status,
       ).then((Value) {
         OperationStatus = Value.State;
         OperationMemo = Value.Message;
@@ -79,11 +79,11 @@ class AfterServiceNotifier extends BaseNotifier {
     OperationData = Null;
     try {
       await afterServiceApi.AfterServiceAll(
-        URL,
-        Order,
-        Stext,
-        Level,
-        Status,
+        URL: URL,
+        Order: Order,
+        Stext: Stext,
+        Level: Level,
+        Status: Status,
       ).then((Value) {
         OperationStatus = Value.State;
         OperationMemo = Value.Message;
@@ -105,8 +105,8 @@ class AfterServiceNotifier extends BaseNotifier {
     OperationData = Null;
     try {
       await afterServiceApi.AfterServiceData(
-        URL,
-        ID,
+        URL: URL,
+        ID: ID,
       ).then((Value) {
         OperationStatus = Value.State;
         OperationMemo = Value.Message;
@@ -128,8 +128,8 @@ class AfterServiceNotifier extends BaseNotifier {
     OperationData = Null;
     try {
       await afterServiceApi.AfterServiceDel(
-        URL,
-        ID,
+        URL: URL,
+        ID: ID,
       ).then((Value) {
         OperationStatus = Value.State;
         OperationMemo = Value.Message;
@@ -151,8 +151,8 @@ class AfterServiceNotifier extends BaseNotifier {
     OperationData = Null;
     try {
       await afterServiceApi.AfterServiceStatus(
-        URL,
-        ID,
+        URL: URL,
+        ID: ID,
       ).then((Value) {
         OperationStatus = Value.State;
         OperationMemo = Value.Message;
@@ -175,9 +175,9 @@ class AfterServiceNotifier extends BaseNotifier {
     OperationData = Null;
     try {
       await afterServiceApi.AfterServiceSignIn(
-        URL,
-        Account,
-        Password,
+        URL: URL,
+        Account: Account,
+        Password: Password,
       ).then((Value) {
         OperationStatus = Value.State;
         OperationMemo = Value.Message;
@@ -198,7 +198,7 @@ class AfterServiceNotifier extends BaseNotifier {
     OperationData = Null;
     try {
       await afterServiceApi.AfterServiceSignOut(
-        URL,
+        URL: URL,
       ).then((Value) {
         OperationStatus = Value.State;
         OperationMemo = Value.Message;
@@ -222,10 +222,10 @@ class AfterServiceNotifier extends BaseNotifier {
     OperationData = Null;
     try {
       await afterServiceApi.AfterServiceUpdate(
-        URL,
-        Password,
-        Name,
-        Remark,
+        URL: URL,
+        Password: Password,
+        Name: Name,
+        Remark: Remark,
       ).then((Value) {
         OperationStatus = Value.State;
         OperationMemo = Value.Message;

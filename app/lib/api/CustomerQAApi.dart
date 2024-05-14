@@ -8,12 +8,12 @@ import 'package:app/model/ResultModel.dart';
 import 'package:app/model/ResultListModel.dart';
 
 class CustomerQAApi extends BaseApi {
-  Future<ResultModel> CustomerQANew([
-    dynamic URL,
-    dynamic Title,
-    dynamic Content,
-    dynamic ID,
-  ]) async {
+  Future<ResultModel> CustomerQANew({
+    required URL,
+    required Title,
+    required Content,
+    required ID,
+  }) async {
     Response response = await post(
       Uri.http(URL, "/customer/qa/new"),
       body: {
@@ -28,14 +28,14 @@ class CustomerQAApi extends BaseApi {
     return ResultModel.fromJson(jsonDecode(Decoder.convert(response.bodyBytes)));
   }
 
-  Future<ResultListModel> CustomerQAList([
-    dynamic URL,
-    dynamic Page,
-    dynamic PageSize,
-    dynamic Order,
-    dynamic Stext,
-    dynamic Display,
-  ]) async {
+  Future<ResultListModel> CustomerQAList({
+    required URL,
+    required Page,
+    required PageSize,
+    required Order,
+    required Stext,
+    required Display,
+  }) async {
     Response response = await post(
       Uri.http(URL, "/customer/qa/list"),
       body: {
@@ -52,12 +52,12 @@ class CustomerQAApi extends BaseApi {
     return ResultListModel.fromJson(jsonDecode(Decoder.convert(response.bodyBytes)));
   }
 
-  Future<ResultModel> CustomerQAAll([
-    dynamic URL,
-    dynamic Order,
-    dynamic Stext,
-    dynamic Display,
-  ]) async {
+  Future<ResultModel> CustomerQAAll({
+    required URL,
+    required Order,
+    required Stext,
+    required Display,
+  }) async {
     Response response = await post(
       Uri.http(URL, "/customer/qa/all"),
       body: {
@@ -72,10 +72,10 @@ class CustomerQAApi extends BaseApi {
     return ResultModel.fromJson(jsonDecode(Decoder.convert(response.bodyBytes)));
   }
 
-  Future<ResultModel> CustomerQAData([
-    dynamic URL,
-    dynamic ID,
-  ]) async {
+  Future<ResultModel> CustomerQAData({
+    required URL,
+    required ID,
+  }) async {
     Response response = await post(
       Uri.http(URL, "/customer/qa/data"),
       body: {
@@ -88,10 +88,10 @@ class CustomerQAApi extends BaseApi {
     return ResultModel.fromJson(jsonDecode(Decoder.convert(response.bodyBytes)));
   }
 
-  Future<ResultModel> CustomerQADel([
-    dynamic URL,
-    dynamic ID,
-  ]) async {
+  Future<ResultModel> CustomerQADel({
+    required URL,
+    required ID,
+  }) async {
     Response response = await post(
       Uri.http(URL, "/customer/qa/del"),
       body: {
@@ -104,10 +104,10 @@ class CustomerQAApi extends BaseApi {
     return ResultModel.fromJson(jsonDecode(Decoder.convert(response.bodyBytes)));
   }
 
-  Future<ResultModel> CustomerQADisplay([
-    dynamic URL,
-    dynamic ID,
-  ]) async {
+  Future<ResultModel> CustomerQADisplay({
+    required URL,
+    required ID,
+  }) async {
     Response response = await post(
       Uri.http(URL, "/customer/qa/display"),
       body: {

@@ -8,15 +8,15 @@ import 'package:app/model/ResultModel.dart';
 import 'package:app/model/ResultListModel.dart';
 
 class ManagerApi extends BaseApi {
-  Future<ResultModel> ManagerNew([
-    dynamic URL,
-    dynamic Account,
-    dynamic Password,
-    dynamic Name,
-    dynamic Remark,
-    dynamic GroupID,
-    dynamic ID,
-  ]) async {
+  Future<ResultModel> ManagerNew({
+    required URL,
+    required Account,
+    required Password,
+    required Name,
+    required Remark,
+    required GroupID,
+    required ID,
+  }) async {
     Response response = await post(
       Uri.http(URL, "/manager/new"),
       body: {
@@ -34,16 +34,16 @@ class ManagerApi extends BaseApi {
     return ResultModel.fromJson(jsonDecode(Decoder.convert(response.bodyBytes)));
   }
 
-  Future<ResultListModel> ManagerList([
-    dynamic URL,
-    dynamic Page,
-    dynamic PageSize,
-    dynamic Order,
-    dynamic Stext,
-    dynamic Level,
-    dynamic Status,
-    dynamic GroupID,
-  ]) async {
+  Future<ResultListModel> ManagerList({
+    required URL,
+    required Page,
+    required PageSize,
+    required Order,
+    required Stext,
+    required Level,
+    required Status,
+    required GroupID,
+  }) async {
     Response response = await post(
       Uri.http(URL, "/manager/list"),
       body: {
@@ -62,14 +62,14 @@ class ManagerApi extends BaseApi {
     return ResultListModel.fromJson(jsonDecode(Decoder.convert(response.bodyBytes)));
   }
 
-  Future<ResultModel> ManagerAll([
-    dynamic URL,
-    dynamic Order,
-    dynamic Stext,
-    dynamic Level,
-    dynamic Status,
-    dynamic GroupID,
-  ]) async {
+  Future<ResultModel> ManagerAll({
+    required URL,
+    required Order,
+    required Stext,
+    required Level,
+    required Status,
+    required GroupID,
+  }) async {
     Response response = await post(
       Uri.http(URL, "/manager/all"),
       body: {
@@ -86,10 +86,10 @@ class ManagerApi extends BaseApi {
     return ResultModel.fromJson(jsonDecode(Decoder.convert(response.bodyBytes)));
   }
 
-  Future<ResultModel> ManagerData([
-    dynamic URL,
-    dynamic ID,
-  ]) async {
+  Future<ResultModel> ManagerData({
+    required URL,
+    required ID,
+  }) async {
     Response response = await post(
       Uri.http(URL, "/manager/data"),
       body: {
@@ -102,10 +102,10 @@ class ManagerApi extends BaseApi {
     return ResultModel.fromJson(jsonDecode(Decoder.convert(response.bodyBytes)));
   }
 
-  Future<ResultModel> ManagerDel([
-    dynamic URL,
-    dynamic ID,
-  ]) async {
+  Future<ResultModel> ManagerDel({
+    required URL,
+    required ID,
+  }) async {
     Response response = await post(
       Uri.http(URL, "/manager/del"),
       body: {
@@ -118,10 +118,10 @@ class ManagerApi extends BaseApi {
     return ResultModel.fromJson(jsonDecode(Decoder.convert(response.bodyBytes)));
   }
 
-  Future<ResultModel> ManagerStatus([
-    dynamic URL,
-    dynamic ID,
-  ]) async {
+  Future<ResultModel> ManagerStatus({
+    required URL,
+    required ID,
+  }) async {
     Response response = await post(
       Uri.http(URL, "/manager/status"),
       body: {
@@ -134,11 +134,11 @@ class ManagerApi extends BaseApi {
     return ResultModel.fromJson(jsonDecode(Decoder.convert(response.bodyBytes)));
   }
 
-  Future<ResultModel> ManagerSignIn([
-    dynamic URL,
-    dynamic Account,
-    dynamic Password,
-  ]) async {
+  Future<ResultModel> ManagerSignIn({
+    required URL,
+    required Account,
+    required Password,
+  }) async {
     Response response = await post(
       Uri.http(URL, "/manager/sign/in"),
       body: {
@@ -151,9 +151,9 @@ class ManagerApi extends BaseApi {
     return ResultModel.fromJson(jsonDecode(Decoder.convert(response.bodyBytes)));
   }
 
-  Future<ResultModel> ManagerSignOut([
-    dynamic URL,
-  ]) async {
+  Future<ResultModel> ManagerSignOut({
+    required URL,
+  }) async {
     Response response = await post(
       Uri.http(URL, "/manager/sign/out"),
       body: {
@@ -165,13 +165,13 @@ class ManagerApi extends BaseApi {
     return ResultModel.fromJson(jsonDecode(Decoder.convert(response.bodyBytes)));
   }
 
-  Future<ResultModel> ManagerUpdate([
-    dynamic URL,
-    dynamic Password,
-    dynamic Name,
-    dynamic Remark,
-    dynamic GroupID,
-  ]) async {
+  Future<ResultModel> ManagerUpdate({
+    required URL,
+    required Password,
+    required Name,
+    required Remark,
+    required GroupID,
+  }) async {
     Response response = await post(
       Uri.http(URL, "/manager/update"),
       body: {

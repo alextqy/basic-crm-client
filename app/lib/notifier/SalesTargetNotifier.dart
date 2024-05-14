@@ -12,7 +12,7 @@ class SalesTargetNotifier extends BaseNotifier {
     required ID,
   }) async {
     OperationStatus = false;
-    OperationMemo = "";
+    OperationMemo = '';
     OperationData = Null;
     try {
       await salesTargetApi.SalesTargetNew(
@@ -44,7 +44,7 @@ class SalesTargetNotifier extends BaseNotifier {
     required ManagerID,
   }) async {
     OperationStatus = false;
-    OperationMemo = "";
+    OperationMemo = '';
     OperationData = Null;
     try {
       await salesTargetApi.SalesTargetList(
@@ -75,7 +75,7 @@ class SalesTargetNotifier extends BaseNotifier {
     required ManagerID,
   }) async {
     OperationStatus = false;
-    OperationMemo = "";
+    OperationMemo = '';
     OperationData = Null;
     try {
       await salesTargetApi.SalesTargetAll(
@@ -101,7 +101,7 @@ class SalesTargetNotifier extends BaseNotifier {
     required ID,
   }) async {
     OperationStatus = false;
-    OperationMemo = "";
+    OperationMemo = '';
     OperationData = Null;
     try {
       await salesTargetApi.SalesTargetData(
@@ -124,7 +124,7 @@ class SalesTargetNotifier extends BaseNotifier {
     required ID,
   }) async {
     OperationStatus = false;
-    OperationMemo = "";
+    OperationMemo = '';
     OperationData = Null;
     try {
       await salesTargetApi.SalesTargetDel(

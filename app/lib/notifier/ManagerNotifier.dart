@@ -13,7 +13,7 @@ class ManagerNotifier extends BaseNotifier {
     required ID,
   }) async {
     OperationStatus = false;
-    OperationMemo = "";
+    OperationMemo = '';
     OperationData = Null;
     try {
       await managerApi.ManagerNew(
@@ -47,7 +47,7 @@ class ManagerNotifier extends BaseNotifier {
     required GroupID,
   }) async {
     OperationStatus = false;
-    OperationMemo = "";
+    OperationMemo = '';
     OperationData = Null;
     try {
       await managerApi.ManagerList(
@@ -80,7 +80,7 @@ class ManagerNotifier extends BaseNotifier {
     required GroupID,
   }) async {
     OperationStatus = false;
-    OperationMemo = "";
+    OperationMemo = '';
     OperationData = Null;
     try {
       await managerApi.ManagerAll(
@@ -107,7 +107,7 @@ class ManagerNotifier extends BaseNotifier {
     required ID,
   }) async {
     OperationStatus = false;
-    OperationMemo = "";
+    OperationMemo = '';
     OperationData = Null;
     try {
       await managerApi.ManagerData(
@@ -130,7 +130,7 @@ class ManagerNotifier extends BaseNotifier {
     required ID,
   }) async {
     OperationStatus = false;
-    OperationMemo = "";
+    OperationMemo = '';
     OperationData = Null;
     try {
       await managerApi.ManagerDel(
@@ -153,7 +153,7 @@ class ManagerNotifier extends BaseNotifier {
     required ID,
   }) async {
     OperationStatus = false;
-    OperationMemo = "";
+    OperationMemo = '';
     OperationData = Null;
     try {
       await managerApi.ManagerStatus(
@@ -177,7 +177,7 @@ class ManagerNotifier extends BaseNotifier {
     required Password,
   }) async {
     OperationStatus = false;
-    OperationMemo = "";
+    OperationMemo = '';
     OperationData = Null;
     try {
       await managerApi.ManagerSignIn(
@@ -200,7 +200,7 @@ class ManagerNotifier extends BaseNotifier {
     required URL,
   }) async {
     OperationStatus = false;
-    OperationMemo = "";
+    OperationMemo = '';
     OperationData = Null;
     try {
       await managerApi.ManagerSignOut(
@@ -225,7 +225,7 @@ class ManagerNotifier extends BaseNotifier {
     required GroupID,
   }) async {
     OperationStatus = false;
-    OperationMemo = "";
+    OperationMemo = '';
     OperationData = Null;
     try {
       await managerApi.ManagerUpdate(

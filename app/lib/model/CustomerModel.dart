@@ -19,12 +19,12 @@ class CustomerModel {
 
   CustomerModel({
     this.ID = 0,
-    this.Name = "",
+    this.Name = '',
     this.Birthday = 0,
     this.Gender = 0,
-    this.Email = "",
-    this.Tel = "",
-    this.CustomerInfo = "",
+    this.Email = '',
+    this.Tel = '',
+    this.CustomerInfo = '',
     this.Priority = 0,
     this.CreationTime = 0,
     this.CompanyID = 0,
@@ -35,19 +35,19 @@ class CustomerModel {
 
   factory CustomerModel.fromJson(Map<String, dynamic> json) {
     return CustomerModel(
-      ID: json["ID"],
-      Name: json["Name"],
-      Birthday: json["Birthday"],
-      Gender: json["Gender"],
-      Email: json["Email"],
-      Tel: json["Tel"],
-      CustomerInfo: json["CustomerInfo"],
-      Priority: json["Priority"],
-      CreationTime: json["CreationTime"],
-      CompanyID: json["CompanyID"],
-      ManagerID: json["ManagerID"],
-      AfterServiceID: json["AfterServiceID"],
-      Level: json["Level"],
+      ID: json['ID'],
+      Name: json['Name'],
+      Birthday: json['Birthday'],
+      Gender: json['Gender'],
+      Email: json['Email'],
+      Tel: json['Tel'],
+      CustomerInfo: json['CustomerInfo'],
+      Priority: json['Priority'],
+      CreationTime: json['CreationTime'],
+      CompanyID: json['CompanyID'],
+      ManagerID: json['ManagerID'],
+      AfterServiceID: json['AfterServiceID'],
+      Level: json['Level'],
     );
   }
 

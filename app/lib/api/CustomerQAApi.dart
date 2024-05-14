@@ -15,12 +15,12 @@ class CustomerQAApi extends BaseApi {
     required ID,
   }) async {
     Response response = await post(
-      Uri.http(URL, "/customer/qa/new"),
+      Uri.http(URL, '/customer/qa/new'),
       body: {
-        "Token": FileHelper().Read("Token"),
-        "Title": Title.toString(),
-        "Content": Content.toString(),
-        "ID": ID.toString(),
+        'Token': FileHelper().Read('Token'),
+        'Title': Title.toString(),
+        'Content': Content.toString(),
+        'ID': ID.toString(),
       },
       headers: PostHeaders,
       encoding: PostEncoding,
@@ -37,14 +37,14 @@ class CustomerQAApi extends BaseApi {
     required Display,
   }) async {
     Response response = await post(
-      Uri.http(URL, "/customer/qa/list"),
+      Uri.http(URL, '/customer/qa/list'),
       body: {
-        "Token": FileHelper().Read("Token"),
-        "Page": Page.toString(),
-        "PageSize": PageSize.toString(),
-        "Order": Order.toString(),
-        "Stext": Stext.toString(),
-        "Display": Display.toString(),
+        'Token': FileHelper().Read('Token'),
+        'Page': Page.toString(),
+        'PageSize': PageSize.toString(),
+        'Order': Order.toString(),
+        'Stext': Stext.toString(),
+        'Display': Display.toString(),
       },
       headers: PostHeaders,
       encoding: PostEncoding,
@@ -59,12 +59,12 @@ class CustomerQAApi extends BaseApi {
     required Display,
   }) async {
     Response response = await post(
-      Uri.http(URL, "/customer/qa/all"),
+      Uri.http(URL, '/customer/qa/all'),
       body: {
-        "Token": FileHelper().Read("Token"),
-        "Order": Order.toString(),
-        "Stext": Stext.toString(),
-        "Display": Display.toString(),
+        'Token': FileHelper().Read('Token'),
+        'Order': Order.toString(),
+        'Stext': Stext.toString(),
+        'Display': Display.toString(),
       },
       headers: PostHeaders,
       encoding: PostEncoding,
@@ -77,10 +77,10 @@ class CustomerQAApi extends BaseApi {
     required ID,
   }) async {
     Response response = await post(
-      Uri.http(URL, "/customer/qa/data"),
+      Uri.http(URL, '/customer/qa/data'),
       body: {
-        "Token": FileHelper().Read("Token"),
-        "ID": ID.toString(),
+        'Token': FileHelper().Read('Token'),
+        'ID': ID.toString(),
       },
       headers: PostHeaders,
       encoding: PostEncoding,
@@ -93,10 +93,10 @@ class CustomerQAApi extends BaseApi {
     required ID,
   }) async {
     Response response = await post(
-      Uri.http(URL, "/customer/qa/del"),
+      Uri.http(URL, '/customer/qa/del'),
       body: {
-        "Token": FileHelper().Read("Token"),
-        "ID": ID.toString(),
+        'Token': FileHelper().Read('Token'),
+        'ID': ID.toString(),
       },
       headers: PostHeaders,
       encoding: PostEncoding,
@@ -109,10 +109,10 @@ class CustomerQAApi extends BaseApi {
     required ID,
   }) async {
     Response response = await post(
-      Uri.http(URL, "/customer/qa/display"),
+      Uri.http(URL, '/customer/qa/display'),
       body: {
-        "Token": FileHelper().Read("Token"),
-        "ID": ID.toString(),
+        'Token': FileHelper().Read('Token'),
+        'ID': ID.toString(),
       },
       headers: PostHeaders,
       encoding: PostEncoding,

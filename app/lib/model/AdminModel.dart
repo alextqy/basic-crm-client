@@ -15,27 +15,27 @@ class AdminModel {
 
   AdminModel({
     this.ID = 0,
-    this.Account = "",
-    this.Password = "",
-    this.Name = "",
+    this.Account = '',
+    this.Password = '',
+    this.Name = '',
     this.Level = 0,
     this.Status = 0,
-    this.Remark = "",
-    this.Token = "",
+    this.Remark = '',
+    this.Token = '',
     this.CreationTime = 0,
   });
 
   factory AdminModel.fromJson(Map<String, dynamic> json) {
     return AdminModel(
-      ID: json["ID"],
-      Account: json["Account"],
-      Password: json["Password"],
-      Name: json["Name"],
-      Level: json["Level"],
-      Status: json["Status"],
-      Remark: json["Remark"],
-      Token: json["Token"],
-      CreationTime: json["CreationTime"],
+      ID: json['ID'],
+      Account: json['Account'],
+      Password: json['Password'],
+      Name: json['Name'],
+      Level: json['Level'],
+      Status: json['Status'],
+      Remark: json['Remark'],
+      Token: json['Token'],
+      CreationTime: json['CreationTime'],
     );
   }
 

@@ -11,19 +11,19 @@ class CustomerQAModel {
 
   CustomerQAModel({
     this.ID = 0,
-    this.Title = "",
-    this.Content = "",
+    this.Title = '',
+    this.Content = '',
     this.Display = 0,
     this.CreationTime = 0,
   });
 
   factory CustomerQAModel.fromJson(Map<String, dynamic> json) {
     return CustomerQAModel(
-      ID: json["ID"],
-      Title: json["Title"],
-      Content: json["Content"],
-      Display: json["Display"],
-      CreationTime: json["CreationTime"],
+      ID: json['ID'],
+      Title: json['Title'],
+      Content: json['Content'],
+      Display: json['Display'],
+      CreationTime: json['CreationTime'],
     );
   }
 

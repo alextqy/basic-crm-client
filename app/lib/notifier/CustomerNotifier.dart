@@ -18,7 +18,7 @@ class CustomerNotifier extends BaseNotifier {
     required ID,
   }) async {
     OperationStatus = false;
-    OperationMemo = "";
+    OperationMemo = '';
     OperationData = Null;
     try {
       await customerApi.CustomerNew(
@@ -60,7 +60,7 @@ class CustomerNotifier extends BaseNotifier {
     required Level,
   }) async {
     OperationStatus = false;
-    OperationMemo = "";
+    OperationMemo = '';
     OperationData = Null;
     try {
       await customerApi.CustomerList(
@@ -99,7 +99,7 @@ class CustomerNotifier extends BaseNotifier {
     required Level,
   }) async {
     OperationStatus = false;
-    OperationMemo = "";
+    OperationMemo = '';
     OperationData = Null;
     try {
       await customerApi.CustomerAll(
@@ -129,7 +129,7 @@ class CustomerNotifier extends BaseNotifier {
     required ID,
   }) async {
     OperationStatus = false;
-    OperationMemo = "";
+    OperationMemo = '';
     OperationData = Null;
     try {
       await customerApi.CustomerData(
@@ -152,7 +152,7 @@ class CustomerNotifier extends BaseNotifier {
     required ID,
   }) async {
     OperationStatus = false;
-    OperationMemo = "";
+    OperationMemo = '';
     OperationData = Null;
     try {
       await customerApi.CustomerDel(

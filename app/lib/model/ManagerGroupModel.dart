@@ -10,17 +10,17 @@ class ManagerGroupModel {
 
   ManagerGroupModel({
     this.ID = 0,
-    this.GroupName = "",
+    this.GroupName = '',
     this.CreationTime = 0,
-    this.Remark = "",
+    this.Remark = '',
   });
 
   factory ManagerGroupModel.fromJson(Map<String, dynamic> json) {
     return ManagerGroupModel(
-      ID: json["ID"],
-      GroupName: json["GroupName"],
-      CreationTime: json["CreationTime"],
-      Remark: json["Remark"],
+      ID: json['ID'],
+      GroupName: json['GroupName'],
+      CreationTime: json['CreationTime'],
+      Remark: json['Remark'],
     );
   }
 

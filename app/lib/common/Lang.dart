@@ -1,16 +1,27 @@
 // ignore_for_file: non_constant_identifier_names
 
-import "package:app/common/File.dart";
+import 'package:app/common/File.dart';
 
 class LangHelper {
-  String Type = "";
-  String Title = "";
+  String LangType = '';
+  String Title = '';
+  String Admin = '';
+  String Manager = '';
+  String AfterService = '';
 
-  Lang() {
-    Type = FileHelper().JsonRead(key: "lang");
-    Title = FileHelper().JsonRead(key: "title");
+  LangHelper() {
+    LangType = FileHelper().JsonRead(key: 'lang');
+    Title = FileHelper().JsonRead(key: 'title');
 
-    if (Type == "cn") {
-    } else {}
+    if (LangType == 'en') {
+      Admin = 'Admin';
+      Manager = 'Manager';
+      AfterService = 'After Service';
+    }
+    if (LangType == 'cn') {
+      Admin = '管理员';
+      Manager = '销售经理';
+      AfterService = '售后';
+    }
   }
 }

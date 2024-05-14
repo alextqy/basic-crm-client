@@ -17,14 +17,14 @@ class SalesPlanApi extends BaseApi {
     required ID,
   }) async {
     Response response = await post(
-      Uri.http(URL, "/sales/plan/new"),
+      Uri.http(URL, '/sales/plan/new'),
       body: {
-        "Token": FileHelper().Read("Token"),
-        "PlanName": PlanName.toString(),
-        "TargetID": TargetID.toString(),
-        "PlanContent": PlanContent.toString(),
-        "Budget": Budget.toString(),
-        "ID": ID.toString(),
+        'Token': FileHelper().Read('Token'),
+        'PlanName': PlanName.toString(),
+        'TargetID': TargetID.toString(),
+        'PlanContent': PlanContent.toString(),
+        'Budget': Budget.toString(),
+        'ID': ID.toString(),
       },
       headers: PostHeaders,
       encoding: PostEncoding,
@@ -43,16 +43,16 @@ class SalesPlanApi extends BaseApi {
     required ManagerID,
   }) async {
     Response response = await post(
-      Uri.http(URL, "/sales/plan/list"),
+      Uri.http(URL, '/sales/plan/list'),
       body: {
-        "Token": FileHelper().Read("Token"),
-        "Page": Page.toString(),
-        "PageSize": PageSize.toString(),
-        "Order": Order.toString(),
-        "Stext": Stext.toString(),
-        "TargetID": TargetID.toString(),
-        "Status": Status.toString(),
-        "ManagerID": ManagerID.toString(),
+        'Token': FileHelper().Read('Token'),
+        'Page': Page.toString(),
+        'PageSize': PageSize.toString(),
+        'Order': Order.toString(),
+        'Stext': Stext.toString(),
+        'TargetID': TargetID.toString(),
+        'Status': Status.toString(),
+        'ManagerID': ManagerID.toString(),
       },
       headers: PostHeaders,
       encoding: PostEncoding,
@@ -69,14 +69,14 @@ class SalesPlanApi extends BaseApi {
     required ManagerID,
   }) async {
     Response response = await post(
-      Uri.http(URL, "/sales/plan/all"),
+      Uri.http(URL, '/sales/plan/all'),
       body: {
-        "Token": FileHelper().Read("Token"),
-        "Order": Order.toString(),
-        "Stext": Stext.toString(),
-        "TargetID": TargetID.toString(),
-        "Status": Status.toString(),
-        "ManagerID": ManagerID.toString(),
+        'Token': FileHelper().Read('Token'),
+        'Order': Order.toString(),
+        'Stext': Stext.toString(),
+        'TargetID': TargetID.toString(),
+        'Status': Status.toString(),
+        'ManagerID': ManagerID.toString(),
       },
       headers: PostHeaders,
       encoding: PostEncoding,
@@ -89,10 +89,10 @@ class SalesPlanApi extends BaseApi {
     required ID,
   }) async {
     Response response = await post(
-      Uri.http(URL, "/sales/plan/data"),
+      Uri.http(URL, '/sales/plan/data'),
       body: {
-        "Token": FileHelper().Read("Token"),
-        "ID": ID.toString(),
+        'Token': FileHelper().Read('Token'),
+        'ID': ID.toString(),
       },
       headers: PostHeaders,
       encoding: PostEncoding,
@@ -105,10 +105,10 @@ class SalesPlanApi extends BaseApi {
     required ID,
   }) async {
     Response response = await post(
-      Uri.http(URL, "/sales/plan/del"),
+      Uri.http(URL, '/sales/plan/del'),
       body: {
-        "Token": FileHelper().Read("Token"),
-        "ID": ID.toString(),
+        'Token': FileHelper().Read('Token'),
+        'ID': ID.toString(),
       },
       headers: PostHeaders,
       encoding: PostEncoding,

@@ -1,12 +1,14 @@
 // ignore_for_file: non_constant_identifier_names, must_be_immutable
 
-import "package:flutter/material.dart";
-import "package:flutter/services.dart";
-import "package:file_selector/file_selector.dart";
-import "package:app/common/File.dart";
+import 'package:app/common/Lang.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:file_selector/file_selector.dart';
+import 'package:app/common/File.dart';
 
+LangHelper Lang = LangHelper();
 double ToolbarHeight = 37;
-String AppTitle = FileHelper().JsonRead(key: "title");
+String AppTitle = FileHelper().JsonRead(key: 'title');
 
 int ShowSpeed = 450;
 double IconSize = 20;
@@ -37,6 +39,6 @@ Future<ClipboardData?> Paste() {
 }
 
 Future<List<XFile>> FileSelector(List<String> xFType) async {
-  XTypeGroup xType = XTypeGroup(label: "", extensions: xFType);
+  XTypeGroup xType = XTypeGroup(label: '', extensions: xFType);
   return await openFiles(acceptedTypeGroups: [xType]);
 }

@@ -21,7 +21,7 @@ class OrderModel {
 
   OrderModel({
     this.ID = 0,
-    this.OrderNo = "",
+    this.OrderNo = '',
     this.ProductID = 0,
     this.ManagerID = 0,
     this.CustomerID = 0,
@@ -30,7 +30,7 @@ class OrderModel {
     this.ProductPrice = 0,
     this.ProductCost = 0,
     this.Status = 0,
-    this.Remark = "",
+    this.Remark = '',
     this.CreationTime = 0,
     this.OrderType = 0,
     this.Payment = 0,
@@ -39,21 +39,21 @@ class OrderModel {
 
   factory OrderModel.fromJson(Map<String, dynamic> json) {
     return OrderModel(
-      ID: json["ID"],
-      OrderNo: json["OrderNo"],
-      ProductID: json["ProductID"],
-      ManagerID: json["ManagerID"],
-      CustomerID: json["CustomerID"],
-      DistributorID: json["DistributorID"],
-      OrderPrice: json["OrderPrice"],
-      ProductPrice: json["ProductPrice"],
-      ProductCost: json["ProductCost"],
-      Status: json["Status"],
-      Remark: json["Remark"],
-      CreationTime: json["CreationTime"],
-      OrderType: json["OrderType"],
-      Payment: json["Payment"],
-      Review: json["Review"],
+      ID: json['ID'],
+      OrderNo: json['OrderNo'],
+      ProductID: json['ProductID'],
+      ManagerID: json['ManagerID'],
+      CustomerID: json['CustomerID'],
+      DistributorID: json['DistributorID'],
+      OrderPrice: json['OrderPrice'],
+      ProductPrice: json['ProductPrice'],
+      ProductCost: json['ProductCost'],
+      Status: json['Status'],
+      Remark: json['Remark'],
+      CreationTime: json['CreationTime'],
+      OrderType: json['OrderType'],
+      Payment: json['Payment'],
+      Review: json['Review'],
     );
   }
 

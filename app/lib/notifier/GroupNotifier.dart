@@ -10,7 +10,7 @@ class GroupNotifier extends BaseNotifier {
     required ID,
   }) async {
     OperationStatus = false;
-    OperationMemo = "";
+    OperationMemo = '';
     OperationData = Null;
     try {
       await managerGroupApi.GroupNew(
@@ -38,7 +38,7 @@ class GroupNotifier extends BaseNotifier {
     required Stext,
   }) async {
     OperationStatus = false;
-    OperationMemo = "";
+    OperationMemo = '';
     OperationData = Null;
     try {
       await managerGroupApi.GroupList(
@@ -65,7 +65,7 @@ class GroupNotifier extends BaseNotifier {
     required Stext,
   }) async {
     OperationStatus = false;
-    OperationMemo = "";
+    OperationMemo = '';
     OperationData = Null;
     try {
       await managerGroupApi.GroupAll(
@@ -89,7 +89,7 @@ class GroupNotifier extends BaseNotifier {
     required ID,
   }) async {
     OperationStatus = false;
-    OperationMemo = "";
+    OperationMemo = '';
     OperationData = Null;
     try {
       await managerGroupApi.GroupData(
@@ -112,7 +112,7 @@ class GroupNotifier extends BaseNotifier {
     required ID,
   }) async {
     OperationStatus = false;
-    OperationMemo = "";
+    OperationMemo = '';
     OperationData = Null;
     try {
       await managerGroupApi.GroupDel(

@@ -18,15 +18,15 @@ class SupplierApi extends BaseApi {
     required ID,
   }) async {
     Response response = await post(
-      Uri.http(URL, "/supplier/new"),
+      Uri.http(URL, '/supplier/new'),
       body: {
-        "Token": FileHelper().Read("Token"),
-        "Name": Name.toString(),
-        "Email": Email.toString(),
-        "Tel": Tel.toString(),
-        "Address": Address.toString(),
-        "SupplierInfo": SupplierInfo.toString(),
-        "ID": ID.toString(),
+        'Token': FileHelper().Read('Token'),
+        'Name': Name.toString(),
+        'Email': Email.toString(),
+        'Tel': Tel.toString(),
+        'Address': Address.toString(),
+        'SupplierInfo': SupplierInfo.toString(),
+        'ID': ID.toString(),
       },
       headers: PostHeaders,
       encoding: PostEncoding,
@@ -42,13 +42,13 @@ class SupplierApi extends BaseApi {
     required Stext,
   }) async {
     Response response = await post(
-      Uri.http(URL, "/supplier/list"),
+      Uri.http(URL, '/supplier/list'),
       body: {
-        "Token": FileHelper().Read("Token"),
-        "Page": Page.toString(),
-        "PageSize": PageSize.toString(),
-        "Order": Order.toString(),
-        "Stext": Stext.toString(),
+        'Token': FileHelper().Read('Token'),
+        'Page': Page.toString(),
+        'PageSize': PageSize.toString(),
+        'Order': Order.toString(),
+        'Stext': Stext.toString(),
       },
       headers: PostHeaders,
       encoding: PostEncoding,
@@ -62,11 +62,11 @@ class SupplierApi extends BaseApi {
     required Stext,
   }) async {
     Response response = await post(
-      Uri.http(URL, "/supplier/all"),
+      Uri.http(URL, '/supplier/all'),
       body: {
-        "Token": FileHelper().Read("Token"),
-        "Order": Order.toString(),
-        "Stext": Stext.toString(),
+        'Token': FileHelper().Read('Token'),
+        'Order': Order.toString(),
+        'Stext': Stext.toString(),
       },
       headers: PostHeaders,
       encoding: PostEncoding,
@@ -79,10 +79,10 @@ class SupplierApi extends BaseApi {
     required ID,
   }) async {
     Response response = await post(
-      Uri.http(URL, "/supplier/data"),
+      Uri.http(URL, '/supplier/data'),
       body: {
-        "Token": FileHelper().Read("Token"),
-        "ID": ID.toString(),
+        'Token': FileHelper().Read('Token'),
+        'ID': ID.toString(),
       },
       headers: PostHeaders,
       encoding: PostEncoding,
@@ -95,10 +95,10 @@ class SupplierApi extends BaseApi {
     required ID,
   }) async {
     Response response = await post(
-      Uri.http(URL, "/supplier/del"),
+      Uri.http(URL, '/supplier/del'),
       body: {
-        "Token": FileHelper().Read("Token"),
-        "ID": ID.toString(),
+        'Token': FileHelper().Read('Token'),
+        'ID': ID.toString(),
       },
       headers: PostHeaders,
       encoding: PostEncoding,

@@ -14,10 +14,10 @@ class AdminApi extends BaseApi {
     required Password,
   }) async {
     Response response = await post(
-      Uri.http(URL, "/admin/sign/in"),
+      Uri.http(URL, '/admin/sign/in'),
       body: {
-        "Account": Account.toString(),
-        "Password": Password.toString(),
+        'Account': Account.toString(),
+        'Password': Password.toString(),
       },
       headers: PostHeaders,
       encoding: PostEncoding,
@@ -29,9 +29,9 @@ class AdminApi extends BaseApi {
     required URL,
   }) async {
     Response response = await post(
-      Uri.http(URL, "/admin/sign/out"),
+      Uri.http(URL, '/admin/sign/out'),
       body: {
-        "Token": FileHelper().Read("Token"),
+        'Token': FileHelper().Read('Token'),
       },
       headers: PostHeaders,
       encoding: PostEncoding,
@@ -48,14 +48,14 @@ class AdminApi extends BaseApi {
     required ID,
   }) async {
     Response response = await post(
-      Uri.http(URL, "/admin/new"),
+      Uri.http(URL, '/admin/new'),
       body: {
-        "Token": FileHelper().Read("Token"),
-        "Account": Account.toString(),
-        "Password": Password.toString(),
-        "Name": Name.toString(),
-        "Remark": Remark.toString(),
-        "ID": ID.toString(),
+        'Token': FileHelper().Read('Token'),
+        'Account': Account.toString(),
+        'Password': Password.toString(),
+        'Name': Name.toString(),
+        'Remark': Remark.toString(),
+        'ID': ID.toString(),
       },
       headers: PostHeaders,
       encoding: PostEncoding,
@@ -73,15 +73,15 @@ class AdminApi extends BaseApi {
     required Status,
   }) async {
     Response response = await post(
-      Uri.http(URL, "/admin/list"),
+      Uri.http(URL, '/admin/list'),
       body: {
-        "Token": FileHelper().Read("Token"),
-        "Page": Page.toString(),
-        "PageSize": PageSize.toString(),
-        "Order": Order.toString(),
-        "Stext": Stext.toString(),
-        "Level": Level.toString(),
-        "Status": Status.toString(),
+        'Token': FileHelper().Read('Token'),
+        'Page': Page.toString(),
+        'PageSize': PageSize.toString(),
+        'Order': Order.toString(),
+        'Stext': Stext.toString(),
+        'Level': Level.toString(),
+        'Status': Status.toString(),
       },
       headers: PostHeaders,
       encoding: PostEncoding,
@@ -97,13 +97,13 @@ class AdminApi extends BaseApi {
     required Status,
   }) async {
     Response response = await post(
-      Uri.http(URL, "/admin/all"),
+      Uri.http(URL, '/admin/all'),
       body: {
-        "Token": FileHelper().Read("Token"),
-        "Order": Order.toString(),
-        "Stext": Stext.toString(),
-        "Level": Level.toString(),
-        "Status": Status.toString(),
+        'Token': FileHelper().Read('Token'),
+        'Order': Order.toString(),
+        'Stext': Stext.toString(),
+        'Level': Level.toString(),
+        'Status': Status.toString(),
       },
       headers: PostHeaders,
       encoding: PostEncoding,
@@ -116,10 +116,10 @@ class AdminApi extends BaseApi {
     required ID,
   }) async {
     Response response = await post(
-      Uri.http(URL, "/admin/data"),
+      Uri.http(URL, '/admin/data'),
       body: {
-        "Token": FileHelper().Read("Token"),
-        "ID": ID.toString(),
+        'Token': FileHelper().Read('Token'),
+        'ID': ID.toString(),
       },
       headers: PostHeaders,
       encoding: PostEncoding,
@@ -132,10 +132,10 @@ class AdminApi extends BaseApi {
     required ID,
   }) async {
     Response response = await post(
-      Uri.http(URL, "/admin/del"),
+      Uri.http(URL, '/admin/del'),
       body: {
-        "Token": FileHelper().Read("Token"),
-        "ID": ID.toString(),
+        'Token': FileHelper().Read('Token'),
+        'ID': ID.toString(),
       },
       headers: PostHeaders,
       encoding: PostEncoding,
@@ -148,10 +148,10 @@ class AdminApi extends BaseApi {
     required ID,
   }) async {
     Response response = await post(
-      Uri.http(URL, "/admin/status"),
+      Uri.http(URL, '/admin/status'),
       body: {
-        "Token": FileHelper().Read("Token"),
-        "ID": ID.toString(),
+        'Token': FileHelper().Read('Token'),
+        'ID': ID.toString(),
       },
       headers: PostHeaders,
       encoding: PostEncoding,

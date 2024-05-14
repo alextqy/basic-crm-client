@@ -9,16 +9,16 @@ class ResultModel {
   ResultModel({
     this.State = false,
     this.Code = 0,
-    this.Message = "",
-    this.Data = "",
+    this.Message = '',
+    this.Data = '',
   });
 
   factory ResultModel.fromJson(Map<String, dynamic> json) {
     return ResultModel(
-      State: json["State"],
-      Code: json["Code"],
-      Message: json["Message"],
-      Data: json["Data"],
+      State: json['State'],
+      Code: json['Code'],
+      Message: json['Message'],
+      Data: json['Data'],
     );
   }
 }

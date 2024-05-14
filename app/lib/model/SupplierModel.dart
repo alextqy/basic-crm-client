@@ -13,23 +13,23 @@ class SupplierModel {
 
   SupplierModel({
     this.ID = 0,
-    this.Name = "",
-    this.Email = "",
-    this.Tel = "",
-    this.Address = "",
-    this.SupplierInfo = "",
+    this.Name = '',
+    this.Email = '',
+    this.Tel = '',
+    this.Address = '',
+    this.SupplierInfo = '',
     this.CreationTime = 0,
   });
 
   factory SupplierModel.fromJson(Map<String, dynamic> json) {
     return SupplierModel(
-      ID: json["ID"],
-      Name: json["Name"],
-      Email: json["Email"],
-      Tel: json["Tel"],
-      Address: json["Address"],
-      SupplierInfo: json["SupplierInfo"],
-      CreationTime: json["CreationTime"],
+      ID: json['ID'],
+      Name: json['Name'],
+      Email: json['Email'],
+      Tel: json['Tel'],
+      Address: json['Address'],
+      SupplierInfo: json['SupplierInfo'],
+      CreationTime: json['CreationTime'],
     );
   }
 

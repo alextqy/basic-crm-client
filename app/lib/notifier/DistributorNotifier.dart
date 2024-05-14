@@ -16,7 +16,7 @@ class DistributorNotifier extends BaseNotifier {
     required ID,
   }) async {
     OperationStatus = false;
-    OperationMemo = "";
+    OperationMemo = '';
     OperationData = Null;
     try {
       await distributorApi.DistributorNew(
@@ -54,7 +54,7 @@ class DistributorNotifier extends BaseNotifier {
     required Level,
   }) async {
     OperationStatus = false;
-    OperationMemo = "";
+    OperationMemo = '';
     OperationData = Null;
     try {
       await distributorApi.DistributorList(
@@ -89,7 +89,7 @@ class DistributorNotifier extends BaseNotifier {
     required Level,
   }) async {
     OperationStatus = false;
-    OperationMemo = "";
+    OperationMemo = '';
     OperationData = Null;
     try {
       await distributorApi.DistributorAll(
@@ -117,7 +117,7 @@ class DistributorNotifier extends BaseNotifier {
     required ID,
   }) async {
     OperationStatus = false;
-    OperationMemo = "";
+    OperationMemo = '';
     OperationData = Null;
     try {
       await distributorApi.DistributorData(
@@ -140,7 +140,7 @@ class DistributorNotifier extends BaseNotifier {
     required ID,
   }) async {
     OperationStatus = false;
-    OperationMemo = "";
+    OperationMemo = '';
     OperationData = Null;
     try {
       await distributorApi.DistributorDel(

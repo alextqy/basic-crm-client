@@ -3,7 +3,7 @@
 class ResultListModel {
   bool State = false;
   int Code = 0;
-  String Message = "";
+  String Message = '';
   int Page = 0;
   int PageSize = 0;
   int TotalPage = 0;
@@ -12,22 +12,22 @@ class ResultListModel {
   ResultListModel({
     this.State = false,
     this.Code = 0,
-    this.Message = "",
+    this.Message = '',
     this.Page = 0,
     this.PageSize = 0,
     this.TotalPage = 0,
-    this.Data = "",
+    this.Data = '',
   });
 
   factory ResultListModel.fromJson(Map<String, dynamic> json) {
     return ResultListModel(
-      State: json["State"],
-      Code: json["Code"],
-      Message: json["Message"],
-      Page: json["Page"],
-      PageSize: json["PageSize"],
-      TotalPage: json["TotalPage"],
-      Data: json["Data"],
+      State: json['State'],
+      Code: json['Code'],
+      Message: json['Message'],
+      Page: json['Page'],
+      PageSize: json['PageSize'],
+      TotalPage: json['TotalPage'],
+      Data: json['Data'],
     );
   }
 }

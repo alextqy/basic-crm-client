@@ -1,11 +1,11 @@
 // ignore_for_file: non_constant_identifier_names
 
-import "dart:io";
-import "dart:typed_data";
-import "package:crypto/crypto.dart";
-import "package:file_selector/file_selector.dart";
-import "package:mime/mime.dart";
-import "dart:convert";
+import 'dart:io';
+import 'dart:typed_data';
+import 'package:crypto/crypto.dart';
+import 'package:file_selector/file_selector.dart';
+import 'package:mime/mime.dart';
+import 'dart:convert';
 
 class FileHelper {
   // 文件创建
@@ -83,7 +83,7 @@ class FileHelper {
       String content = file.readAsStringSync();
       return content;
     } catch (e) {
-      return "";
+      return '';
     }
   }
 
@@ -201,13 +201,13 @@ class FileHelper {
   void DirOpen({
     required String dirPath,
     required List<String> type,
-    String fileName = "*",
+    String fileName = '*',
   }) async {
     XTypeGroup xType = XTypeGroup(label: fileName, extensions: type);
     await openFile(
       acceptedTypeGroups: [xType],
       initialDirectory: dirPath,
-      confirmButtonText: "",
+      confirmButtonText: '',
     );
   }
 
@@ -215,13 +215,13 @@ class FileHelper {
   Future<String?> FileCheck({
     required String dirPath,
     required List<String> type,
-    String fileName = "*",
+    String fileName = '*',
   }) async {
     XTypeGroup xType = XTypeGroup(label: fileName, extensions: type);
     XFile? tempPath = await openFile(
       acceptedTypeGroups: [xType],
       initialDirectory: dirPath,
-      confirmButtonText: "",
+      confirmButtonText: '',
     );
     return tempPath?.path;
   }
@@ -242,7 +242,7 @@ class FileHelper {
   }
 
   // 写入json文件
-  bool JsonWrite({String key = "", dynamic value = "", String savePath = "config.json"}) {
+  bool JsonWrite({String key = '', dynamic value = '', String savePath = 'config.json'}) {
     if (key.isNotEmpty && savePath.isNotEmpty) {
       try {
         File jsonFile = File(savePath);
@@ -266,13 +266,13 @@ class FileHelper {
   }
 
   // 读取json文件
-  String JsonRead({String key = "", String filePath = "config.json"}) {
+  String JsonRead({String key = '', String filePath = 'config.json'}) {
     File jsonFile = File(filePath);
     if (jsonFile.existsSync()) {
       String jsonStr = jsonFile.readAsStringSync();
       Map<String, dynamic> jsonContent = jsonDecode(jsonStr);
       return jsonContent[key].toString();
     }
-    return "";
+    return '';
   }
 }

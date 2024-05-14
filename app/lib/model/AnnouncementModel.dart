@@ -12,8 +12,8 @@ class AnnouncementModel {
 
   AnnouncementModel({
     this.ID = 0,
-    this.Title = "",
-    this.Content = "",
+    this.Title = '',
+    this.Content = '',
     this.AuthorID = 0,
     this.Display = 0,
     this.CreationTime = 0,
@@ -21,12 +21,12 @@ class AnnouncementModel {
 
   factory AnnouncementModel.fromJson(Map<String, dynamic> json) {
     return AnnouncementModel(
-      ID: json["ID"],
-      Title: json["Title"],
-      Content: json["Content"],
-      AuthorID: json["AuthorID"],
-      Display: json["Display"],
-      CreationTime: json["CreationTime"],
+      ID: json['ID'],
+      Title: json['Title'],
+      Content: json['Content'],
+      AuthorID: json['AuthorID'],
+      Display: json['Display'],
+      CreationTime: json['CreationTime'],
     );
   }
 

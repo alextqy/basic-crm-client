@@ -10,7 +10,7 @@ class CompanyNotifier extends BaseNotifier {
     required ID,
   }) async {
     OperationStatus = false;
-    OperationMemo = "";
+    OperationMemo = '';
     OperationData = Null;
     try {
       await companyApi.CompanyNew(
@@ -38,7 +38,7 @@ class CompanyNotifier extends BaseNotifier {
     required Stext,
   }) async {
     OperationStatus = false;
-    OperationMemo = "";
+    OperationMemo = '';
     OperationData = Null;
     try {
       await companyApi.CompanyList(
@@ -65,7 +65,7 @@ class CompanyNotifier extends BaseNotifier {
     required Stext,
   }) async {
     OperationStatus = false;
-    OperationMemo = "";
+    OperationMemo = '';
     OperationData = Null;
     try {
       await companyApi.CompanyAll(
@@ -89,7 +89,7 @@ class CompanyNotifier extends BaseNotifier {
     required ID,
   }) async {
     OperationStatus = false;
-    OperationMemo = "";
+    OperationMemo = '';
     OperationData = Null;
     try {
       await companyApi.CompanyData(
@@ -112,7 +112,7 @@ class CompanyNotifier extends BaseNotifier {
     required ID,
   }) async {
     OperationStatus = false;
-    OperationMemo = "";
+    OperationMemo = '';
     OperationData = Null;
     try {
       await companyApi.CompanyDel(

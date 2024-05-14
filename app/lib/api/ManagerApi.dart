@@ -18,15 +18,15 @@ class ManagerApi extends BaseApi {
     required ID,
   }) async {
     Response response = await post(
-      Uri.http(URL, "/manager/new"),
+      Uri.http(URL, '/manager/new'),
       body: {
-        "Token": FileHelper().Read("Token"),
-        "Account": Account.toString(),
-        "Password": Password.toString(),
-        "Name": Name.toString(),
-        "Remark": Remark.toString(),
-        "GroupID": GroupID.toString(),
-        "ID": ID.toString(),
+        'Token': FileHelper().Read('Token'),
+        'Account': Account.toString(),
+        'Password': Password.toString(),
+        'Name': Name.toString(),
+        'Remark': Remark.toString(),
+        'GroupID': GroupID.toString(),
+        'ID': ID.toString(),
       },
       headers: PostHeaders,
       encoding: PostEncoding,
@@ -45,16 +45,16 @@ class ManagerApi extends BaseApi {
     required GroupID,
   }) async {
     Response response = await post(
-      Uri.http(URL, "/manager/list"),
+      Uri.http(URL, '/manager/list'),
       body: {
-        "Token": FileHelper().Read("Token"),
-        "Page": Page.toString(),
-        "PageSize": PageSize.toString(),
-        "Order": Order.toString(),
-        "Stext": Stext.toString(),
-        "Level": Level.toString(),
-        "Status": Status.toString(),
-        "GroupID": GroupID.toString(),
+        'Token': FileHelper().Read('Token'),
+        'Page': Page.toString(),
+        'PageSize': PageSize.toString(),
+        'Order': Order.toString(),
+        'Stext': Stext.toString(),
+        'Level': Level.toString(),
+        'Status': Status.toString(),
+        'GroupID': GroupID.toString(),
       },
       headers: PostHeaders,
       encoding: PostEncoding,
@@ -71,14 +71,14 @@ class ManagerApi extends BaseApi {
     required GroupID,
   }) async {
     Response response = await post(
-      Uri.http(URL, "/manager/all"),
+      Uri.http(URL, '/manager/all'),
       body: {
-        "Token": FileHelper().Read("Token"),
-        "Order": Order.toString(),
-        "Stext": Stext.toString(),
-        "Level": Level.toString(),
-        "Status": Status.toString(),
-        "GroupID": GroupID.toString(),
+        'Token': FileHelper().Read('Token'),
+        'Order': Order.toString(),
+        'Stext': Stext.toString(),
+        'Level': Level.toString(),
+        'Status': Status.toString(),
+        'GroupID': GroupID.toString(),
       },
       headers: PostHeaders,
       encoding: PostEncoding,
@@ -91,10 +91,10 @@ class ManagerApi extends BaseApi {
     required ID,
   }) async {
     Response response = await post(
-      Uri.http(URL, "/manager/data"),
+      Uri.http(URL, '/manager/data'),
       body: {
-        "Token": FileHelper().Read("Token"),
-        "ID": ID.toString(),
+        'Token': FileHelper().Read('Token'),
+        'ID': ID.toString(),
       },
       headers: PostHeaders,
       encoding: PostEncoding,
@@ -107,10 +107,10 @@ class ManagerApi extends BaseApi {
     required ID,
   }) async {
     Response response = await post(
-      Uri.http(URL, "/manager/del"),
+      Uri.http(URL, '/manager/del'),
       body: {
-        "Token": FileHelper().Read("Token"),
-        "ID": ID.toString(),
+        'Token': FileHelper().Read('Token'),
+        'ID': ID.toString(),
       },
       headers: PostHeaders,
       encoding: PostEncoding,
@@ -123,10 +123,10 @@ class ManagerApi extends BaseApi {
     required ID,
   }) async {
     Response response = await post(
-      Uri.http(URL, "/manager/status"),
+      Uri.http(URL, '/manager/status'),
       body: {
-        "Token": FileHelper().Read("Token"),
-        "ID": ID.toString(),
+        'Token': FileHelper().Read('Token'),
+        'ID': ID.toString(),
       },
       headers: PostHeaders,
       encoding: PostEncoding,
@@ -140,10 +140,10 @@ class ManagerApi extends BaseApi {
     required Password,
   }) async {
     Response response = await post(
-      Uri.http(URL, "/manager/sign/in"),
+      Uri.http(URL, '/manager/sign/in'),
       body: {
-        "Account": Account.toString(),
-        "Password": Password.toString(),
+        'Account': Account.toString(),
+        'Password': Password.toString(),
       },
       headers: PostHeaders,
       encoding: PostEncoding,
@@ -155,9 +155,9 @@ class ManagerApi extends BaseApi {
     required URL,
   }) async {
     Response response = await post(
-      Uri.http(URL, "/manager/sign/out"),
+      Uri.http(URL, '/manager/sign/out'),
       body: {
-        "Token": FileHelper().Read("Token"),
+        'Token': FileHelper().Read('Token'),
       },
       headers: PostHeaders,
       encoding: PostEncoding,
@@ -173,13 +173,13 @@ class ManagerApi extends BaseApi {
     required GroupID,
   }) async {
     Response response = await post(
-      Uri.http(URL, "/manager/update"),
+      Uri.http(URL, '/manager/update'),
       body: {
-        "Token": FileHelper().Read("Token"),
-        "Password": Password.toString(),
-        "Name": Name.toString(),
-        "Remark": Remark.toString(),
-        "GroupID": GroupID.toString(),
+        'Token': FileHelper().Read('Token'),
+        'Password': Password.toString(),
+        'Name': Name.toString(),
+        'Remark': Remark.toString(),
+        'GroupID': GroupID.toString(),
       },
       headers: PostHeaders,
       encoding: PostEncoding,

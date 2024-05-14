@@ -1,10 +1,10 @@
 // ignore_for_file: non_constant_identifier_names, must_be_immutable
 
-import "package:flutter/material.dart";
-import "package:app/interface/common/PubLib.dart";
+import 'package:flutter/material.dart';
+import 'package:app/interface/common/PubLib.dart';
 
 // 提示框
-ShowAlertDialog(BuildContext context, {String memo = ""}) {
+ShowAlertDialog(BuildContext context, {String memo = ''}) {
   return showDialog(
     context: context,
     barrierDismissible: true,
@@ -12,14 +12,14 @@ ShowAlertDialog(BuildContext context, {String memo = ""}) {
       return StatefulBuilder(
         builder: (BuildContext context, Function state) {
           return AlertDialog(
-            title: Text("title", style: TxStyle(), maxLines: 1, overflow: TextOverflow.ellipsis),
+            title: Text('title', style: TxStyle(), maxLines: 1, overflow: TextOverflow.ellipsis),
             content: Text(memo, style: TxStyle(), maxLines: 1, overflow: TextOverflow.ellipsis),
             actions: [
               TextButton(
                 onPressed: () async {
                   Navigator.pop(context);
                 },
-                child: Text("cancel", style: TxStyle(), maxLines: 1, overflow: TextOverflow.ellipsis),
+                child: Text('cancel', style: TxStyle(), maxLines: 1, overflow: TextOverflow.ellipsis),
               ),
             ],
           );
@@ -53,14 +53,14 @@ showAlertWidget(BuildContext context, Widget child) {
   );
 }
 
-ScaffoldFeatureController showSnackBar(BuildContext context, {String content = "", Color backgroundColor = Colors.black, int duration = 2}) {
+ScaffoldFeatureController showSnackBar(BuildContext context, {String content = '', Color backgroundColor = Colors.black, int duration = 2}) {
   return ScaffoldMessenger.of(context).showSnackBar(
     SnackBar(
       duration: Duration(seconds: duration),
       backgroundColor: backgroundColor,
       padding: const EdgeInsets.all(10),
       content: Text(content, style: TxStyle(), maxLines: 1, overflow: TextOverflow.ellipsis),
-      // action: SnackBarAction(label: "Action", onPressed: () async {}),
+      // action: SnackBarAction(label: 'Action', onPressed: () async {}),
     ),
   );
 }

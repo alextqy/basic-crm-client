@@ -17,14 +17,14 @@ class AfterServiceApi extends BaseApi {
     required ID,
   }) async {
     Response response = await post(
-      Uri.http(URL, "/after/service/new"),
+      Uri.http(URL, '/after/service/new'),
       body: {
-        "Token": FileHelper().Read("Token"),
-        "Account": Account.toString(),
-        "Password": Password.toString(),
-        "Name": Name.toString(),
-        "Remark": Remark.toString(),
-        "ID": ID.toString(),
+        'Token': FileHelper().Read('Token'),
+        'Account': Account.toString(),
+        'Password': Password.toString(),
+        'Name': Name.toString(),
+        'Remark': Remark.toString(),
+        'ID': ID.toString(),
       },
       headers: PostHeaders,
       encoding: PostEncoding,
@@ -42,15 +42,15 @@ class AfterServiceApi extends BaseApi {
     required Status,
   }) async {
     Response response = await post(
-      Uri.http(URL, "/after/service/list"),
+      Uri.http(URL, '/after/service/list'),
       body: {
-        "Token": FileHelper().Read("Token"),
-        "Page": Page.toString(),
-        "PageSize": PageSize.toString(),
-        "Order": Order.toString(),
-        "Stext": Stext.toString(),
-        "Level": Level.toString(),
-        "Status": Status.toString(),
+        'Token': FileHelper().Read('Token'),
+        'Page': Page.toString(),
+        'PageSize': PageSize.toString(),
+        'Order': Order.toString(),
+        'Stext': Stext.toString(),
+        'Level': Level.toString(),
+        'Status': Status.toString(),
       },
       headers: PostHeaders,
       encoding: PostEncoding,
@@ -66,13 +66,13 @@ class AfterServiceApi extends BaseApi {
     required Status,
   }) async {
     Response response = await post(
-      Uri.http(URL, "/after/service/all"),
+      Uri.http(URL, '/after/service/all'),
       body: {
-        "Token": FileHelper().Read("Token"),
-        "Order": Order.toString(),
-        "Stext": Stext.toString(),
-        "Level": Level.toString(),
-        "Status": Status.toString(),
+        'Token': FileHelper().Read('Token'),
+        'Order': Order.toString(),
+        'Stext': Stext.toString(),
+        'Level': Level.toString(),
+        'Status': Status.toString(),
       },
       headers: PostHeaders,
       encoding: PostEncoding,
@@ -85,10 +85,10 @@ class AfterServiceApi extends BaseApi {
     required ID,
   }) async {
     Response response = await post(
-      Uri.http(URL, "/after/service/data"),
+      Uri.http(URL, '/after/service/data'),
       body: {
-        "Token": FileHelper().Read("Token"),
-        "ID": ID.toString(),
+        'Token': FileHelper().Read('Token'),
+        'ID': ID.toString(),
       },
       headers: PostHeaders,
       encoding: PostEncoding,
@@ -101,10 +101,10 @@ class AfterServiceApi extends BaseApi {
     required ID,
   }) async {
     Response response = await post(
-      Uri.http(URL, "/after/service/del"),
+      Uri.http(URL, '/after/service/del'),
       body: {
-        "Token": FileHelper().Read("Token"),
-        "ID": ID.toString(),
+        'Token': FileHelper().Read('Token'),
+        'ID': ID.toString(),
       },
       headers: PostHeaders,
       encoding: PostEncoding,
@@ -117,10 +117,10 @@ class AfterServiceApi extends BaseApi {
     required ID,
   }) async {
     Response response = await post(
-      Uri.http(URL, "/after/service/status"),
+      Uri.http(URL, '/after/service/status'),
       body: {
-        "Token": FileHelper().Read("Token"),
-        "ID": ID.toString(),
+        'Token': FileHelper().Read('Token'),
+        'ID': ID.toString(),
       },
       headers: PostHeaders,
       encoding: PostEncoding,
@@ -134,10 +134,10 @@ class AfterServiceApi extends BaseApi {
     required Password,
   }) async {
     Response response = await post(
-      Uri.http(URL, "/after/service/sign/in"),
+      Uri.http(URL, '/after/service/sign/in'),
       body: {
-        "Account": Account.toString(),
-        "Password": Password.toString(),
+        'Account': Account.toString(),
+        'Password': Password.toString(),
       },
       headers: PostHeaders,
       encoding: PostEncoding,
@@ -149,9 +149,9 @@ class AfterServiceApi extends BaseApi {
     required URL,
   }) async {
     Response response = await post(
-      Uri.http(URL, "/after/service/sign/out"),
+      Uri.http(URL, '/after/service/sign/out'),
       body: {
-        "Token": FileHelper().Read("Token"),
+        'Token': FileHelper().Read('Token'),
       },
       headers: PostHeaders,
       encoding: PostEncoding,
@@ -166,12 +166,12 @@ class AfterServiceApi extends BaseApi {
     required Remark,
   }) async {
     Response response = await post(
-      Uri.http(URL, "/after/service/update"),
+      Uri.http(URL, '/after/service/update'),
       body: {
-        "Token": FileHelper().Read("Token"),
-        "Password": Password.toString(),
-        "Name": Name.toString(),
-        "Remark": Remark.toString(),
+        'Token': FileHelper().Read('Token'),
+        'Password': Password.toString(),
+        'Name': Name.toString(),
+        'Remark': Remark.toString(),
       },
       headers: PostHeaders,
       encoding: PostEncoding,

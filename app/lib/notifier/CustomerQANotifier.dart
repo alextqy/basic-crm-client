@@ -10,7 +10,7 @@ class CustomerQANotifier extends BaseNotifier {
     required ID,
   }) async {
     OperationStatus = false;
-    OperationMemo = "";
+    OperationMemo = '';
     OperationData = Null;
     try {
       await customerQAApi.CustomerQANew(
@@ -39,7 +39,7 @@ class CustomerQANotifier extends BaseNotifier {
     required Display,
   }) async {
     OperationStatus = false;
-    OperationMemo = "";
+    OperationMemo = '';
     OperationData = Null;
     try {
       await customerQAApi.CustomerQAList(
@@ -68,7 +68,7 @@ class CustomerQANotifier extends BaseNotifier {
     required Display,
   }) async {
     OperationStatus = false;
-    OperationMemo = "";
+    OperationMemo = '';
     OperationData = Null;
     try {
       await customerQAApi.CustomerQAAll(
@@ -93,7 +93,7 @@ class CustomerQANotifier extends BaseNotifier {
     required ID,
   }) async {
     OperationStatus = false;
-    OperationMemo = "";
+    OperationMemo = '';
     OperationData = Null;
     try {
       await customerQAApi.CustomerQAData(
@@ -116,7 +116,7 @@ class CustomerQANotifier extends BaseNotifier {
     required ID,
   }) async {
     OperationStatus = false;
-    OperationMemo = "";
+    OperationMemo = '';
     OperationData = Null;
     try {
       await customerQAApi.CustomerQADel(
@@ -139,7 +139,7 @@ class CustomerQANotifier extends BaseNotifier {
     required ID,
   }) async {
     OperationStatus = false;
-    OperationMemo = "";
+    OperationMemo = '';
     OperationData = Null;
     try {
       await customerQAApi.CustomerQADisplay(

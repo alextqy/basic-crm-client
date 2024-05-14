@@ -12,7 +12,7 @@ class ProductNotifier extends BaseNotifier {
     required ID,
   }) async {
     OperationStatus = false;
-    OperationMemo = "";
+    OperationMemo = '';
     OperationData = Null;
     try {
       await productApi.ProductNew(
@@ -43,7 +43,7 @@ class ProductNotifier extends BaseNotifier {
     required Status,
   }) async {
     OperationStatus = false;
-    OperationMemo = "";
+    OperationMemo = '';
     OperationData = Null;
     try {
       await productApi.ProductList(
@@ -72,7 +72,7 @@ class ProductNotifier extends BaseNotifier {
     required Status,
   }) async {
     OperationStatus = false;
-    OperationMemo = "";
+    OperationMemo = '';
     OperationData = Null;
     try {
       await productApi.ProductAll(
@@ -97,7 +97,7 @@ class ProductNotifier extends BaseNotifier {
     required ID,
   }) async {
     OperationStatus = false;
-    OperationMemo = "";
+    OperationMemo = '';
     OperationData = Null;
     try {
       await productApi.ProductData(
@@ -120,7 +120,7 @@ class ProductNotifier extends BaseNotifier {
     required ID,
   }) async {
     OperationStatus = false;
-    OperationMemo = "";
+    OperationMemo = '';
     OperationData = Null;
     try {
       await productApi.ProductDel(

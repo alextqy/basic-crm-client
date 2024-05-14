@@ -12,7 +12,7 @@ class AfterServiceNotifier extends BaseNotifier {
     required ID,
   }) async {
     OperationStatus = false;
-    OperationMemo = "";
+    OperationMemo = '';
     OperationData = Null;
     try {
       await afterServiceApi.AfterServiceNew(
@@ -44,7 +44,7 @@ class AfterServiceNotifier extends BaseNotifier {
     required Status,
   }) async {
     OperationStatus = false;
-    OperationMemo = "";
+    OperationMemo = '';
     OperationData = Null;
     try {
       await afterServiceApi.AfterServiceList(
@@ -75,7 +75,7 @@ class AfterServiceNotifier extends BaseNotifier {
     required Status,
   }) async {
     OperationStatus = false;
-    OperationMemo = "";
+    OperationMemo = '';
     OperationData = Null;
     try {
       await afterServiceApi.AfterServiceAll(
@@ -101,7 +101,7 @@ class AfterServiceNotifier extends BaseNotifier {
     required ID,
   }) async {
     OperationStatus = false;
-    OperationMemo = "";
+    OperationMemo = '';
     OperationData = Null;
     try {
       await afterServiceApi.AfterServiceData(
@@ -124,7 +124,7 @@ class AfterServiceNotifier extends BaseNotifier {
     required ID,
   }) async {
     OperationStatus = false;
-    OperationMemo = "";
+    OperationMemo = '';
     OperationData = Null;
     try {
       await afterServiceApi.AfterServiceDel(
@@ -147,7 +147,7 @@ class AfterServiceNotifier extends BaseNotifier {
     required ID,
   }) async {
     OperationStatus = false;
-    OperationMemo = "";
+    OperationMemo = '';
     OperationData = Null;
     try {
       await afterServiceApi.AfterServiceStatus(
@@ -171,7 +171,7 @@ class AfterServiceNotifier extends BaseNotifier {
     required Password,
   }) async {
     OperationStatus = false;
-    OperationMemo = "";
+    OperationMemo = '';
     OperationData = Null;
     try {
       await afterServiceApi.AfterServiceSignIn(
@@ -194,7 +194,7 @@ class AfterServiceNotifier extends BaseNotifier {
     required URL,
   }) async {
     OperationStatus = false;
-    OperationMemo = "";
+    OperationMemo = '';
     OperationData = Null;
     try {
       await afterServiceApi.AfterServiceSignOut(
@@ -218,7 +218,7 @@ class AfterServiceNotifier extends BaseNotifier {
     required Remark,
   }) async {
     OperationStatus = false;
-    OperationMemo = "";
+    OperationMemo = '';
     OperationData = Null;
     try {
       await afterServiceApi.AfterServiceUpdate(

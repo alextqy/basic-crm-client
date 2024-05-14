@@ -14,9 +14,9 @@ class SalesPlanModel {
 
   SalesPlanModel({
     this.ID = 0,
-    this.PlanName = "",
+    this.PlanName = '',
     this.TargetID = 0,
-    this.PlanContent = "",
+    this.PlanContent = '',
     this.CreationTime = 0,
     this.Status = 0,
     this.Budget = 0,
@@ -25,14 +25,14 @@ class SalesPlanModel {
 
   factory SalesPlanModel.fromJson(Map<String, dynamic> json) {
     return SalesPlanModel(
-      ID: json["ID"],
-      PlanName: json["PlanName"],
-      TargetID: json["TargetID"],
-      PlanContent: json["PlanContent"],
-      CreationTime: json["CreationTime"],
-      Status: json["Status"],
-      Budget: json["Budget"],
-      ManagerID: json["ManagerID"],
+      ID: json['ID'],
+      PlanName: json['PlanName'],
+      TargetID: json['TargetID'],
+      PlanContent: json['PlanContent'],
+      CreationTime: json['CreationTime'],
+      Status: json['Status'],
+      Budget: json['Budget'],
+      ManagerID: json['ManagerID'],
     );
   }
 

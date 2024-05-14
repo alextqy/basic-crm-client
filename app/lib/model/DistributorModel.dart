@@ -16,10 +16,10 @@ class DistributorModel {
 
   DistributorModel({
     this.ID = 0,
-    this.Name = "",
-    this.Email = "",
-    this.Tel = "",
-    this.DistributorInfo = "",
+    this.Name = '',
+    this.Email = '',
+    this.Tel = '',
+    this.DistributorInfo = '',
     this.CreationTime = 0,
     this.CompanyID = 0,
     this.ManagerID = 0,
@@ -29,16 +29,16 @@ class DistributorModel {
 
   factory DistributorModel.fromJson(Map<String, dynamic> json) {
     return DistributorModel(
-      ID: json["ID"],
-      Name: json["Name"],
-      Email: json["Email"],
-      Tel: json["Tel"],
-      DistributorInfo: json["DistributorInfo"],
-      CreationTime: json["CreationTime"],
-      CompanyID: json["CompanyID"],
-      ManagerID: json["ManagerID"],
-      AfterServiceID: json["AfterServiceID"],
-      Level: json["Level"],
+      ID: json['ID'],
+      Name: json['Name'],
+      Email: json['Email'],
+      Tel: json['Tel'],
+      DistributorInfo: json['DistributorInfo'],
+      CreationTime: json['CreationTime'],
+      CompanyID: json['CompanyID'],
+      ManagerID: json['ManagerID'],
+      AfterServiceID: json['AfterServiceID'],
+      Level: json['Level'],
     );
   }
 

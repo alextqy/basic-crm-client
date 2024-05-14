@@ -1,12 +1,12 @@
 // ignore_for_file: non_constant_identifier_names, must_be_immutable
 
-import "package:flutter/material.dart";
-import "package:app/common/File.dart";
-import "package:app/interface/common/PubLib.dart";
-import "package:app/interface/common/Routes.dart";
+import 'package:flutter/material.dart';
+import 'package:app/common/File.dart';
+import 'package:app/interface/common/PubLib.dart';
+import 'package:app/interface/common/Routes.dart';
 
 Drawer ActionMenu(BuildContext context) {
-  // bool Master = bool.parse(FileHelper().JsonRead(key: "master"));
+  // bool Master = bool.parse(FileHelper().JsonRead(key: 'master'));
 
   dynamic MenuHeader(BuildContext context) {
     return SizedBox(
@@ -32,12 +32,12 @@ Drawer ActionMenu(BuildContext context) {
                     width: 53,
                     child: CircleAvatar(
                       backgroundColor: BgColor(context),
-                      child: Text(FileHelper().JsonRead(key: "account").substring(0, 2), style: TxStyle(fontSize: 24), maxLines: 1, overflow: TextOverflow.ellipsis),
+                      child: Text(FileHelper().JsonRead(key: 'account').substring(0, 2), style: TxStyle(fontSize: 24), maxLines: 1, overflow: TextOverflow.ellipsis),
                     ),
                   ),
                 ),
                 onTap: () async {
-                  Navigator.of(context).push(Routes().generate(context, "/personal/settings"));
+                  Navigator.of(context).push(Routes().generate(context, '/personal/settings'));
                 },
               ),
             ),
@@ -50,7 +50,7 @@ Drawer ActionMenu(BuildContext context) {
 
   dynamic MenuFooter(BuildContext context) {
     return Tooltip(
-      message: "out",
+      message: 'out',
       textStyle: TxStyle(),
       decoration: TooltipStyle(),
       child: SizedBox(
@@ -65,16 +65,16 @@ Drawer ActionMenu(BuildContext context) {
           child: Row(
             children: [
               const Expanded(child: SizedBox.shrink()),
-              Text("exit", style: TxStyle(), maxLines: 1, overflow: TextOverflow.ellipsis),
+              Text('exit', style: TxStyle(), maxLines: 1, overflow: TextOverflow.ellipsis),
               const SizedBox(width: 10),
               Icon(Icons.exit_to_app, size: IconSize, color: IconColor),
             ],
           ),
           onLongPress: () async {
-            FileHelper().JsonWrite(key: "account", value: "");
+            FileHelper().JsonWrite(key: 'account', value: '');
             // userNotifier.signOut(url: appUrl).then((value) {
             //   if (value.state == true) {
-            //     if (FileHelper().delFile("token")) {
+            //     if (FileHelper().delFile('token')) {
             //       exit(0);
             //     }
             //   } else {
@@ -83,10 +83,10 @@ Drawer ActionMenu(BuildContext context) {
             // });
           },
           onPressed: () async {
-            FileHelper().JsonWrite(key: "account", value: "");
+            FileHelper().JsonWrite(key: 'account', value: '');
             // userNotifier.signOut(url: appUrl).then((value) {
             //   if (value.state == true) {
-            //     if (FileHelper().delFile("token")) {
+            //     if (FileHelper().delFile('token')) {
             //       Navigator.pushAndRemoveUntil(
             //         context,
             //         MaterialPageRoute(builder: (context) => IndexPage(title: appTitle)),
@@ -116,23 +116,23 @@ Drawer ActionMenu(BuildContext context) {
               ListTile(
                 horizontalTitleGap: 20,
                 leading: Icon(Icons.home, size: IconSize, color: IconColor),
-                title: Text("home", style: TxStyle(), maxLines: 1, overflow: TextOverflow.ellipsis),
+                title: Text('home', style: TxStyle(), maxLines: 1, overflow: TextOverflow.ellipsis),
                 onTap: () async {
-                  Navigator.of(context).push(Routes().generate(context, "/"));
+                  Navigator.of(context).push(Routes().generate(context, '/'));
                 },
               ),
               ListTile(
                 horizontalTitleGap: 20,
                 leading: Icon(Icons.cloud_upload, size: IconSize, color: IconColor),
-                title: Text("upload", style: TxStyle(), maxLines: 1, overflow: TextOverflow.ellipsis),
+                title: Text('upload', style: TxStyle(), maxLines: 1, overflow: TextOverflow.ellipsis),
                 onTap: () async {
-                  Navigator.of(context).push(Routes().generate(context, "/uploading"));
+                  Navigator.of(context).push(Routes().generate(context, '/uploading'));
                 },
               ),
             ],
           ),
         ),
-        ListTile(horizontalTitleGap: 10, title: Text("v 0.1.0", style: TxStyle(), maxLines: 1, overflow: TextOverflow.ellipsis)),
+        ListTile(horizontalTitleGap: 10, title: Text('v 0.1.0', style: TxStyle(), maxLines: 1, overflow: TextOverflow.ellipsis)),
         MenuFooter(context),
       ],
     ),

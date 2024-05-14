@@ -18,7 +18,7 @@ class OrderNotifier extends BaseNotifier {
     required ID,
   }) async {
     OperationStatus = false;
-    OperationMemo = "";
+    OperationMemo = '';
     OperationData = Null;
     try {
       await orderApi.OrderNew(
@@ -62,7 +62,7 @@ class OrderNotifier extends BaseNotifier {
     required Review,
   }) async {
     OperationStatus = false;
-    OperationMemo = "";
+    OperationMemo = '';
     OperationData = Null;
     try {
       await orderApi.OrderList(
@@ -105,7 +105,7 @@ class OrderNotifier extends BaseNotifier {
     required Review,
   }) async {
     OperationStatus = false;
-    OperationMemo = "";
+    OperationMemo = '';
     OperationData = Null;
     try {
       await orderApi.OrderAll(
@@ -137,7 +137,7 @@ class OrderNotifier extends BaseNotifier {
     required ID,
   }) async {
     OperationStatus = false;
-    OperationMemo = "";
+    OperationMemo = '';
     OperationData = Null;
     try {
       await orderApi.OrderData(
@@ -160,7 +160,7 @@ class OrderNotifier extends BaseNotifier {
     required ID,
   }) async {
     OperationStatus = false;
-    OperationMemo = "";
+    OperationMemo = '';
     OperationData = Null;
     try {
       await orderApi.OrderDel(

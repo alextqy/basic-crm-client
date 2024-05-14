@@ -1,9 +1,9 @@
 // ignore_for_file: non_constant_identifier_names, must_be_immutable
 
-import "dart:async";
-import "package:flutter/material.dart";
-import "package:app/interface/common/PubLib.dart";
-import "package:app/interface/common/Routes.dart";
+import 'dart:async';
+import 'package:flutter/material.dart';
+import 'package:app/interface/common/PubLib.dart';
+import 'package:app/interface/common/Routes.dart';
 
 class Marquee extends StatefulWidget {
   late List<String> data;
@@ -11,7 +11,7 @@ class Marquee extends StatefulWidget {
   late int interval; // 停留时间
   late int switchingSpeed; // 切换速度
 
-  Marquee({required this.data, this.url = "", this.interval = 3, this.switchingSpeed = 1, super.key});
+  Marquee({required this.data, this.url = '', this.interval = 3, this.switchingSpeed = 1, super.key});
 
   @override
   MarqueeState createState() => MarqueeState();

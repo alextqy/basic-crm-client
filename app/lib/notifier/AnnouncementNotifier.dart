@@ -10,7 +10,7 @@ class AnnouncementNotifier extends BaseNotifier {
     required ID,
   }) async {
     OperationStatus = false;
-    OperationMemo = "";
+    OperationMemo = '';
     OperationData = Null;
     try {
       await announcementApi.AnnouncementNew(
@@ -40,7 +40,7 @@ class AnnouncementNotifier extends BaseNotifier {
     required Display,
   }) async {
     OperationStatus = false;
-    OperationMemo = "";
+    OperationMemo = '';
     OperationData = Null;
     try {
       await announcementApi.AnnouncementList(
@@ -71,7 +71,7 @@ class AnnouncementNotifier extends BaseNotifier {
     required Display,
   }) async {
     OperationStatus = false;
-    OperationMemo = "";
+    OperationMemo = '';
     OperationData = Null;
     try {
       await announcementApi.AnnouncementAll(
@@ -97,7 +97,7 @@ class AnnouncementNotifier extends BaseNotifier {
     required ID,
   }) async {
     OperationStatus = false;
-    OperationMemo = "";
+    OperationMemo = '';
     OperationData = Null;
     try {
       await announcementApi.AnnouncementData(
@@ -120,7 +120,7 @@ class AnnouncementNotifier extends BaseNotifier {
     required ID,
   }) async {
     OperationStatus = false;
-    OperationMemo = "";
+    OperationMemo = '';
     OperationData = Null;
     try {
       await announcementApi.AnnouncementDel(
@@ -143,7 +143,7 @@ class AnnouncementNotifier extends BaseNotifier {
     required ID,
   }) async {
     OperationStatus = false;
-    OperationMemo = "";
+    OperationMemo = '';
     OperationData = Null;
     try {
       await announcementApi.AnnouncementDisplay(

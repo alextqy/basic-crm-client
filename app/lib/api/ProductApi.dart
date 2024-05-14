@@ -17,14 +17,14 @@ class ProductApi extends BaseApi {
     required ID,
   }) async {
     Response response = await post(
-      Uri.http(URL, "/product/new"),
+      Uri.http(URL, '/product/new'),
       body: {
-        "Token": FileHelper().Read("Token"),
-        "ProductName": ProductName.toString(),
-        "Price": Price.toString(),
-        "Cost": Cost.toString(),
-        "Remark": Remark.toString(),
-        "ID": ID.toString(),
+        'Token': FileHelper().Read('Token'),
+        'ProductName': ProductName.toString(),
+        'Price': Price.toString(),
+        'Cost': Cost.toString(),
+        'Remark': Remark.toString(),
+        'ID': ID.toString(),
       },
       headers: PostHeaders,
       encoding: PostEncoding,
@@ -41,14 +41,14 @@ class ProductApi extends BaseApi {
     required Status,
   }) async {
     Response response = await post(
-      Uri.http(URL, "/product/list"),
+      Uri.http(URL, '/product/list'),
       body: {
-        "Token": FileHelper().Read("Token"),
-        "Page": Page.toString(),
-        "PageSize": PageSize.toString(),
-        "Order": Order.toString(),
-        "Stext": Stext.toString(),
-        "Status": Status.toString(),
+        'Token': FileHelper().Read('Token'),
+        'Page': Page.toString(),
+        'PageSize': PageSize.toString(),
+        'Order': Order.toString(),
+        'Stext': Stext.toString(),
+        'Status': Status.toString(),
       },
       headers: PostHeaders,
       encoding: PostEncoding,
@@ -63,12 +63,12 @@ class ProductApi extends BaseApi {
     required Status,
   }) async {
     Response response = await post(
-      Uri.http(URL, "/product/all"),
+      Uri.http(URL, '/product/all'),
       body: {
-        "Token": FileHelper().Read("Token"),
-        "Order": Order.toString(),
-        "Stext": Stext.toString(),
-        "Status": Status.toString(),
+        'Token': FileHelper().Read('Token'),
+        'Order': Order.toString(),
+        'Stext': Stext.toString(),
+        'Status': Status.toString(),
       },
       headers: PostHeaders,
       encoding: PostEncoding,
@@ -81,10 +81,10 @@ class ProductApi extends BaseApi {
     required ID,
   }) async {
     Response response = await post(
-      Uri.http(URL, "/product/data"),
+      Uri.http(URL, '/product/data'),
       body: {
-        "Token": FileHelper().Read("Token"),
-        "ID": ID.toString(),
+        'Token': FileHelper().Read('Token'),
+        'ID': ID.toString(),
       },
       headers: PostHeaders,
       encoding: PostEncoding,
@@ -97,10 +97,10 @@ class ProductApi extends BaseApi {
     required ID,
   }) async {
     Response response = await post(
-      Uri.http(URL, "/product/del"),
+      Uri.http(URL, '/product/del'),
       body: {
-        "Token": FileHelper().Read("Token"),
-        "ID": ID.toString(),
+        'Token': FileHelper().Read('Token'),
+        'ID': ID.toString(),
       },
       headers: PostHeaders,
       encoding: PostEncoding,

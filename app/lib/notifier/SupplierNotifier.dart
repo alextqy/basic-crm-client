@@ -13,7 +13,7 @@ class SupplierNotifier extends BaseNotifier {
     required ID,
   }) async {
     OperationStatus = false;
-    OperationMemo = "";
+    OperationMemo = '';
     OperationData = Null;
     try {
       await supplierApi.SupplierNew(
@@ -44,7 +44,7 @@ class SupplierNotifier extends BaseNotifier {
     required Stext,
   }) async {
     OperationStatus = false;
-    OperationMemo = "";
+    OperationMemo = '';
     OperationData = Null;
     try {
       await supplierApi.SupplierList(
@@ -71,7 +71,7 @@ class SupplierNotifier extends BaseNotifier {
     required Stext,
   }) async {
     OperationStatus = false;
-    OperationMemo = "";
+    OperationMemo = '';
     OperationData = Null;
     try {
       await supplierApi.SupplierAll(
@@ -95,7 +95,7 @@ class SupplierNotifier extends BaseNotifier {
     required ID,
   }) async {
     OperationStatus = false;
-    OperationMemo = "";
+    OperationMemo = '';
     OperationData = Null;
     try {
       await supplierApi.SupplierData(
@@ -118,7 +118,7 @@ class SupplierNotifier extends BaseNotifier {
     required ID,
   }) async {
     OperationStatus = false;
-    OperationMemo = "";
+    OperationMemo = '';
     OperationData = Null;
     try {
       await supplierApi.SupplierDel(

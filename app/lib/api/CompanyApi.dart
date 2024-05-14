@@ -15,12 +15,12 @@ class CompanyApi extends BaseApi {
     required ID,
   }) async {
     Response response = await post(
-      Uri.http(URL, "/company/new"),
+      Uri.http(URL, '/company/new'),
       body: {
-        "Token": FileHelper().Read("Token"),
-        "CompanyName": CompanyName.toString(),
-        "Remark": Remark.toString(),
-        "ID": ID.toString(),
+        'Token': FileHelper().Read('Token'),
+        'CompanyName': CompanyName.toString(),
+        'Remark': Remark.toString(),
+        'ID': ID.toString(),
       },
       headers: PostHeaders,
       encoding: PostEncoding,
@@ -36,13 +36,13 @@ class CompanyApi extends BaseApi {
     required Stext,
   }) async {
     Response response = await post(
-      Uri.http(URL, "/company/list"),
+      Uri.http(URL, '/company/list'),
       body: {
-        "Token": FileHelper().Read("Token"),
-        "Page": Page.toString(),
-        "PageSize": PageSize.toString(),
-        "Order": Order.toString(),
-        "Stext": Stext.toString(),
+        'Token': FileHelper().Read('Token'),
+        'Page': Page.toString(),
+        'PageSize': PageSize.toString(),
+        'Order': Order.toString(),
+        'Stext': Stext.toString(),
       },
       headers: PostHeaders,
       encoding: PostEncoding,
@@ -56,11 +56,11 @@ class CompanyApi extends BaseApi {
     required Stext,
   }) async {
     Response response = await post(
-      Uri.http(URL, "/company/all"),
+      Uri.http(URL, '/company/all'),
       body: {
-        "Token": FileHelper().Read("Token"),
-        "Order": Order.toString(),
-        "Stext": Stext.toString(),
+        'Token': FileHelper().Read('Token'),
+        'Order': Order.toString(),
+        'Stext': Stext.toString(),
       },
       headers: PostHeaders,
       encoding: PostEncoding,
@@ -73,10 +73,10 @@ class CompanyApi extends BaseApi {
     required ID,
   }) async {
     Response response = await post(
-      Uri.http(URL, "/company/data"),
+      Uri.http(URL, '/company/data'),
       body: {
-        "Token": FileHelper().Read("Token"),
-        "ID": ID.toString(),
+        'Token': FileHelper().Read('Token'),
+        'ID': ID.toString(),
       },
       headers: PostHeaders,
       encoding: PostEncoding,
@@ -89,10 +89,10 @@ class CompanyApi extends BaseApi {
     required ID,
   }) async {
     Response response = await post(
-      Uri.http(URL, "/company/del"),
+      Uri.http(URL, '/company/del'),
       body: {
-        "Token": FileHelper().Read("Token"),
-        "ID": ID.toString(),
+        'Token': FileHelper().Read('Token'),
+        'ID': ID.toString(),
       },
       headers: PostHeaders,
       encoding: PostEncoding,

@@ -15,12 +15,12 @@ class GroupApi extends BaseApi {
     required ID,
   }) async {
     Response response = await post(
-      Uri.http(URL, "/group/new"),
+      Uri.http(URL, '/group/new'),
       body: {
-        "Token": FileHelper().Read("Token"),
-        "GroupName": GroupName.toString(),
-        "Remark": Remark.toString(),
-        "ID": ID.toString(),
+        'Token': FileHelper().Read('Token'),
+        'GroupName': GroupName.toString(),
+        'Remark': Remark.toString(),
+        'ID': ID.toString(),
       },
       headers: PostHeaders,
       encoding: PostEncoding,
@@ -36,13 +36,13 @@ class GroupApi extends BaseApi {
     required Stext,
   }) async {
     Response response = await post(
-      Uri.http(URL, "/group/list"),
+      Uri.http(URL, '/group/list'),
       body: {
-        "Token": FileHelper().Read("Token"),
-        "Page": Page.toString(),
-        "PageSize": PageSize.toString(),
-        "Order": Order.toString(),
-        "Stext": Stext.toString(),
+        'Token': FileHelper().Read('Token'),
+        'Page': Page.toString(),
+        'PageSize': PageSize.toString(),
+        'Order': Order.toString(),
+        'Stext': Stext.toString(),
       },
       headers: PostHeaders,
       encoding: PostEncoding,
@@ -56,11 +56,11 @@ class GroupApi extends BaseApi {
     required Stext,
   }) async {
     Response response = await post(
-      Uri.http(URL, "/group/all"),
+      Uri.http(URL, '/group/all'),
       body: {
-        "Token": FileHelper().Read("Token"),
-        "Order": Order.toString(),
-        "Stext": Stext.toString(),
+        'Token': FileHelper().Read('Token'),
+        'Order': Order.toString(),
+        'Stext': Stext.toString(),
       },
       headers: PostHeaders,
       encoding: PostEncoding,
@@ -73,10 +73,10 @@ class GroupApi extends BaseApi {
     required ID,
   }) async {
     Response response = await post(
-      Uri.http(URL, "/group/data"),
+      Uri.http(URL, '/group/data'),
       body: {
-        "Token": FileHelper().Read("Token"),
-        "ID": ID.toString(),
+        'Token': FileHelper().Read('Token'),
+        'ID': ID.toString(),
       },
       headers: PostHeaders,
       encoding: PostEncoding,
@@ -89,10 +89,10 @@ class GroupApi extends BaseApi {
     required ID,
   }) async {
     Response response = await post(
-      Uri.http(URL, "/group/del"),
+      Uri.http(URL, '/group/del'),
       body: {
-        "Token": FileHelper().Read("Token"),
-        "ID": ID.toString(),
+        'Token': FileHelper().Read('Token'),
+        'ID': ID.toString(),
       },
       headers: PostHeaders,
       encoding: PostEncoding,

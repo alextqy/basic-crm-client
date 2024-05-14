@@ -1,11 +1,11 @@
 // ignore_for_file: non_constant_identifier_names
 
-import "dart:io";
-import "dart:convert";
-import "dart:typed_data";
-import "package:app/common/File.dart";
-import "package:crypto/crypto.dart" as crypto;
-import "package:flutter/material.dart";
+import 'dart:io';
+import 'dart:convert';
+import 'dart:typed_data';
+import 'package:app/common/File.dart';
+import 'package:crypto/crypto.dart' as crypto;
+import 'package:flutter/material.dart';
 
 class ToolsHelper {
   // 当前时间戳
@@ -15,7 +15,7 @@ class ToolsHelper {
 
   // 时间戳转时间
   String TimestampToStr(int timestamp) {
-    if (timestamp == 0) return "";
+    if (timestamp == 0) return '';
     if (timestamp.toString().length == 10) {
       timestamp *= 1000;
     }
@@ -91,25 +91,25 @@ class ToolsHelper {
 
   // UDP 客户端
   Future<String> ClentUDP(int port) async {
-    RawDatagramSocket rawDgramSocket = await RawDatagramSocket.bind("0.0.0.0", port);
-    // rawDgramSocket.send(utf8.encode("hello,world!"), InternetAddress("0.0.0.0"), port);
+    RawDatagramSocket rawDgramSocket = await RawDatagramSocket.bind('0.0.0.0', port);
+    // rawDgramSocket.send(utf8.encode('hello,world!'), InternetAddress('0.0.0.0'), port);
     await for (RawSocketEvent event in rawDgramSocket) {
       if (event == RawSocketEvent.read) {
         return utf8.decode(rawDgramSocket.receive()!.data);
       }
     }
-    return "";
+    return '';
   }
 
   // 接口监听
   Future<void> SocketListen(BuildContext context, int port, int s) async {
     Duration timeoutDuration = Duration(milliseconds: s * 1000);
-    RawDatagramSocket rawDgramSocket = await RawDatagramSocket.bind("0.0.0.0", port);
+    RawDatagramSocket rawDgramSocket = await RawDatagramSocket.bind('0.0.0.0', port);
     rawDgramSocket.timeout(timeoutDuration, onTimeout: ((sink) {
       rawDgramSocket.close();
     })).listen((event) async {
       if (event == RawSocketEvent.read) {
-        var b = !FileHelper().JsonWrite(key: "server_address", value: utf8.decode(rawDgramSocket.receive()!.data));
+        var b = !FileHelper().JsonWrite(key: 'server_address', value: utf8.decode(rawDgramSocket.receive()!.data));
         print(b);
         rawDgramSocket.close();
       }
@@ -122,7 +122,7 @@ class ToolsHelper {
   //   await for (RawSocketEvent event in rawDgramSocket) {
   //     if (event == RawSocketEvent.read) {
   //       // print(utf8.decode(rawDgramSocket.receive()!.data));
-  //       rawDgramSocket.send(utf8.encode("UDP Server:already received!"), InternetAddress.loopbackIPv4, 8082);
+  //       rawDgramSocket.send(utf8.encode('UDP Server:already received!'), InternetAddress.loopbackIPv4, 8082);
   //     }
   //   }
   // }

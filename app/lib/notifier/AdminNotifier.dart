@@ -9,7 +9,7 @@ class AdminNotifier extends BaseNotifier {
     required Password,
   }) async {
     OperationStatus = false;
-    OperationMemo = "";
+    OperationMemo = '';
     OperationData = Null;
     try {
       await adminApi.AdminSignIn(
@@ -32,7 +32,7 @@ class AdminNotifier extends BaseNotifier {
     required URL,
   }) async {
     OperationStatus = false;
-    OperationMemo = "";
+    OperationMemo = '';
     OperationData = Null;
     try {
       await adminApi.AdminSignOut(
@@ -58,7 +58,7 @@ class AdminNotifier extends BaseNotifier {
     required ID,
   }) async {
     OperationStatus = false;
-    OperationMemo = "";
+    OperationMemo = '';
     OperationData = Null;
     try {
       await adminApi.AdminNew(
@@ -90,7 +90,7 @@ class AdminNotifier extends BaseNotifier {
     required Status,
   }) async {
     OperationStatus = false;
-    OperationMemo = "";
+    OperationMemo = '';
     OperationData = Null;
     try {
       await adminApi.AdminList(
@@ -121,7 +121,7 @@ class AdminNotifier extends BaseNotifier {
     required Status,
   }) async {
     OperationStatus = false;
-    OperationMemo = "";
+    OperationMemo = '';
     OperationData = Null;
     try {
       await adminApi.AdminAll(
@@ -147,7 +147,7 @@ class AdminNotifier extends BaseNotifier {
     required ID,
   }) async {
     OperationStatus = false;
-    OperationMemo = "";
+    OperationMemo = '';
     OperationData = Null;
     try {
       await adminApi.AdminData(
@@ -170,7 +170,7 @@ class AdminNotifier extends BaseNotifier {
     required ID,
   }) async {
     OperationStatus = false;
-    OperationMemo = "";
+    OperationMemo = '';
     OperationData = Null;
     try {
       await adminApi.AdminDel(
@@ -193,7 +193,7 @@ class AdminNotifier extends BaseNotifier {
     required ID,
   }) async {
     OperationStatus = false;
-    OperationMemo = "";
+    OperationMemo = '';
     OperationData = Null;
     try {
       await adminApi.AdminStatus(

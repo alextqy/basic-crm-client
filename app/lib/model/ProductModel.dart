@@ -13,23 +13,23 @@ class ProductModel {
 
   ProductModel({
     this.ID = 0,
-    this.ProductName = "",
+    this.ProductName = '',
     this.Price = 0,
     this.Cost = 0,
     this.Status = 0,
-    this.Remark = "",
+    this.Remark = '',
     this.CreationTime = 0,
   });
 
   factory ProductModel.fromJson(Map<String, dynamic> json) {
     return ProductModel(
-      ID: json["ID"],
-      ProductName: json["ProductName"],
-      Price: json["Price"],
-      Cost: json["Cost"],
-      Status: json["Status"],
-      Remark: json["Remark"],
-      CreationTime: json["CreationTime"],
+      ID: json['ID'],
+      ProductName: json['ProductName'],
+      Price: json['Price'],
+      Cost: json['Cost'],
+      Status: json['Status'],
+      Remark: json['Remark'],
+      CreationTime: json['CreationTime'],
     );
   }
 

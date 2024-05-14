@@ -170,4 +170,79 @@ class ManagerNotifier extends BaseNotifier {
       notifyListeners();
     }
   }
+
+  void ManagerSignIn({
+    required URL,
+    required Account,
+    required Password,
+  }) async {
+    OperationStatus = false;
+    OperationMemo = "";
+    OperationData = Null;
+    try {
+      await managerApi.ManagerSignIn(
+        URL,
+        Account,
+        Password,
+      ).then((Value) {
+        OperationStatus = Value.State;
+        OperationMemo = Value.Message;
+        OperationData = Value.Data;
+      });
+    } catch (e) {
+      OperationMemo = e.toString();
+    } finally {
+      notifyListeners();
+    }
+  }
+
+  void ManagerSignOut({
+    required URL,
+  }) async {
+    OperationStatus = false;
+    OperationMemo = "";
+    OperationData = Null;
+    try {
+      await managerApi.ManagerSignOut(
+        URL,
+      ).then((Value) {
+        OperationStatus = Value.State;
+        OperationMemo = Value.Message;
+        OperationData = Value.Data;
+      });
+    } catch (e) {
+      OperationMemo = e.toString();
+    } finally {
+      notifyListeners();
+    }
+  }
+
+  void ManagerUpdate({
+    required URL,
+    required Password,
+    required Name,
+    required Remark,
+    required GroupID,
+  }) async {
+    OperationStatus = false;
+    OperationMemo = "";
+    OperationData = Null;
+    try {
+      await managerApi.ManagerUpdate(
+        URL,
+        Password,
+        Name,
+        Remark,
+        GroupID,
+      ).then((Value) {
+        OperationStatus = Value.State;
+        OperationMemo = Value.Message;
+        OperationData = Value.Data;
+      });
+    } catch (e) {
+      OperationMemo = e.toString();
+    } finally {
+      notifyListeners();
+    }
+  }
 }

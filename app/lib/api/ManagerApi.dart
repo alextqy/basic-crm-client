@@ -133,4 +133,57 @@ class ManagerApi extends BaseApi {
     ).timeout(Duration(seconds: Timeout));
     return ResultModel.fromJson(jsonDecode(Decoder.convert(response.bodyBytes)));
   }
+
+  Future<ResultModel> ManagerSignIn([
+    dynamic URL,
+    dynamic Account,
+    dynamic Password,
+  ]) async {
+    Response response = await post(
+      Uri.http(URL, "/manager/sign/in"),
+      body: {
+        "Account": Account.toString(),
+        "Password": Password.toString(),
+      },
+      headers: PostHeaders,
+      encoding: PostEncoding,
+    ).timeout(Duration(seconds: Timeout));
+    return ResultModel.fromJson(jsonDecode(Decoder.convert(response.bodyBytes)));
+  }
+
+  Future<ResultModel> ManagerSignOut([
+    dynamic URL,
+  ]) async {
+    Response response = await post(
+      Uri.http(URL, "/manager/sign/out"),
+      body: {
+        "Token": FileHelper().Read("Token"),
+      },
+      headers: PostHeaders,
+      encoding: PostEncoding,
+    ).timeout(Duration(seconds: Timeout));
+    return ResultModel.fromJson(jsonDecode(Decoder.convert(response.bodyBytes)));
+  }
+
+  Future<ResultModel> ManagerUpdate([
+    dynamic URL,
+    dynamic Password,
+    dynamic Name,
+    dynamic Remark,
+    dynamic GroupID,
+  ]) async {
+    Response response = await post(
+      Uri.http(URL, "/manager/update"),
+      body: {
+        "Token": FileHelper().Read("Token"),
+        "Password": Password.toString(),
+        "Name": Name.toString(),
+        "Remark": Remark.toString(),
+        "GroupID": GroupID.toString(),
+      },
+      headers: PostHeaders,
+      encoding: PostEncoding,
+    ).timeout(Duration(seconds: Timeout));
+    return ResultModel.fromJson(jsonDecode(Decoder.convert(response.bodyBytes)));
+  }
 }

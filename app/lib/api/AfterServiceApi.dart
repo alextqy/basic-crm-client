@@ -127,4 +127,55 @@ class AfterServiceApi extends BaseApi {
     ).timeout(Duration(seconds: Timeout));
     return ResultModel.fromJson(jsonDecode(Decoder.convert(response.bodyBytes)));
   }
+
+  Future<ResultModel> AfterServiceSignIn([
+    dynamic URL,
+    dynamic Account,
+    dynamic Password,
+  ]) async {
+    Response response = await post(
+      Uri.http(URL, "/after/service/sign/in"),
+      body: {
+        "Account": Account.toString(),
+        "Password": Password.toString(),
+      },
+      headers: PostHeaders,
+      encoding: PostEncoding,
+    ).timeout(Duration(seconds: Timeout));
+    return ResultModel.fromJson(jsonDecode(Decoder.convert(response.bodyBytes)));
+  }
+
+  Future<ResultModel> AfterServiceSignOut([
+    dynamic URL,
+  ]) async {
+    Response response = await post(
+      Uri.http(URL, "/after/service/sign/out"),
+      body: {
+        "Token": FileHelper().Read("Token"),
+      },
+      headers: PostHeaders,
+      encoding: PostEncoding,
+    ).timeout(Duration(seconds: Timeout));
+    return ResultModel.fromJson(jsonDecode(Decoder.convert(response.bodyBytes)));
+  }
+
+  Future<ResultModel> AfterServiceUpdate([
+    dynamic URL,
+    dynamic Password,
+    dynamic Name,
+    dynamic Remark,
+  ]) async {
+    Response response = await post(
+      Uri.http(URL, "/after/service/update"),
+      body: {
+        "Token": FileHelper().Read("Token"),
+        "Password": Password.toString(),
+        "Name": Name.toString(),
+        "Remark": Remark.toString(),
+      },
+      headers: PostHeaders,
+      encoding: PostEncoding,
+    ).timeout(Duration(seconds: Timeout));
+    return ResultModel.fromJson(jsonDecode(Decoder.convert(response.bodyBytes)));
+  }
 }

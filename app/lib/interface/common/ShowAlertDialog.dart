@@ -57,11 +57,11 @@ ScaffoldFeatureController ShowSnackBar(
   BuildContext Context, {
   String Content = '',
   Color BackgroundColor = Colors.black,
-  int Dur = 2,
+  int Durn = 2,
 }) {
   return ScaffoldMessenger.of(Context).showSnackBar(
     SnackBar(
-      duration: Duration(seconds: Dur),
+      duration: Duration(seconds: Durn),
       backgroundColor: BackgroundColor,
       padding: const EdgeInsets.all(10),
       content: Text(Content, style: TxStyle(), maxLines: 1, overflow: TextOverflow.ellipsis),

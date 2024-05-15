@@ -15,17 +15,16 @@ class CompanyModel {
     this.Remark = '',
   });
 
-  factory CompanyModel.fromJson(Map<String, dynamic> json) {
+  factory CompanyModel.FromJson(Map<String, dynamic> Json) {
     return CompanyModel(
-      ID: json['ID'],
-      CompanyName: json['CompanyName'],
-      CreationTime: json['CreationTime'],
-      Remark: json['Remark'],
+      ID: Json['ID'],
+      CompanyName: Json['CompanyName'],
+      CreationTime: Json['CreationTime'],
+      Remark: Json['Remark'],
     );
   }
 
-  List<CompanyModel> fromJsonList(String jsonString) {
-    List<CompanyModel> dataList = (jsonDecode(jsonString) as List).map((i) => CompanyModel.fromJson(i)).toList();
-    return dataList;
+  List<CompanyModel> FromJsonList(String JsonString) {
+    return (jsonDecode(JsonString) as List).map((i) => CompanyModel.FromJson(i)).toList();
   }
 }

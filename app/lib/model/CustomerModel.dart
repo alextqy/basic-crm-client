@@ -33,26 +33,25 @@ class CustomerModel {
     this.Level = 0,
   });
 
-  factory CustomerModel.fromJson(Map<String, dynamic> json) {
+  factory CustomerModel.FromJson(Map<String, dynamic> Json) {
     return CustomerModel(
-      ID: json['ID'],
-      Name: json['Name'],
-      Birthday: json['Birthday'],
-      Gender: json['Gender'],
-      Email: json['Email'],
-      Tel: json['Tel'],
-      CustomerInfo: json['CustomerInfo'],
-      Priority: json['Priority'],
-      CreationTime: json['CreationTime'],
-      CompanyID: json['CompanyID'],
-      ManagerID: json['ManagerID'],
-      AfterServiceID: json['AfterServiceID'],
-      Level: json['Level'],
+      ID: Json['ID'],
+      Name: Json['Name'],
+      Birthday: Json['Birthday'],
+      Gender: Json['Gender'],
+      Email: Json['Email'],
+      Tel: Json['Tel'],
+      CustomerInfo: Json['CustomerInfo'],
+      Priority: Json['Priority'],
+      CreationTime: Json['CreationTime'],
+      CompanyID: Json['CompanyID'],
+      ManagerID: Json['ManagerID'],
+      AfterServiceID: Json['AfterServiceID'],
+      Level: Json['Level'],
     );
   }
 
-  List<CustomerModel> fromJsonList(String jsonString) {
-    List<CustomerModel> dataList = (jsonDecode(jsonString) as List).map((i) => CustomerModel.fromJson(i)).toList();
-    return dataList;
+  List<CustomerModel> FromJsonList(String JsonString) {
+    return (jsonDecode(JsonString) as List).map((i) => CustomerModel.FromJson(i)).toList();
   }
 }

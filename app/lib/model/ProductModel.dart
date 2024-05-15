@@ -21,20 +21,19 @@ class ProductModel {
     this.CreationTime = 0,
   });
 
-  factory ProductModel.fromJson(Map<String, dynamic> json) {
+  factory ProductModel.FromJson(Map<String, dynamic> Json) {
     return ProductModel(
-      ID: json['ID'],
-      ProductName: json['ProductName'],
-      Price: json['Price'],
-      Cost: json['Cost'],
-      Status: json['Status'],
-      Remark: json['Remark'],
-      CreationTime: json['CreationTime'],
+      ID: Json['ID'],
+      ProductName: Json['ProductName'],
+      Price: Json['Price'],
+      Cost: Json['Cost'],
+      Status: Json['Status'],
+      Remark: Json['Remark'],
+      CreationTime: Json['CreationTime'],
     );
   }
 
-  List<ProductModel> fromJsonList(String jsonString) {
-    List<ProductModel> dataList = (jsonDecode(jsonString) as List).map((i) => ProductModel.fromJson(i)).toList();
-    return dataList;
+  List<ProductModel> FromJsonList(String JsonString) {
+    return (jsonDecode(JsonString) as List).map((i) => ProductModel.FromJson(i)).toList();
   }
 }

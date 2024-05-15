@@ -27,23 +27,22 @@ class DistributorModel {
     this.Level = 0,
   });
 
-  factory DistributorModel.fromJson(Map<String, dynamic> json) {
+  factory DistributorModel.FromJson(Map<String, dynamic> Json) {
     return DistributorModel(
-      ID: json['ID'],
-      Name: json['Name'],
-      Email: json['Email'],
-      Tel: json['Tel'],
-      DistributorInfo: json['DistributorInfo'],
-      CreationTime: json['CreationTime'],
-      CompanyID: json['CompanyID'],
-      ManagerID: json['ManagerID'],
-      AfterServiceID: json['AfterServiceID'],
-      Level: json['Level'],
+      ID: Json['ID'],
+      Name: Json['Name'],
+      Email: Json['Email'],
+      Tel: Json['Tel'],
+      DistributorInfo: Json['DistributorInfo'],
+      CreationTime: Json['CreationTime'],
+      CompanyID: Json['CompanyID'],
+      ManagerID: Json['ManagerID'],
+      AfterServiceID: Json['AfterServiceID'],
+      Level: Json['Level'],
     );
   }
 
-  List<DistributorModel> fromJsonList(String jsonString) {
-    List<DistributorModel> dataList = (jsonDecode(jsonString) as List).map((i) => DistributorModel.fromJson(i)).toList();
-    return dataList;
+  List<DistributorModel> FromJsonList(String JsonString) {
+    return (jsonDecode(JsonString) as List).map((i) => DistributorModel.FromJson(i)).toList();
   }
 }

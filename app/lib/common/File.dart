@@ -1,4 +1,4 @@
-// ignore_for_file: non_constant_identifier_names
+// ignore_for_file: non_constant_identifier_names, file_names
 
 import 'dart:io';
 import 'dart:typed_data';
@@ -9,10 +9,10 @@ import 'dart:convert';
 
 class FileHelper {
   // 文件创建
-  bool New(String filePath) {
+  bool New(String FilePath) {
     try {
-      if (filePath.isNotEmpty) {
-        File file = File(filePath);
+      if (FilePath.isNotEmpty) {
+        File file = File(FilePath);
         file.createSync(recursive: true);
         return true;
       }
@@ -23,10 +23,10 @@ class FileHelper {
   }
 
   // 文件写入
-  bool Write(String fileName, String content) {
-    File file = File(fileName);
+  bool Write(String FileName, String Content) {
+    File file = File(FileName);
     try {
-      file.writeAsStringSync(content);
+      file.writeAsStringSync(Content);
     } catch (e) {
       return false;
     }
@@ -34,18 +34,18 @@ class FileHelper {
   }
 
   // 文件写入(异步)
-  Future<bool> WriteAsync(String fileName, String content) async {
-    File file = File(fileName);
-    file.writeAsString(content);
+  Future<bool> WriteAsync(String FileName, String Content) async {
+    File file = File(FileName);
+    file.writeAsString(Content);
     return true;
   }
 
   // 文件追加写入
-  Future<bool> WriteAppend(String filePath, String content) async {
+  Future<bool> WriteAppend(String FilePath, String Content) async {
     try {
-      File file = File(filePath);
+      File file = File(FilePath);
       IOSink isk = file.openWrite(mode: FileMode.writeOnlyAppend);
-      isk.write(content);
+      isk.write(Content);
       await isk.close();
     } catch (e) {
       return false;
@@ -54,10 +54,10 @@ class FileHelper {
   }
 
   // 文件二进制写入
-  bool WriteBytes(String fileName, List<int> content) {
-    File file = File(fileName);
+  bool WriteBytes(String FileName, List<int> Content) {
+    File file = File(FileName);
     try {
-      file.writeAsBytes(content);
+      file.writeAsBytes(Content);
     } catch (e) {
       return false;
     }
@@ -65,11 +65,11 @@ class FileHelper {
   }
 
   // 文件二进制追加写入
-  Future<bool> WriteBytesAppend(File file, int position, Uint8List content) async {
-    RandomAccessFile raf = await file.open(mode: FileMode.append);
-    RandomAccessFile rafp = await raf.setPosition(position);
+  Future<bool> WriteBytesAppend(File F, int Position, Uint8List Content) async {
+    RandomAccessFile raf = await F.open(mode: FileMode.append);
+    RandomAccessFile rafp = await raf.setPosition(Position);
     try {
-      rafp.writeFrom(content);
+      rafp.writeFrom(Content);
     } catch (e) {
       return false;
     }
@@ -77,40 +77,39 @@ class FileHelper {
   }
 
   // 文件读取
-  String Read(String filePath) {
-    File file = File(filePath);
+  String Read(String FilePath) {
+    File F = File(FilePath);
     try {
-      String content = file.readAsStringSync();
-      return content;
+      return F.readAsStringSync();
     } catch (e) {
       return '';
     }
   }
 
   // 文件随机读取
-  List<int> ReadRandom(String filePath, int start, int end) {
-    File file = File(filePath);
+  List<int> ReadRandom(String FilePath, int Start, int End) {
+    File F = File(FilePath);
     List<int> content = [];
-    file.openRead(start, end).listen((data) {
-      content.addAll(data);
+    F.openRead(Start, End).listen((Data) {
+      content.addAll(Data);
     });
     return content;
   }
 
   // 读取二进制
-  Future<Uint8List> ReadBytes(File file, int position, int length) async {
-    RandomAccessFile raf = await file.open(mode: FileMode.read);
-    RandomAccessFile content = await raf.setPosition(position);
-    Uint8List c = content.readSync(length);
-    await raf.close();
-    return c;
+  Future<Uint8List> ReadBytes(File F, int Position, int Length) async {
+    RandomAccessFile Raf = await F.open(mode: FileMode.read);
+    RandomAccessFile Content = await Raf.setPosition(Position);
+    Uint8List C = Content.readSync(Length);
+    await Raf.close();
+    return C;
   }
 
   // 文件删除
-  bool Del(String filePath) {
-    File file = File(filePath);
+  bool Del(String FilePath) {
+    File F = File(FilePath);
     try {
-      file.deleteSync();
+      F.deleteSync();
     } catch (e) {
       return false;
     }
@@ -118,10 +117,10 @@ class FileHelper {
   }
 
   // 文件重命名
-  bool Rename(String filePath, String newName) {
-    File file = File(filePath);
+  bool Rename(String FilePath, String NewName) {
+    File F = File(FilePath);
     try {
-      file.renameSync(newName);
+      F.renameSync(NewName);
     } catch (e) {
       return false;
     }
@@ -129,10 +128,10 @@ class FileHelper {
   }
 
   // 文件复制
-  bool Copy(String filePath, String newName) {
-    File file = File(filePath);
+  bool Copy(String FilePath, String NewName) {
+    File F = File(FilePath);
     try {
-      file.copySync(newName);
+      F.copySync(NewName);
     } catch (e) {
       return false;
     }
@@ -140,28 +139,28 @@ class FileHelper {
   }
 
   // 文件是否存在
-  bool Exists(String filePath) {
-    File file = File(filePath);
-    return file.existsSync();
+  bool Exists(String FilePath) {
+    File F = File(FilePath);
+    return F.existsSync();
   }
 
   // 文件大小
-  int Size(String filePath) {
-    File file = File(filePath);
-    return file.lengthSync();
+  int Size(String FilePath) {
+    File F = File(FilePath);
+    return F.lengthSync();
   }
 
   // 文件类型
-  String? Type(String filePath) {
-    return lookupMimeType(filePath);
+  String? Type(String FilePath) {
+    return lookupMimeType(FilePath);
   }
 
   // 文件夹创建
-  bool DirNew(String dirPath) {
-    Directory dir = Directory(dirPath);
+  bool DirNew(String DirPath) {
+    Directory Dir = Directory(DirPath);
     try {
-      if (!Directory(dirPath).existsSync()) {
-        dir.createSync(recursive: true);
+      if (!Directory(DirPath).existsSync()) {
+        Dir.createSync(recursive: true);
       }
     } catch (e) {
       return false;
@@ -170,10 +169,10 @@ class FileHelper {
   }
 
   // 文件夹删除
-  bool DelDir(String dirPath) {
-    Directory dir = Directory(dirPath);
+  bool DelDir(String DirPath) {
+    Directory Dir = Directory(DirPath);
     try {
-      dir.deleteSync(recursive: true);
+      Dir.deleteSync(recursive: true);
     } catch (e) {
       return false;
     }
@@ -181,49 +180,49 @@ class FileHelper {
   }
 
   // 文件夹是否存在
-  bool DirExists(String dirPath) {
-    Directory dir = Directory(dirPath);
-    return dir.existsSync();
+  bool DirExists(String DirPath) {
+    Directory Dir = Directory(DirPath);
+    return Dir.existsSync();
   }
 
   // 是否是文件夹
-  bool IsDir(String path) {
-    return FileSystemEntity.isDirectorySync(path);
+  bool IsDir(String Path) {
+    return FileSystemEntity.isDirectorySync(Path);
   }
 
   // 获取文件列表
-  List<FileSystemEntity> DirList(String dirPath) {
-    Directory dir = Directory(dirPath);
-    return dir.listSync();
+  List<FileSystemEntity> DirList(String DirPath) {
+    Directory Dir = Directory(DirPath);
+    return Dir.listSync();
   }
 
   // 打开文件夹
   void DirOpen({
-    required String dirPath,
-    required List<String> type,
-    String fileName = '*',
+    required String DirPath,
+    required List<String> L,
+    String FileName = '*',
   }) async {
-    XTypeGroup xType = XTypeGroup(label: fileName, extensions: type);
+    XTypeGroup XType = XTypeGroup(label: FileName, extensions: L);
     await openFile(
-      acceptedTypeGroups: [xType],
-      initialDirectory: dirPath,
+      acceptedTypeGroups: [XType],
+      initialDirectory: DirPath,
       confirmButtonText: '',
     );
   }
 
   // 选择文件
   Future<String?> FileCheck({
-    required String dirPath,
-    required List<String> type,
-    String fileName = '*',
+    required String DirPath,
+    required List<String> L,
+    String FileName = '*',
   }) async {
-    XTypeGroup xType = XTypeGroup(label: fileName, extensions: type);
-    XFile? tempPath = await openFile(
-      acceptedTypeGroups: [xType],
-      initialDirectory: dirPath,
+    XTypeGroup XType = XTypeGroup(label: FileName, extensions: L);
+    XFile? TempPath = await openFile(
+      acceptedTypeGroups: [XType],
+      initialDirectory: DirPath,
       confirmButtonText: '',
     );
-    return tempPath?.path;
+    return TempPath?.path;
   }
 
   // 根目录
@@ -232,20 +231,20 @@ class FileHelper {
   }
 
   /// 文件MD5
-  static String CryptoMD5(File file) {
-    return md5.convert(file.readAsBytesSync()).toString();
+  static String CryptoMD5(File F) {
+    return md5.convert(F.readAsBytesSync()).toString();
   }
 
   /// 文件MD5(异步)
-  static Future<String> CryptoMD5Async(File file) async {
-    return (await md5.bind(file.openRead()).first).toString();
+  static Future<String> CryptoMD5Async(File F) async {
+    return (await md5.bind(F.openRead()).first).toString();
   }
 
   // 写入json文件
-  bool JsonWrite({String key = '', dynamic value = '', String savePath = 'config.json'}) {
-    if (key.isNotEmpty && savePath.isNotEmpty) {
+  bool JsonWrite({String Key = '', dynamic Value = '', String SavePath = 'config.json'}) {
+    if (Key.isNotEmpty && SavePath.isNotEmpty) {
       try {
-        File jsonFile = File(savePath);
+        File jsonFile = File(SavePath);
         if (!jsonFile.existsSync()) {
           jsonFile.createSync(recursive: true);
         }
@@ -255,7 +254,7 @@ class FileHelper {
         if (jsonStr.isNotEmpty) {
           jsonStrMap = jsonDecode(jsonStr);
         }
-        jsonStrMap[key] = value;
+        jsonStrMap[Key] = Value;
         jsonFile.writeAsStringSync(jsonEncode(jsonStrMap));
         return true;
       } catch (e) {
@@ -266,12 +265,12 @@ class FileHelper {
   }
 
   // 读取json文件
-  String JsonRead({String key = '', String filePath = 'config.json'}) {
-    File jsonFile = File(filePath);
-    if (jsonFile.existsSync()) {
-      String jsonStr = jsonFile.readAsStringSync();
-      Map<String, dynamic> jsonContent = jsonDecode(jsonStr);
-      return jsonContent[key].toString();
+  String JsonRead({String Key = '', String FilePath = 'config.json'}) {
+    File JsonFile = File(FilePath);
+    if (JsonFile.existsSync()) {
+      String JsonStr = JsonFile.readAsStringSync();
+      Map<String, dynamic> JsonContent = jsonDecode(JsonStr);
+      return JsonContent[Key].toString();
     }
     return '';
   }

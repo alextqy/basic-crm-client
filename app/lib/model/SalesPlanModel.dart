@@ -23,21 +23,20 @@ class SalesPlanModel {
     this.ManagerID = 0,
   });
 
-  factory SalesPlanModel.fromJson(Map<String, dynamic> json) {
+  factory SalesPlanModel.FromJson(Map<String, dynamic> Json) {
     return SalesPlanModel(
-      ID: json['ID'],
-      PlanName: json['PlanName'],
-      TargetID: json['TargetID'],
-      PlanContent: json['PlanContent'],
-      CreationTime: json['CreationTime'],
-      Status: json['Status'],
-      Budget: json['Budget'],
-      ManagerID: json['ManagerID'],
+      ID: Json['ID'],
+      PlanName: Json['PlanName'],
+      TargetID: Json['TargetID'],
+      PlanContent: Json['PlanContent'],
+      CreationTime: Json['CreationTime'],
+      Status: Json['Status'],
+      Budget: Json['Budget'],
+      ManagerID: Json['ManagerID'],
     );
   }
 
-  List<SalesPlanModel> fromJsonList(String jsonString) {
-    List<SalesPlanModel> dataList = (jsonDecode(jsonString) as List).map((i) => SalesPlanModel.fromJson(i)).toList();
-    return dataList;
+  List<SalesPlanModel> FromJsonList(String JsonString) {
+    return (jsonDecode(JsonString) as List).map((i) => SalesPlanModel.FromJson(i)).toList();
   }
 }

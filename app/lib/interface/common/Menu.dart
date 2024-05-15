@@ -1,14 +1,14 @@
-// ignore_for_file: non_constant_identifier_names, must_be_immutable
+// ignore_for_file: non_constant_identifier_names, must_be_immutable, file_names
 
 import 'package:flutter/material.dart';
 import 'package:app/common/File.dart';
 import 'package:app/interface/common/PubLib.dart';
 import 'package:app/interface/common/Routes.dart';
 
-Drawer ActionMenu(BuildContext context) {
+Drawer ActionMenu(BuildContext Context) {
   // bool Master = bool.parse(FileHelper().JsonRead(key: 'master'));
 
-  dynamic MenuHeader(BuildContext context) {
+  dynamic MenuHeader(BuildContext Context) {
     return SizedBox(
       height: 80,
       width: double.infinity,
@@ -31,13 +31,13 @@ Drawer ActionMenu(BuildContext context) {
                     height: 53,
                     width: 53,
                     child: CircleAvatar(
-                      backgroundColor: BgColor(context),
-                      child: Text(FileHelper().JsonRead(key: 'account').substring(0, 2), style: TxStyle(fontSize: 24), maxLines: 1, overflow: TextOverflow.ellipsis),
+                      backgroundColor: BgColor(Context),
+                      child: Text(FileHelper().JsonRead(Key: 'account').substring(0, 2), style: TxStyle(FontSize: 24), maxLines: 1, overflow: TextOverflow.ellipsis),
                     ),
                   ),
                 ),
                 onTap: () async {
-                  Navigator.of(context).push(Routes().generate(context, '/personal/settings'));
+                  Navigator.of(Context).push(Routes().Generate(Context, '/personal/settings'));
                 },
               ),
             ),
@@ -48,7 +48,7 @@ Drawer ActionMenu(BuildContext context) {
     );
   }
 
-  dynamic MenuFooter(BuildContext context) {
+  dynamic MenuFooter(BuildContext Context) {
     return Tooltip(
       message: 'out',
       textStyle: TxStyle(),
@@ -59,7 +59,7 @@ Drawer ActionMenu(BuildContext context) {
           style: ButtonStyle(
             shape: MaterialStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.circular(0.0))),
             backgroundColor: MaterialStateProperty.resolveWith<Color>((states) {
-              return BgColor(context);
+              return BgColor(Context);
             }),
           ),
           child: Row(
@@ -71,32 +71,10 @@ Drawer ActionMenu(BuildContext context) {
             ],
           ),
           onLongPress: () async {
-            FileHelper().JsonWrite(key: 'account', value: '');
-            // userNotifier.signOut(url: appUrl).then((value) {
-            //   if (value.state == true) {
-            //     if (FileHelper().delFile('token')) {
-            //       exit(0);
-            //     }
-            //   } else {
-            //     showSnackBar(context, content: value.message, backgroundColor: bgColor(context));
-            //   }
-            // });
+            FileHelper().JsonWrite(Key: 'account', Value: '');
           },
           onPressed: () async {
-            FileHelper().JsonWrite(key: 'account', value: '');
-            // userNotifier.signOut(url: appUrl).then((value) {
-            //   if (value.state == true) {
-            //     if (FileHelper().delFile('token')) {
-            //       Navigator.pushAndRemoveUntil(
-            //         context,
-            //         MaterialPageRoute(builder: (context) => IndexPage(title: appTitle)),
-            //         (route) => false,
-            //       );
-            //     }
-            //   } else {
-            //     showSnackBar(context, content: value.message, backgroundColor: bgColor(context));
-            //   }
-            // });
+            FileHelper().JsonWrite(Key: 'account', Value: '');
           },
         ),
       ),
@@ -104,11 +82,11 @@ Drawer ActionMenu(BuildContext context) {
   }
 
   return Drawer(
-    width: ScreenSize(context).width > 800 ? ScreenSize(context).width * 0.2 : ScreenSize(context).width * 0.45,
+    width: ScreenSize(Context).width > 800 ? ScreenSize(Context).width * 0.2 : ScreenSize(Context).width * 0.45,
     backgroundColor: Colors.black54,
     child: Column(
       children: [
-        MenuHeader(context),
+        MenuHeader(Context),
         Expanded(
           child: ListView(
             padding: const EdgeInsets.all(0),
@@ -118,7 +96,7 @@ Drawer ActionMenu(BuildContext context) {
                 leading: Icon(Icons.home, size: IconSize, color: IconColor),
                 title: Text('home', style: TxStyle(), maxLines: 1, overflow: TextOverflow.ellipsis),
                 onTap: () async {
-                  Navigator.of(context).push(Routes().generate(context, '/'));
+                  Navigator.of(Context).push(Routes().Generate(Context, '/'));
                 },
               ),
               ListTile(
@@ -126,14 +104,14 @@ Drawer ActionMenu(BuildContext context) {
                 leading: Icon(Icons.cloud_upload, size: IconSize, color: IconColor),
                 title: Text('upload', style: TxStyle(), maxLines: 1, overflow: TextOverflow.ellipsis),
                 onTap: () async {
-                  Navigator.of(context).push(Routes().generate(context, '/uploading'));
+                  Navigator.of(Context).push(Routes().Generate(Context, '/uploading'));
                 },
               ),
             ],
           ),
         ),
         ListTile(horizontalTitleGap: 10, title: Text('v 0.1.0', style: TxStyle(), maxLines: 1, overflow: TextOverflow.ellipsis)),
-        MenuFooter(context),
+        MenuFooter(Context),
       ],
     ),
   );

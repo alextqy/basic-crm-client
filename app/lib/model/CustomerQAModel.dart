@@ -17,18 +17,17 @@ class CustomerQAModel {
     this.CreationTime = 0,
   });
 
-  factory CustomerQAModel.fromJson(Map<String, dynamic> json) {
+  factory CustomerQAModel.FromJson(Map<String, dynamic> Json) {
     return CustomerQAModel(
-      ID: json['ID'],
-      Title: json['Title'],
-      Content: json['Content'],
-      Display: json['Display'],
-      CreationTime: json['CreationTime'],
+      ID: Json['ID'],
+      Title: Json['Title'],
+      Content: Json['Content'],
+      Display: Json['Display'],
+      CreationTime: Json['CreationTime'],
     );
   }
 
-  List<CustomerQAModel> fromJsonList(String jsonString) {
-    List<CustomerQAModel> dataList = (jsonDecode(jsonString) as List).map((i) => CustomerQAModel.fromJson(i)).toList();
-    return dataList;
+  List<CustomerQAModel> FromJsonList(String JsonString) {
+    return (jsonDecode(JsonString) as List).map((i) => CustomerQAModel.FromJson(i)).toList();
   }
 }

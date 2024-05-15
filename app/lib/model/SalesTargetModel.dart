@@ -23,21 +23,20 @@ class SalesTargetModel {
     this.Remark = '',
   });
 
-  factory SalesTargetModel.fromJson(Map<String, dynamic> json) {
+  factory SalesTargetModel.FromJson(Map<String, dynamic> Json) {
     return SalesTargetModel(
-      ID: json['ID'],
-      TargetName: json['TargetName'],
-      ExpirationDate: json['ExpirationDate'],
-      CreationTime: json['CreationTime'],
-      AchievementRate: json['AchievementRate'],
-      CustomerID: json['CustomerID'],
-      ManagerID: json['ManagerID'],
-      Remark: json['Remark'],
+      ID: Json['ID'],
+      TargetName: Json['TargetName'],
+      ExpirationDate: Json['ExpirationDate'],
+      CreationTime: Json['CreationTime'],
+      AchievementRate: Json['AchievementRate'],
+      CustomerID: Json['CustomerID'],
+      ManagerID: Json['ManagerID'],
+      Remark: Json['Remark'],
     );
   }
 
-  List<SalesTargetModel> fromJsonList(String jsonString) {
-    List<SalesTargetModel> dataList = (jsonDecode(jsonString) as List).map((i) => SalesTargetModel.fromJson(i)).toList();
-    return dataList;
+  List<SalesTargetModel> FromJsonList(String JsonString) {
+    return (jsonDecode(JsonString) as List).map((i) => SalesTargetModel.FromJson(i)).toList();
   }
 }

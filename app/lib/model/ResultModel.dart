@@ -13,12 +13,12 @@ class ResultModel {
     this.Data = '',
   });
 
-  factory ResultModel.fromJson(Map<String, dynamic> json) {
+  factory ResultModel.FromJson(Map<String, dynamic> Json) {
     return ResultModel(
-      State: json['State'],
-      Code: json['Code'],
-      Message: json['Message'],
-      Data: json['Data'],
+      State: Json['State'],
+      Code: Json['Code'],
+      Message: Json['Message'],
+      Data: Json['Data'],
     );
   }
 }

@@ -21,20 +21,19 @@ class SupplierModel {
     this.CreationTime = 0,
   });
 
-  factory SupplierModel.fromJson(Map<String, dynamic> json) {
+  factory SupplierModel.FromJson(Map<String, dynamic> Json) {
     return SupplierModel(
-      ID: json['ID'],
-      Name: json['Name'],
-      Email: json['Email'],
-      Tel: json['Tel'],
-      Address: json['Address'],
-      SupplierInfo: json['SupplierInfo'],
-      CreationTime: json['CreationTime'],
+      ID: Json['ID'],
+      Name: Json['Name'],
+      Email: Json['Email'],
+      Tel: Json['Tel'],
+      Address: Json['Address'],
+      SupplierInfo: Json['SupplierInfo'],
+      CreationTime: Json['CreationTime'],
     );
   }
 
-  List<SupplierModel> fromJsonList(String jsonString) {
-    List<SupplierModel> dataList = (jsonDecode(jsonString) as List).map((i) => SupplierModel.fromJson(i)).toList();
-    return dataList;
+  List<SupplierModel> FromJsonList(String JsonString) {
+    return (jsonDecode(JsonString) as List).map((i) => SupplierModel.FromJson(i)).toList();
   }
 }

@@ -19,15 +19,15 @@ class ResultListModel {
     this.Data = '',
   });
 
-  factory ResultListModel.fromJson(Map<String, dynamic> json) {
+  factory ResultListModel.FromJson(Map<String, dynamic> Json) {
     return ResultListModel(
-      State: json['State'],
-      Code: json['Code'],
-      Message: json['Message'],
-      Page: json['Page'],
-      PageSize: json['PageSize'],
-      TotalPage: json['TotalPage'],
-      Data: json['Data'],
+      State: Json['State'],
+      Code: Json['Code'],
+      Message: Json['Message'],
+      Page: Json['Page'],
+      PageSize: Json['PageSize'],
+      TotalPage: Json['TotalPage'],
+      Data: Json['Data'],
     );
   }
 }

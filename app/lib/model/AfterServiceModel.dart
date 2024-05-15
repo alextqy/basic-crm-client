@@ -25,22 +25,21 @@ class AfterServiceModel {
     this.CreationTime = 0,
   });
 
-  factory AfterServiceModel.fromJson(Map<String, dynamic> json) {
+  factory AfterServiceModel.FromJson(Map<String, dynamic> Json) {
     return AfterServiceModel(
-      ID: json['ID'],
-      Account: json['Account'],
-      Password: json['Password'],
-      Name: json['Name'],
-      Level: json['Level'],
-      Status: json['Status'],
-      Remark: json['Remark'],
-      Token: json['Token'],
-      CreationTime: json['CreationTime'],
+      ID: Json['ID'],
+      Account: Json['Account'],
+      Password: Json['Password'],
+      Name: Json['Name'],
+      Level: Json['Level'],
+      Status: Json['Status'],
+      Remark: Json['Remark'],
+      Token: Json['Token'],
+      CreationTime: Json['CreationTime'],
     );
   }
 
-  List<AfterServiceModel> fromJsonList(String jsonString) {
-    List<AfterServiceModel> dataList = (jsonDecode(jsonString) as List).map((i) => AfterServiceModel.fromJson(i)).toList();
-    return dataList;
+  List<AfterServiceModel> FromJsonList(String JsonString) {
+    return (jsonDecode(JsonString) as List).map((i) => AfterServiceModel.FromJson(i)).toList();
   }
 }

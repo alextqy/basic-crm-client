@@ -1,6 +1,5 @@
 // ignore_for_file: file_names, non_constant_identifier_names
 
-import 'dart:convert';
 import 'package:http/http.dart';
 import 'package:app/api/BaseApi.dart';
 import 'package:app/common/File.dart';
@@ -14,10 +13,10 @@ class GroupApi extends BaseApi {
     required Remark,
     required ID,
   }) async {
-    Response response = await post(
+    Response Resp = await post(
       Uri.http(URL, '/group/new'),
       body: {
-        'Token': FileHelper().Read('Token'),
+        'Token': FileHelper().JsonRead(Key: 'Token'),
         'GroupName': GroupName.toString(),
         'Remark': Remark.toString(),
         'ID': ID.toString(),
@@ -25,7 +24,7 @@ class GroupApi extends BaseApi {
       headers: PostHeaders,
       encoding: PostEncoding,
     ).timeout(Duration(seconds: Timeout));
-    return ResultModel.fromJson(jsonDecode(Decoder.convert(response.bodyBytes)));
+    return DeJson(Resp);
   }
 
   Future<ResultListModel> GroupList({
@@ -35,10 +34,10 @@ class GroupApi extends BaseApi {
     required Order,
     required Stext,
   }) async {
-    Response response = await post(
+    Response Resp = await post(
       Uri.http(URL, '/group/list'),
       body: {
-        'Token': FileHelper().Read('Token'),
+        'Token': FileHelper().JsonRead(Key: 'Token'),
         'Page': Page.toString(),
         'PageSize': PageSize.toString(),
         'Order': Order.toString(),
@@ -47,7 +46,7 @@ class GroupApi extends BaseApi {
       headers: PostHeaders,
       encoding: PostEncoding,
     ).timeout(Duration(seconds: Timeout));
-    return ResultListModel.fromJson(jsonDecode(Decoder.convert(response.bodyBytes)));
+    return DeJson(Resp);
   }
 
   Future<ResultModel> GroupAll({
@@ -55,48 +54,48 @@ class GroupApi extends BaseApi {
     required Order,
     required Stext,
   }) async {
-    Response response = await post(
+    Response Resp = await post(
       Uri.http(URL, '/group/all'),
       body: {
-        'Token': FileHelper().Read('Token'),
+        'Token': FileHelper().JsonRead(Key: 'Token'),
         'Order': Order.toString(),
         'Stext': Stext.toString(),
       },
       headers: PostHeaders,
       encoding: PostEncoding,
     ).timeout(Duration(seconds: Timeout));
-    return ResultModel.fromJson(jsonDecode(Decoder.convert(response.bodyBytes)));
+    return DeJson(Resp);
   }
 
   Future<ResultModel> GroupData({
     required URL,
     required ID,
   }) async {
-    Response response = await post(
+    Response Resp = await post(
       Uri.http(URL, '/group/data'),
       body: {
-        'Token': FileHelper().Read('Token'),
+        'Token': FileHelper().JsonRead(Key: 'Token'),
         'ID': ID.toString(),
       },
       headers: PostHeaders,
       encoding: PostEncoding,
     ).timeout(Duration(seconds: Timeout));
-    return ResultModel.fromJson(jsonDecode(Decoder.convert(response.bodyBytes)));
+    return DeJson(Resp);
   }
 
   Future<ResultModel> GroupDel({
     required URL,
     required ID,
   }) async {
-    Response response = await post(
+    Response Resp = await post(
       Uri.http(URL, '/group/del'),
       body: {
-        'Token': FileHelper().Read('Token'),
+        'Token': FileHelper().JsonRead(Key: 'Token'),
         'ID': ID.toString(),
       },
       headers: PostHeaders,
       encoding: PostEncoding,
     ).timeout(Duration(seconds: Timeout));
-    return ResultModel.fromJson(jsonDecode(Decoder.convert(response.bodyBytes)));
+    return DeJson(Resp);
   }
 }

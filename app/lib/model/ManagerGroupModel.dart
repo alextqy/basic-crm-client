@@ -15,17 +15,16 @@ class ManagerGroupModel {
     this.Remark = '',
   });
 
-  factory ManagerGroupModel.fromJson(Map<String, dynamic> json) {
+  factory ManagerGroupModel.FromJson(Map<String, dynamic> Json) {
     return ManagerGroupModel(
-      ID: json['ID'],
-      GroupName: json['GroupName'],
-      CreationTime: json['CreationTime'],
-      Remark: json['Remark'],
+      ID: Json['ID'],
+      GroupName: Json['GroupName'],
+      CreationTime: Json['CreationTime'],
+      Remark: Json['Remark'],
     );
   }
 
-  List<ManagerGroupModel> fromJsonList(String jsonString) {
-    List<ManagerGroupModel> dataList = (jsonDecode(jsonString) as List).map((i) => ManagerGroupModel.fromJson(i)).toList();
-    return dataList;
+  List<ManagerGroupModel> FromJsonList(String JsonString) {
+    return (jsonDecode(JsonString) as List).map((i) => ManagerGroupModel.FromJson(i)).toList();
   }
 }

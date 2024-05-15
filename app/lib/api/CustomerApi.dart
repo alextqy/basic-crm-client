@@ -1,6 +1,5 @@
 // ignore_for_file: file_names, non_constant_identifier_names
 
-import 'dart:convert';
 import 'package:http/http.dart';
 import 'package:app/api/BaseApi.dart';
 import 'package:app/common/File.dart';
@@ -22,10 +21,10 @@ class CustomerApi extends BaseApi {
     required Level,
     required ID,
   }) async {
-    Response response = await post(
+    Response Resp = await post(
       Uri.http(URL, '/customer/new'),
       body: {
-        'Token': FileHelper().Read('Token'),
+        'Token': FileHelper().JsonRead(Key: 'Token'),
         'Name': Name.toString(),
         'Birthday': Birthday.toString(),
         'Gender': Gender.toString(),
@@ -41,7 +40,7 @@ class CustomerApi extends BaseApi {
       headers: PostHeaders,
       encoding: PostEncoding,
     ).timeout(Duration(seconds: Timeout));
-    return ResultModel.fromJson(jsonDecode(Decoder.convert(response.bodyBytes)));
+    return DeJson(Resp);
   }
 
   Future<ResultListModel> CustomerList({
@@ -57,10 +56,10 @@ class CustomerApi extends BaseApi {
     required AfterServiceID,
     required Level,
   }) async {
-    Response response = await post(
+    Response Resp = await post(
       Uri.http(URL, '/customer/list'),
       body: {
-        'Token': FileHelper().Read('Token'),
+        'Token': FileHelper().JsonRead(Key: 'Token'),
         'Page': Page.toString(),
         'PageSize': PageSize.toString(),
         'Order': Order.toString(),
@@ -75,7 +74,7 @@ class CustomerApi extends BaseApi {
       headers: PostHeaders,
       encoding: PostEncoding,
     ).timeout(Duration(seconds: Timeout));
-    return ResultListModel.fromJson(jsonDecode(Decoder.convert(response.bodyBytes)));
+    return DeJson(Resp);
   }
 
   Future<ResultModel> CustomerAll({
@@ -89,10 +88,10 @@ class CustomerApi extends BaseApi {
     required AfterServiceID,
     required Level,
   }) async {
-    Response response = await post(
+    Response Resp = await post(
       Uri.http(URL, '/customer/all'),
       body: {
-        'Token': FileHelper().Read('Token'),
+        'Token': FileHelper().JsonRead(Key: 'Token'),
         'Order': Order.toString(),
         'Stext': Stext.toString(),
         'Gender': Gender.toString(),
@@ -105,38 +104,38 @@ class CustomerApi extends BaseApi {
       headers: PostHeaders,
       encoding: PostEncoding,
     ).timeout(Duration(seconds: Timeout));
-    return ResultModel.fromJson(jsonDecode(Decoder.convert(response.bodyBytes)));
+    return DeJson(Resp);
   }
 
   Future<ResultModel> CustomerData({
     required URL,
     required ID,
   }) async {
-    Response response = await post(
+    Response Resp = await post(
       Uri.http(URL, '/customer/data'),
       body: {
-        'Token': FileHelper().Read('Token'),
+        'Token': FileHelper().JsonRead(Key: 'Token'),
         'ID': ID.toString(),
       },
       headers: PostHeaders,
       encoding: PostEncoding,
     ).timeout(Duration(seconds: Timeout));
-    return ResultModel.fromJson(jsonDecode(Decoder.convert(response.bodyBytes)));
+    return DeJson(Resp);
   }
 
   Future<ResultModel> CustomerDel({
     required URL,
     required ID,
   }) async {
-    Response response = await post(
+    Response Resp = await post(
       Uri.http(URL, '/customer/del'),
       body: {
-        'Token': FileHelper().Read('Token'),
+        'Token': FileHelper().JsonRead(Key: 'Token'),
         'ID': ID.toString(),
       },
       headers: PostHeaders,
       encoding: PostEncoding,
     ).timeout(Duration(seconds: Timeout));
-    return ResultModel.fromJson(jsonDecode(Decoder.convert(response.bodyBytes)));
+    return DeJson(Resp);
   }
 }

@@ -27,23 +27,22 @@ class ManagerModel {
     this.GroupID = 0,
   });
 
-  factory ManagerModel.fromJson(Map<String, dynamic> json) {
+  factory ManagerModel.FromJson(Map<String, dynamic> Json) {
     return ManagerModel(
-      ID: json['ID'],
-      Account: json['Account'],
-      Password: json['Password'],
-      Name: json['Name'],
-      Level: json['Level'],
-      Status: json['Status'],
-      Remark: json['Remark'],
-      Token: json['Token'],
-      CreationTime: json['CreationTime'],
-      GroupID: json['GroupID'],
+      ID: Json['ID'],
+      Account: Json['Account'],
+      Password: Json['Password'],
+      Name: Json['Name'],
+      Level: Json['Level'],
+      Status: Json['Status'],
+      Remark: Json['Remark'],
+      Token: Json['Token'],
+      CreationTime: Json['CreationTime'],
+      GroupID: Json['GroupID'],
     );
   }
 
-  List<ManagerModel> fromJsonList(String jsonString) {
-    List<ManagerModel> dataList = (jsonDecode(jsonString) as List).map((i) => ManagerModel.fromJson(i)).toList();
-    return dataList;
+  List<ManagerModel> FromJsonList(String JsonString) {
+    return (jsonDecode(JsonString) as List).map((i) => ManagerModel.FromJson(i)).toList();
   }
 }

@@ -37,28 +37,27 @@ class OrderModel {
     this.Review = 0,
   });
 
-  factory OrderModel.fromJson(Map<String, dynamic> json) {
+  factory OrderModel.FromJson(Map<String, dynamic> Json) {
     return OrderModel(
-      ID: json['ID'],
-      OrderNo: json['OrderNo'],
-      ProductID: json['ProductID'],
-      ManagerID: json['ManagerID'],
-      CustomerID: json['CustomerID'],
-      DistributorID: json['DistributorID'],
-      OrderPrice: json['OrderPrice'],
-      ProductPrice: json['ProductPrice'],
-      ProductCost: json['ProductCost'],
-      Status: json['Status'],
-      Remark: json['Remark'],
-      CreationTime: json['CreationTime'],
-      OrderType: json['OrderType'],
-      Payment: json['Payment'],
-      Review: json['Review'],
+      ID: Json['ID'],
+      OrderNo: Json['OrderNo'],
+      ProductID: Json['ProductID'],
+      ManagerID: Json['ManagerID'],
+      CustomerID: Json['CustomerID'],
+      DistributorID: Json['DistributorID'],
+      OrderPrice: Json['OrderPrice'],
+      ProductPrice: Json['ProductPrice'],
+      ProductCost: Json['ProductCost'],
+      Status: Json['Status'],
+      Remark: Json['Remark'],
+      CreationTime: Json['CreationTime'],
+      OrderType: Json['OrderType'],
+      Payment: Json['Payment'],
+      Review: Json['Review'],
     );
   }
 
-  List<OrderModel> fromJsonList(String jsonString) {
-    List<OrderModel> dataList = (jsonDecode(jsonString) as List).map((i) => OrderModel.fromJson(i)).toList();
-    return dataList;
+  List<OrderModel> FromJsonList(String JsonString) {
+    return (jsonDecode(JsonString) as List).map((i) => OrderModel.FromJson(i)).toList();
   }
 }

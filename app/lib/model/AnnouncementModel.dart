@@ -19,19 +19,18 @@ class AnnouncementModel {
     this.CreationTime = 0,
   });
 
-  factory AnnouncementModel.fromJson(Map<String, dynamic> json) {
+  factory AnnouncementModel.FromJson(Map<String, dynamic> Json) {
     return AnnouncementModel(
-      ID: json['ID'],
-      Title: json['Title'],
-      Content: json['Content'],
-      AuthorID: json['AuthorID'],
-      Display: json['Display'],
-      CreationTime: json['CreationTime'],
+      ID: Json['ID'],
+      Title: Json['Title'],
+      Content: Json['Content'],
+      AuthorID: Json['AuthorID'],
+      Display: Json['Display'],
+      CreationTime: Json['CreationTime'],
     );
   }
 
-  List<AnnouncementModel> fromJsonList(String jsonString) {
-    List<AnnouncementModel> dataList = (jsonDecode(jsonString) as List).map((i) => AnnouncementModel.fromJson(i)).toList();
-    return dataList;
+  List<AnnouncementModel> FromJsonList(String JsonString) {
+    return (jsonDecode(JsonString) as List).map((i) => AnnouncementModel.FromJson(i)).toList();
   }
 }

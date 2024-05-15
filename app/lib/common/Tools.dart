@@ -1,10 +1,10 @@
-// ignore_for_file: non_constant_identifier_names
+// ignore_for_file: non_constant_identifier_names, file_names, library_prefixes
 
 import 'dart:io';
 import 'dart:convert';
 import 'dart:typed_data';
 import 'package:app/common/File.dart';
-import 'package:crypto/crypto.dart' as crypto;
+import 'package:crypto/crypto.dart' as Crypto;
 import 'package:flutter/material.dart';
 
 class ToolsHelper {
@@ -14,104 +14,103 @@ class ToolsHelper {
   }
 
   // 时间戳转时间
-  String TimestampToStr(int timestamp) {
-    if (timestamp == 0) return '';
-    if (timestamp.toString().length == 10) {
-      timestamp *= 1000;
+  String TimestampToStr(int Timestamp) {
+    if (Timestamp == 0) return '';
+    if (Timestamp.toString().length == 10) {
+      Timestamp *= 1000;
     }
-    return DateTime.fromMillisecondsSinceEpoch(timestamp).toLocal().toString().substring(0, 19);
+    return DateTime.fromMillisecondsSinceEpoch(Timestamp).toLocal().toString().substring(0, 19);
   }
 
   // 时间转时间戳 1970-01-01 00:00:00.00000
-  int StrToTimestamp(String timeStr) {
-    return DateTime.parse(timeStr).millisecondsSinceEpoch;
+  int StrToTimestamp(String TimeStr) {
+    return DateTime.parse(TimeStr).millisecondsSinceEpoch;
   }
 
   // 字符串md5
-  String MD5(String content) {
-    Uint8List data = const Utf8Encoder().convert(content);
-    crypto.Hash md5 = crypto.md5;
-    crypto.Digest digest = md5.convert(data);
-    return digest.toString();
+  String MD5(String Content) {
+    Uint8List Data = const Utf8Encoder().convert(Content);
+    Crypto.Hash Md5 = Crypto.md5;
+    Crypto.Digest Digest = Md5.convert(Data);
+    return Digest.toString();
   }
 
   // 字符串转二进制
-  Uint8List EncodeBytes(String s) {
-    List<int> encodedString = utf8.encode(s);
-    int encodedLength = encodedString.length;
-    ByteData data = ByteData(encodedLength + 4);
-    data.setUint32(0, encodedLength, Endian.big);
-    Uint8List bytes = data.buffer.asUint8List();
-    bytes.setRange(4, encodedLength + 4, encodedString);
-    return bytes;
+  Uint8List EncodeBytes(String S) {
+    List<int> EncodedString = utf8.encode(S);
+    int EncodedLength = EncodedString.length;
+    ByteData Data = ByteData(EncodedLength + 4);
+    Data.setUint32(0, EncodedLength, Endian.big);
+    Uint8List Bytes = Data.buffer.asUint8List();
+    Bytes.setRange(4, EncodedLength + 4, EncodedString);
+    return Bytes;
   }
 
   // 二进制转字符串
-  String DecodeBytes(Uint8List s) {
-    return utf8.decode(s);
+  String DecodeBytes(Uint8List S) {
+    return utf8.decode(S);
   }
 
   // 字符串格式化utf8
-  String EncodeUtf8(String s) {
-    Utf8Decoder decoder = const Utf8Decoder();
-    return decoder.convert(EncodeBytes(s));
+  String EncodeUtf8(String S) {
+    Utf8Decoder Decoder = const Utf8Decoder();
+    return Decoder.convert(EncodeBytes(S));
   }
 
   // 字符串转base64
-  String EncodeBase64(String s) {
-    return base64Encode(utf8.encode(s));
+  String EncodeBase64(String S) {
+    return base64Encode(utf8.encode(S));
   }
 
   // base64转字符串
-  String DecodeBase64(String s) {
-    return String.fromCharCodes(base64Decode(s));
+  String DecodeBase64(String S) {
+    return String.fromCharCodes(base64Decode(S));
   }
 
   // 字符串转二进制数组
-  List<int> EncodeByteList(List<dynamic> data) {
-    List<int> dataBit = [];
-    for (dynamic element in data) {
-      dataBit.add(element as int);
+  List<int> EncodeByteList(List<dynamic> Data) {
+    List<int> DataBit = [];
+    for (dynamic Element in Data) {
+      DataBit.add(Element as int);
     }
-    return dataBit;
+    return DataBit;
   }
 
   // 二进制数组转二进制
-  Uint8List ByteListToBytes(List<int> data) {
-    return Uint8List.fromList(data);
+  Uint8List ByteListToBytes(List<int> Data) {
+    return Uint8List.fromList(Data);
   }
 
   // 字符串指定位置插入指定符号
-  String StringInsertion(String str, int offs, String ins) {
-    String start = str.substring(0, offs);
-    start += ins;
-    String end = str.substring(offs, str.length);
-    return start + end;
+  String StringInsertion(String Str, int Offs, String Ins) {
+    String Start = Str.substring(0, Offs);
+    Start += Ins;
+    String End = Str.substring(Offs, Str.length);
+    return Start + End;
   }
 
   // UDP 客户端
-  Future<String> ClentUDP(int port) async {
-    RawDatagramSocket rawDgramSocket = await RawDatagramSocket.bind('0.0.0.0', port);
+  Future<String> ClentUDP(int Port) async {
+    RawDatagramSocket RawDgramSocket = await RawDatagramSocket.bind('0.0.0.0', Port);
     // rawDgramSocket.send(utf8.encode('hello,world!'), InternetAddress('0.0.0.0'), port);
-    await for (RawSocketEvent event in rawDgramSocket) {
-      if (event == RawSocketEvent.read) {
-        return utf8.decode(rawDgramSocket.receive()!.data);
+    await for (RawSocketEvent Event in RawDgramSocket) {
+      if (Event == RawSocketEvent.read) {
+        return utf8.decode(RawDgramSocket.receive()!.data);
       }
     }
     return '';
   }
 
   // 接口监听
-  Future<void> SocketListen(BuildContext context, int port, int s) async {
-    Duration timeoutDuration = Duration(milliseconds: s * 1000);
-    RawDatagramSocket rawDgramSocket = await RawDatagramSocket.bind('0.0.0.0', port);
-    rawDgramSocket.timeout(timeoutDuration, onTimeout: ((sink) {
-      rawDgramSocket.close();
+  Future<void> SocketListen(BuildContext Context, int Port, int S) async {
+    Duration TimeoutDuration = Duration(milliseconds: S * 1000);
+    RawDatagramSocket RawDgramSocket = await RawDatagramSocket.bind('0.0.0.0', Port);
+    RawDgramSocket.timeout(TimeoutDuration, onTimeout: ((sink) {
+      RawDgramSocket.close();
     })).listen((event) async {
       if (event == RawSocketEvent.read) {
-        var b = !FileHelper().JsonWrite(key: 'server_address', value: utf8.decode(rawDgramSocket.receive()!.data));
-        print(b);
-        rawDgramSocket.close();
+        var b = !FileHelper().JsonWrite(Key: 'server_address', Value: utf8.decode(RawDgramSocket.receive()!.data));
+        RawDgramSocket.close();
       }
     });
   }

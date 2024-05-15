@@ -1,6 +1,5 @@
 // ignore_for_file: file_names, non_constant_identifier_names
 
-import 'dart:convert';
 import 'package:http/http.dart';
 import 'package:app/api/BaseApi.dart';
 import 'package:app/common/File.dart';
@@ -17,10 +16,10 @@ class ManagerApi extends BaseApi {
     required GroupID,
     required ID,
   }) async {
-    Response response = await post(
+    Response Resp = await post(
       Uri.http(URL, '/manager/new'),
       body: {
-        'Token': FileHelper().Read('Token'),
+        'Token': FileHelper().JsonRead(Key: 'Token'),
         'Account': Account.toString(),
         'Password': Password.toString(),
         'Name': Name.toString(),
@@ -31,7 +30,7 @@ class ManagerApi extends BaseApi {
       headers: PostHeaders,
       encoding: PostEncoding,
     ).timeout(Duration(seconds: Timeout));
-    return ResultModel.fromJson(jsonDecode(Decoder.convert(response.bodyBytes)));
+    return DeJson(Resp);
   }
 
   Future<ResultListModel> ManagerList({
@@ -44,10 +43,10 @@ class ManagerApi extends BaseApi {
     required Status,
     required GroupID,
   }) async {
-    Response response = await post(
+    Response Resp = await post(
       Uri.http(URL, '/manager/list'),
       body: {
-        'Token': FileHelper().Read('Token'),
+        'Token': FileHelper().JsonRead(Key: 'Token'),
         'Page': Page.toString(),
         'PageSize': PageSize.toString(),
         'Order': Order.toString(),
@@ -59,7 +58,7 @@ class ManagerApi extends BaseApi {
       headers: PostHeaders,
       encoding: PostEncoding,
     ).timeout(Duration(seconds: Timeout));
-    return ResultListModel.fromJson(jsonDecode(Decoder.convert(response.bodyBytes)));
+    return DeJson(Resp);
   }
 
   Future<ResultModel> ManagerAll({
@@ -70,10 +69,10 @@ class ManagerApi extends BaseApi {
     required Status,
     required GroupID,
   }) async {
-    Response response = await post(
+    Response Resp = await post(
       Uri.http(URL, '/manager/all'),
       body: {
-        'Token': FileHelper().Read('Token'),
+        'Token': FileHelper().JsonRead(Key: 'Token'),
         'Order': Order.toString(),
         'Stext': Stext.toString(),
         'Level': Level.toString(),
@@ -83,55 +82,55 @@ class ManagerApi extends BaseApi {
       headers: PostHeaders,
       encoding: PostEncoding,
     ).timeout(Duration(seconds: Timeout));
-    return ResultModel.fromJson(jsonDecode(Decoder.convert(response.bodyBytes)));
+    return DeJson(Resp);
   }
 
   Future<ResultModel> ManagerData({
     required URL,
     required ID,
   }) async {
-    Response response = await post(
+    Response Resp = await post(
       Uri.http(URL, '/manager/data'),
       body: {
-        'Token': FileHelper().Read('Token'),
+        'Token': FileHelper().JsonRead(Key: 'Token'),
         'ID': ID.toString(),
       },
       headers: PostHeaders,
       encoding: PostEncoding,
     ).timeout(Duration(seconds: Timeout));
-    return ResultModel.fromJson(jsonDecode(Decoder.convert(response.bodyBytes)));
+    return DeJson(Resp);
   }
 
   Future<ResultModel> ManagerDel({
     required URL,
     required ID,
   }) async {
-    Response response = await post(
+    Response Resp = await post(
       Uri.http(URL, '/manager/del'),
       body: {
-        'Token': FileHelper().Read('Token'),
+        'Token': FileHelper().JsonRead(Key: 'Token'),
         'ID': ID.toString(),
       },
       headers: PostHeaders,
       encoding: PostEncoding,
     ).timeout(Duration(seconds: Timeout));
-    return ResultModel.fromJson(jsonDecode(Decoder.convert(response.bodyBytes)));
+    return DeJson(Resp);
   }
 
   Future<ResultModel> ManagerStatus({
     required URL,
     required ID,
   }) async {
-    Response response = await post(
+    Response Resp = await post(
       Uri.http(URL, '/manager/status'),
       body: {
-        'Token': FileHelper().Read('Token'),
+        'Token': FileHelper().JsonRead(Key: 'Token'),
         'ID': ID.toString(),
       },
       headers: PostHeaders,
       encoding: PostEncoding,
     ).timeout(Duration(seconds: Timeout));
-    return ResultModel.fromJson(jsonDecode(Decoder.convert(response.bodyBytes)));
+    return DeJson(Resp);
   }
 
   Future<ResultModel> ManagerSignIn({
@@ -139,7 +138,7 @@ class ManagerApi extends BaseApi {
     required Account,
     required Password,
   }) async {
-    Response response = await post(
+    Response Resp = await post(
       Uri.http(URL, '/manager/sign/in'),
       body: {
         'Account': Account.toString(),
@@ -148,21 +147,21 @@ class ManagerApi extends BaseApi {
       headers: PostHeaders,
       encoding: PostEncoding,
     ).timeout(Duration(seconds: Timeout));
-    return ResultModel.fromJson(jsonDecode(Decoder.convert(response.bodyBytes)));
+    return DeJson(Resp);
   }
 
   Future<ResultModel> ManagerSignOut({
     required URL,
   }) async {
-    Response response = await post(
+    Response Resp = await post(
       Uri.http(URL, '/manager/sign/out'),
       body: {
-        'Token': FileHelper().Read('Token'),
+        'Token': FileHelper().JsonRead(Key: 'Token'),
       },
       headers: PostHeaders,
       encoding: PostEncoding,
     ).timeout(Duration(seconds: Timeout));
-    return ResultModel.fromJson(jsonDecode(Decoder.convert(response.bodyBytes)));
+    return DeJson(Resp);
   }
 
   Future<ResultModel> ManagerUpdate({
@@ -172,10 +171,10 @@ class ManagerApi extends BaseApi {
     required Remark,
     required GroupID,
   }) async {
-    Response response = await post(
+    Response Resp = await post(
       Uri.http(URL, '/manager/update'),
       body: {
-        'Token': FileHelper().Read('Token'),
+        'Token': FileHelper().JsonRead(Key: 'Token'),
         'Password': Password.toString(),
         'Name': Name.toString(),
         'Remark': Remark.toString(),
@@ -184,6 +183,6 @@ class ManagerApi extends BaseApi {
       headers: PostHeaders,
       encoding: PostEncoding,
     ).timeout(Duration(seconds: Timeout));
-    return ResultModel.fromJson(jsonDecode(Decoder.convert(response.bodyBytes)));
+    return DeJson(Resp);
   }
 }

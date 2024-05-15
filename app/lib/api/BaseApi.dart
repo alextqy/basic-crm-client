@@ -1,6 +1,8 @@
 // ignore_for_file: file_names, non_constant_identifier_names
 
 import 'dart:convert';
+import 'package:http/http.dart';
+import 'package:app/model/ResultModel.dart';
 
 class BaseApi {
   Utf8Decoder Decoder = const Utf8Decoder();
@@ -19,4 +21,8 @@ class BaseApi {
     // 'Access-Control-Allow-Headers': 'x-requested-with, content-type',
   };
   Encoding? PostEncoding = Encoding.getByName('utf-8');
+
+  DeJson(Response Resp) {
+    ResultModel.FromJson(jsonDecode(Decoder.convert(Resp.bodyBytes)));
+  }
 }

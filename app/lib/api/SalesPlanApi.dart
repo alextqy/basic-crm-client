@@ -1,6 +1,5 @@
 // ignore_for_file: file_names, non_constant_identifier_names
 
-import 'dart:convert';
 import 'package:http/http.dart';
 import 'package:app/api/BaseApi.dart';
 import 'package:app/common/File.dart';
@@ -16,10 +15,10 @@ class SalesPlanApi extends BaseApi {
     required Budget,
     required ID,
   }) async {
-    Response response = await post(
+    Response Resp = await post(
       Uri.http(URL, '/sales/plan/new'),
       body: {
-        'Token': FileHelper().Read('Token'),
+        'Token': FileHelper().JsonRead(Key: 'Token'),
         'PlanName': PlanName.toString(),
         'TargetID': TargetID.toString(),
         'PlanContent': PlanContent.toString(),
@@ -29,7 +28,7 @@ class SalesPlanApi extends BaseApi {
       headers: PostHeaders,
       encoding: PostEncoding,
     ).timeout(Duration(seconds: Timeout));
-    return ResultModel.fromJson(jsonDecode(Decoder.convert(response.bodyBytes)));
+    return DeJson(Resp);
   }
 
   Future<ResultListModel> SalesPlanList({
@@ -42,10 +41,10 @@ class SalesPlanApi extends BaseApi {
     required Status,
     required ManagerID,
   }) async {
-    Response response = await post(
+    Response Resp = await post(
       Uri.http(URL, '/sales/plan/list'),
       body: {
-        'Token': FileHelper().Read('Token'),
+        'Token': FileHelper().JsonRead(Key: 'Token'),
         'Page': Page.toString(),
         'PageSize': PageSize.toString(),
         'Order': Order.toString(),
@@ -57,7 +56,7 @@ class SalesPlanApi extends BaseApi {
       headers: PostHeaders,
       encoding: PostEncoding,
     ).timeout(Duration(seconds: Timeout));
-    return ResultListModel.fromJson(jsonDecode(Decoder.convert(response.bodyBytes)));
+    return DeJson(Resp);
   }
 
   Future<ResultModel> SalesPlanAll({
@@ -68,10 +67,10 @@ class SalesPlanApi extends BaseApi {
     required Status,
     required ManagerID,
   }) async {
-    Response response = await post(
+    Response Resp = await post(
       Uri.http(URL, '/sales/plan/all'),
       body: {
-        'Token': FileHelper().Read('Token'),
+        'Token': FileHelper().JsonRead(Key: 'Token'),
         'Order': Order.toString(),
         'Stext': Stext.toString(),
         'TargetID': TargetID.toString(),
@@ -81,38 +80,38 @@ class SalesPlanApi extends BaseApi {
       headers: PostHeaders,
       encoding: PostEncoding,
     ).timeout(Duration(seconds: Timeout));
-    return ResultModel.fromJson(jsonDecode(Decoder.convert(response.bodyBytes)));
+    return DeJson(Resp);
   }
 
   Future<ResultModel> SalesPlanData({
     required URL,
     required ID,
   }) async {
-    Response response = await post(
+    Response Resp = await post(
       Uri.http(URL, '/sales/plan/data'),
       body: {
-        'Token': FileHelper().Read('Token'),
+        'Token': FileHelper().JsonRead(Key: 'Token'),
         'ID': ID.toString(),
       },
       headers: PostHeaders,
       encoding: PostEncoding,
     ).timeout(Duration(seconds: Timeout));
-    return ResultModel.fromJson(jsonDecode(Decoder.convert(response.bodyBytes)));
+    return DeJson(Resp);
   }
 
   Future<ResultModel> SalesPlanDel({
     required URL,
     required ID,
   }) async {
-    Response response = await post(
+    Response Resp = await post(
       Uri.http(URL, '/sales/plan/del'),
       body: {
-        'Token': FileHelper().Read('Token'),
+        'Token': FileHelper().JsonRead(Key: 'Token'),
         'ID': ID.toString(),
       },
       headers: PostHeaders,
       encoding: PostEncoding,
     ).timeout(Duration(seconds: Timeout));
-    return ResultModel.fromJson(jsonDecode(Decoder.convert(response.bodyBytes)));
+    return DeJson(Resp);
   }
 }

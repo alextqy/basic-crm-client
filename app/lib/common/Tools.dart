@@ -109,7 +109,7 @@ class ToolsHelper {
       RawDgramSocket.close();
     })).listen((event) async {
       if (event == RawSocketEvent.read) {
-        var b = !FileHelper().JsonWrite(Key: 'server_address', Value: utf8.decode(RawDgramSocket.receive()!.data));
+        FileHelper().JsonWrite(Key: 'server_address', Value: utf8.decode(RawDgramSocket.receive()!.data));
         RawDgramSocket.close();
       }
     });

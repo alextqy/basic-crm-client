@@ -1,4 +1,4 @@
-// ignore_for_file: file_names, non_constant_identifier_names
+// ignore_for_file: non_constant_identifier_names, file_names
 
 import 'package:http/http.dart';
 import 'package:app/api/BaseApi.dart';

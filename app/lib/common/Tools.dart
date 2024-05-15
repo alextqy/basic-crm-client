@@ -1,10 +1,10 @@
-// ignore_for_file: non_constant_identifier_names, file_names, library_prefixes
+// ignore_for_file: non_constant_identifier_names, file_names
 
 import 'dart:io';
 import 'dart:convert';
 import 'dart:typed_data';
 import 'package:app/common/File.dart';
-import 'package:crypto/crypto.dart' as Crypto;
+import 'package:crypto/crypto.dart' as crypto;
 import 'package:flutter/material.dart';
 
 class ToolsHelper {
@@ -30,8 +30,8 @@ class ToolsHelper {
   // 字符串md5
   String MD5(String Content) {
     Uint8List Data = const Utf8Encoder().convert(Content);
-    Crypto.Hash Md5 = Crypto.md5;
-    Crypto.Digest Digest = Md5.convert(Data);
+    crypto.Hash Md5 = crypto.md5;
+    crypto.Digest Digest = Md5.convert(Data);
     return Digest.toString();
   }
 

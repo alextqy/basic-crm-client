@@ -1,4 +1,4 @@
-// ignore_for_file: non_constant_identifier_names, avoid_renaming_method_parameters
+// ignore_for_file: non_constant_identifier_names, file_names, avoid_renaming_method_parameters
 
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';

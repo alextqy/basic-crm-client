@@ -1,4 +1,4 @@
-// ignore_for_file: non_constant_identifier_names, must_be_immutable, file_names, avoid_renaming_method_parameters, avoid_types_as_parameter_names
+// ignore_for_file: non_constant_identifier_names, file_names, must_be_immutable, avoid_types_as_parameter_names, avoid_renaming_method_parameters
 
 import 'dart:async';
 import 'package:flutter/material.dart';

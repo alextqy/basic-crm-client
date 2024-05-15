@@ -10,7 +10,7 @@ void SetConf() {
   if (!FileHelper().Exists('config.json')) {
     FileHelper().Write(
       'config.json',
-      '{"server": "", "broadcast": 8181, "lang": "en", "title": "BASIC CRM", "account": "", "level": 0, "Token": ""}',
+      '{"server": "", "broadcast": 8181, "lang": "en", "title": "BASIC CRM", "account": "", "level": 0, "token": ""}',
     );
   }
 }

@@ -77,6 +77,7 @@ class _StartPage extends State<StartPage> {
       width: 350,
       child: CupertinoSlidingSegmentedControl(
         groupValue: SegmentedControlValue,
+        thumbColor: BtnColor,
         children: <int, Widget>{
           0: Container(padding: const EdgeInsets.all(6), child: Text(Lang.Admin, style: TxStyle(FontSize: 13))),
           1: Container(padding: const EdgeInsets.all(6), child: Text(Lang.Manager, style: TxStyle(FontSize: 13))),
@@ -100,9 +101,64 @@ class _StartPage extends State<StartPage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            // const Expanded(child: SizedBox()),
+            Container(
+              height: 50,
+              width: 350,
+              padding: const EdgeInsets.all(0),
+              child: TextField(
+                style: TxStyle(),
+                decoration: InputDecoration(
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: const BorderRadius.all(Radius.circular(5)),
+                    borderSide: BorderSide(color: BtnColor, width: 2.5),
+                  ),
+                  focusedBorder: const OutlineInputBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(5)),
+                    borderSide: BorderSide(color: Colors.grey, width: 2.5),
+                  ),
+                  labelText: Lang.Account,
+                  labelStyle: TxStyle(),
+                ),
+              ),
+            ),
+            const SizedBox(height: 15),
+            Container(
+              height: 50,
+              width: 350,
+              padding: const EdgeInsets.all(0),
+              child: TextField(
+                style: TxStyle(),
+                obscureText: true,
+                decoration: InputDecoration(
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: const BorderRadius.all(Radius.circular(5)),
+                    borderSide: BorderSide(color: BtnColor, width: 2.5),
+                  ),
+                  focusedBorder: const OutlineInputBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(5)),
+                    borderSide: BorderSide(color: Colors.grey, width: 2.5),
+                  ),
+                  labelText: Lang.Password,
+                  labelStyle: TxStyle(),
+                ),
+              ),
+            ),
+            const SizedBox(height: 15),
             SegmentedControl(),
-            // const Expanded(child: SizedBox()),
+            const SizedBox(height: 15),
+            InkWell(
+              onTap: () {},
+              child: Container(
+                height: 35,
+                width: 350,
+                alignment: Alignment.center,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(5),
+                  color: BtnColor,
+                ),
+                child: Text(Lang.LogIn, style: TxStyle()),
+              ),
+            ),
           ],
         ),
       ),

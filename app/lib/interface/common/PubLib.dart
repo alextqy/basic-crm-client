@@ -20,6 +20,7 @@ double ToolbarHeight = 37;
 String AppTitle = FileHelper().JsonRead(Key: 'title');
 
 int ShowSpeed = 450;
+Color BtnColor = Colors.white30;
 double IconSize = 20;
 Color IconColor = Colors.white70;
 
@@ -47,7 +48,93 @@ Future<ClipboardData?> Paste() {
   return Clipboard.getData(Clipboard.kTextPlain);
 }
 
-Future<List<XFile>> FileSelector(List<String> xFType) async {
-  XTypeGroup xType = XTypeGroup(label: '', extensions: xFType);
-  return await openFiles(acceptedTypeGroups: [xType]);
+Future<List<XFile>> FileSelector(List<String> XFType) async {
+  XTypeGroup XType = XTypeGroup(label: '', extensions: XFType);
+  return await openFiles(acceptedTypeGroups: [XType]);
+}
+
+Widget SetTextField({
+  bool Enabled = true,
+  String HintText = '',
+  TextStyle HintStyle = const TextStyle(),
+  String LabelText = '',
+  TextStyle LabelStyle = const TextStyle(),
+  String HelperText = '',
+  TextStyle HelperStyle = const TextStyle(),
+  String ErrorText = '',
+  TextStyle ErrorStyle = const TextStyle(),
+  String PrefixText = '',
+  TextStyle PrefixStyle = const TextStyle(),
+  String SuffixText = '',
+  TextStyle SuffixStyle = const TextStyle(),
+  String CounterText = '',
+  TextStyle CounterStyle = const TextStyle(),
+}) {
+  return TextField(
+    /// 可编辑
+    enabled: Enabled,
+
+    /// 整体样式
+    decoration: InputDecoration(
+      /// 输入框内提示
+      hintText: HintText,
+      hintStyle: HintStyle,
+
+      /// 输入框边框提示
+      labelText: LabelText,
+      labelStyle: LabelStyle,
+
+      /// 输入框底部提示
+      helperText: HelperText,
+      helperStyle: HelperStyle,
+
+      /// 输入框底部提示 会覆盖helperText信息
+      errorText: ErrorText,
+      errorStyle: ErrorStyle,
+
+      /// 输入框获取焦点后的左侧提示
+      prefixText: PrefixText,
+      prefixStyle: PrefixStyle,
+
+      /// 输入框获取焦点后的右侧提示
+      suffixText: SuffixText,
+      suffixStyle: SuffixStyle,
+
+      /// 输入框右下角提示 多用于计数器
+      counterText: CounterText,
+      counterStyle: CounterStyle,
+
+      /// 输入框左侧图标
+      prefixIcon: Icon(Icons.phone, size: 20, color: Colors.white),
+
+      /// 输入框右侧图标
+      suffixIcon: Icon(Icons.close, size: 20, color: Colors.white),
+
+      /// 初始边框
+      /// InputBorder.none 无下划线
+      /// OutlineInputBorder 上下左右 都有边框
+      /// UnderlineInputBorder 只有下边框  默认使用的就是下边框
+      border: OutlineInputBorder(
+          borderRadius: BorderRadius.all(Radius.circular(0)), // 圆角角度
+          borderSide: BorderSide(color: Colors.transparent, width: 0.0)),
+
+      /// 输入边框
+      enabledBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.all(Radius.circular(0)), // 圆角角度
+        borderSide: BorderSide(color: Colors.transparent, width: 0.0),
+      ),
+
+      /// 失焦边框
+      disabledBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.all(Radius.circular(0)), // 圆角角度
+        borderSide: BorderSide(color: Colors.transparent, width: 0.0),
+      ),
+
+      /// 焦点边框
+      focusedBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.all(Radius.circular(0)), // 圆角角度
+        borderSide: BorderSide(color: Colors.transparent, width: 0.0),
+      ),
+    ),
+  );
 }

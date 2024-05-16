@@ -10,6 +10,9 @@ class LangHelper {
   String AfterService = '';
   String Loading = '';
   String Complete = '';
+  String Account = '';
+  String Password = '';
+  String LogIn = '';
 
   LangHelper() {
     LangType = FileHelper().JsonRead(Key: 'lang');
@@ -21,6 +24,9 @@ class LangHelper {
       AfterService = 'After Service';
       Loading = 'Loading';
       Complete = 'Complete';
+      Account = 'Account';
+      Password = 'Password';
+      LogIn = 'Log In';
     }
     if (LangType == 'cn') {
       Admin = '管理员';
@@ -28,6 +34,9 @@ class LangHelper {
       AfterService = '售后';
       Loading = '加载中';
       Complete = '完成';
+      Account = '账号';
+      Password = '密码';
+      LogIn = '登录';
     }
   }
 }

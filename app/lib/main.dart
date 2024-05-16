@@ -7,6 +7,7 @@ import 'package:app/notifier/AdminNotifier.dart';
 import 'package:app/notifier/ManagerNotifier.dart';
 import 'package:app/notifier/AfterServiceNotifier.dart';
 import 'package:app/interface/common/ShowAlertDialog.dart';
+import 'package:flutter/widgets.dart';
 
 void main() {
   runApp(const MainApp());
@@ -43,6 +44,8 @@ class _StartPage extends State<StartPage> {
   final AdminNotifier _AdminNotifier = AdminNotifier();
   final ManagerNotifier _ManagerNotifier = ManagerNotifier();
   final AfterServiceNotifier _AfterServiceNotifier = AfterServiceNotifier();
+  TextEditingController AccountController = TextEditingController();
+  TextEditingController PasswordController = TextEditingController();
   int SegmentedControlValue = 0;
 
   AdminListener() async {
@@ -106,6 +109,7 @@ class _StartPage extends State<StartPage> {
               width: 350,
               padding: const EdgeInsets.all(0),
               child: TextField(
+                controller: AccountController,
                 style: TxStyle(),
                 decoration: InputDecoration(
                   enabledBorder: OutlineInputBorder(
@@ -127,6 +131,7 @@ class _StartPage extends State<StartPage> {
               width: 350,
               padding: const EdgeInsets.all(0),
               child: TextField(
+                controller: PasswordController,
                 style: TxStyle(),
                 obscureText: true,
                 decoration: InputDecoration(
@@ -147,7 +152,6 @@ class _StartPage extends State<StartPage> {
             SegmentedControl(),
             const SizedBox(height: 15),
             InkWell(
-              onTap: () {},
               child: Container(
                 height: 35,
                 width: 350,
@@ -158,6 +162,10 @@ class _StartPage extends State<StartPage> {
                 ),
                 child: Text(Lang.LogIn, style: TxStyle()),
               ),
+              onTap: () {
+                print(AccountController.text);
+                print(PasswordController.text);
+              },
             ),
           ],
         ),

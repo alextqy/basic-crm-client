@@ -105,36 +105,37 @@ Widget SetTextField({
       counterStyle: CounterStyle,
 
       /// 输入框左侧图标
-      prefixIcon: Icon(Icons.phone, size: 20, color: Colors.white),
+      // prefixIcon: Icon(Icons.phone, size: 20, color: Colors.white),
 
       /// 输入框右侧图标
-      suffixIcon: Icon(Icons.close, size: 20, color: Colors.white),
+      // suffixIcon: Icon(Icons.close, size: 20, color: Colors.white),
 
       /// 初始边框
       /// InputBorder.none 无下划线
       /// OutlineInputBorder 上下左右 都有边框
       /// UnderlineInputBorder 只有下边框  默认使用的就是下边框
-      border: OutlineInputBorder(
-          borderRadius: BorderRadius.all(Radius.circular(0)), // 圆角角度
-          borderSide: BorderSide(color: Colors.transparent, width: 0.0)),
+      // border: OutlineInputBorder(
+      //   borderRadius: BorderRadius.all(Radius.circular(0)), // 圆角角度
+      //   borderSide: BorderSide(color: Colors.transparent, width: 0.0),
+      // ),
 
       /// 输入边框
-      enabledBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.all(Radius.circular(0)), // 圆角角度
-        borderSide: BorderSide(color: Colors.transparent, width: 0.0),
-      ),
+      // enabledBorder: OutlineInputBorder(
+      //   borderRadius: BorderRadius.all(Radius.circular(0)), // 圆角角度
+      //   borderSide: BorderSide(color: Colors.transparent, width: 0.0),
+      // ),
 
       /// 失焦边框
-      disabledBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.all(Radius.circular(0)), // 圆角角度
-        borderSide: BorderSide(color: Colors.transparent, width: 0.0),
-      ),
+      // disabledBorder: OutlineInputBorder(
+      //   borderRadius: BorderRadius.all(Radius.circular(0)), // 圆角角度
+      //   borderSide: BorderSide(color: Colors.transparent, width: 0.0),
+      // ),
 
       /// 焦点边框
-      focusedBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.all(Radius.circular(0)), // 圆角角度
-        borderSide: BorderSide(color: Colors.transparent, width: 0.0),
-      ),
+      // focusedBorder: OutlineInputBorder(
+      //   borderRadius: BorderRadius.all(Radius.circular(0)), // 圆角角度
+      //   borderSide: BorderSide(color: Colors.transparent, width: 0.0),
+      // ),
     ),
   );
 }

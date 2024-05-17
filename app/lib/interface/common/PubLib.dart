@@ -10,7 +10,7 @@ void SetConf() {
   if (!FileHelper().Exists('config.json')) {
     FileHelper().Write(
       'config.json',
-      '{"server": "", "broadcast": 8181, "lang": "en", "title": "BASIC CRM", "account": "", "level": 0, "token": ""}',
+      '{"server": "", "broadcast": 8001, "lang": "en", "title": "BASIC CRM", "account": "", "level": 0, "token": ""}',
     );
   }
 }
@@ -19,25 +19,26 @@ LangHelper Lang = LangHelper();
 double ToolbarHeight = 37;
 String AppTitle = FileHelper().JsonRead(Key: 'title');
 
-int ShowSpeed = 450;
-Color BtnColor = Colors.white30;
-double IconSize = 20;
-Color IconColor = Colors.white70;
+Color MainColor = Colors.white30;
+Color WidgetColor = Colors.white70;
+Color BorderColor = Colors.white54;
+double BorderWidth = 2.5;
+double IconSize = 25;
 
-BoxDecoration TooltipStyle() {
-  return const BoxDecoration(borderRadius: BorderRadius.all(Radius.elliptical(10, 10)), color: Colors.black);
+Color ThemeColor(BuildContext Context) {
+  return Theme.of(Context).colorScheme.inversePrimary;
+}
+
+Size ScreenSize(BuildContext Context) {
+  return MediaQuery.of(Context).size;
 }
 
 TextStyle TxStyle({Color Color = Colors.white70, double FontSize = 15}) {
   return TextStyle(fontWeight: FontWeight.bold, color: Color, fontSize: FontSize, textBaseline: TextBaseline.alphabetic);
 }
 
-Color BgColor(BuildContext Context) {
-  return Theme.of(Context).colorScheme.inversePrimary;
-}
-
-Size ScreenSize(BuildContext Context) {
-  return MediaQuery.of(Context).size;
+BoxDecoration TooltipStyle() {
+  return const BoxDecoration(borderRadius: BorderRadius.all(Radius.elliptical(10, 10)), color: Colors.black);
 }
 
 void Copy(String Param) {
@@ -51,6 +52,16 @@ Future<ClipboardData?> Paste() {
 Future<List<XFile>> FileSelector(List<String> XFType) async {
   XTypeGroup XType = XTypeGroup(label: '', extensions: XFType);
   return await openFiles(acceptedTypeGroups: [XType]);
+}
+
+IconButton SetIconButton({required Icon I, required void Function()? F}) {
+  return IconButton(
+    icon: I,
+    splashColor: Colors.transparent,
+    highlightColor: Colors.transparent,
+    hoverColor: Colors.transparent,
+    onPressed: F,
+  );
 }
 
 Widget SetTextField({

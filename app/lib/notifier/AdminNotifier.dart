@@ -1,31 +1,15 @@
 // ignore_for_file: non_constant_identifier_names, file_names
 
+import 'package:app/model/ResultModel.dart';
 import 'package:app/notifier/BaseNotifier.dart';
 
 class AdminNotifier extends BaseNotifier {
-  void AdminSignIn({
+  Future<ResultModel> AdminSignIn({
     required URL,
     required Account,
     required Password,
   }) async {
-    OperationStatus = false;
-    OperationMemo = '';
-    OperationData = Null;
-    try {
-      await adminApi.AdminSignIn(
-        URL: URL,
-        Account: Account,
-        Password: Password,
-      ).then((Value) {
-        OperationStatus = Value.State;
-        OperationMemo = Value.Message;
-        OperationData = Value.Data;
-      });
-    } catch (e) {
-      OperationMemo = e.toString();
-    } finally {
-      notifyListeners();
-    }
+    return await adminApi.AdminSignIn(URL: URL, Account: Account, Password: Password);
   }
 
   void AdminSignOut({

@@ -31,7 +31,7 @@ Drawer ActionMenu(BuildContext Context) {
                     height: 53,
                     width: 53,
                     child: CircleAvatar(
-                      backgroundColor: BgColor(Context),
+                      backgroundColor: MainColor,
                       child: Text(FileHelper().JsonRead(Key: 'account').substring(0, 2), style: TxStyle(FontSize: 24), maxLines: 1, overflow: TextOverflow.ellipsis),
                     ),
                   ),
@@ -59,7 +59,7 @@ Drawer ActionMenu(BuildContext Context) {
           style: ButtonStyle(
             shape: MaterialStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.circular(0.0))),
             backgroundColor: MaterialStateProperty.resolveWith<Color>((states) {
-              return BgColor(Context);
+              return MainColor;
             }),
           ),
           child: Row(
@@ -67,7 +67,7 @@ Drawer ActionMenu(BuildContext Context) {
               const Expanded(child: SizedBox.shrink()),
               Text('exit', style: TxStyle(), maxLines: 1, overflow: TextOverflow.ellipsis),
               const SizedBox(width: 10),
-              Icon(Icons.exit_to_app, size: IconSize, color: IconColor),
+              Icon(Icons.exit_to_app, size: IconSize, color: WidgetColor),
             ],
           ),
           onLongPress: () async {
@@ -93,7 +93,7 @@ Drawer ActionMenu(BuildContext Context) {
             children: [
               ListTile(
                 horizontalTitleGap: 20,
-                leading: Icon(Icons.home, size: IconSize, color: IconColor),
+                leading: Icon(Icons.home, size: IconSize, color: WidgetColor),
                 title: Text('home', style: TxStyle(), maxLines: 1, overflow: TextOverflow.ellipsis),
                 onTap: () async {
                   Navigator.of(Context).push(Routes().Generate(Context, '/'));
@@ -101,7 +101,7 @@ Drawer ActionMenu(BuildContext Context) {
               ),
               ListTile(
                 horizontalTitleGap: 20,
-                leading: Icon(Icons.cloud_upload, size: IconSize, color: IconColor),
+                leading: Icon(Icons.cloud_upload, size: IconSize, color: WidgetColor),
                 title: Text('upload', style: TxStyle(), maxLines: 1, overflow: TextOverflow.ellipsis),
                 onTap: () async {
                   Navigator.of(Context).push(Routes().Generate(Context, '/uploading'));

@@ -37,7 +37,7 @@ import 'package:app/api/SupplierApi.dart';
 class BaseNotifier extends ChangeNotifier {
   bool OperationStatus = false;
   String OperationMemo = '';
-  dynamic OperationData = Null;
+  dynamic OperationData = '';
 
   /// MODEL ==========================================
   AdminModel adminModel = AdminModel();

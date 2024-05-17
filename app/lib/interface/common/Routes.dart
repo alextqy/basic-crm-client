@@ -2,12 +2,13 @@
 
 import 'package:flutter/material.dart';
 import 'package:app/interface/common/PubLib.dart';
+import 'package:app/interface/IndexPage.dart';
 
 class Routes {
   dynamic Generate(BuildContext Context, String RouteName, {dynamic Data}) {
     switch (RouteName) {
-      // case '/':
-      //   return MaterialPageRoute(builder: (context) => const HomePage());
+      case '/':
+        return MaterialPageRoute(builder: (Context) => const IndexPage());
       // case '/uploading':
       //   return MaterialPageRoute(builder: (context) => const UploadPage());
       default:
@@ -15,10 +16,10 @@ class Routes {
           builder: (Context) => Scaffold(
             appBar: AppBar(
               toolbarHeight: ToolbarHeight,
-              backgroundColor: BgColor(Context),
-              title: Text('Error', style: TxStyle(FontSize: 20), maxLines: 1, overflow: TextOverflow.ellipsis),
+              backgroundColor: MainColor,
+              title: Text(Lang.Error, style: TxStyle(FontSize: 20), maxLines: 1, overflow: TextOverflow.ellipsis),
             ),
-            body: Center(child: Text('ERROR', style: TxStyle(FontSize: 30), maxLines: 1, overflow: TextOverflow.ellipsis)),
+            body: Center(child: Text(Lang.Error, style: TxStyle(FontSize: 30), maxLines: 1, overflow: TextOverflow.ellipsis)),
           ),
         );
     }

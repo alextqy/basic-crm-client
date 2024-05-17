@@ -23,6 +23,6 @@ class BaseApi {
   Encoding? PostEncoding = Encoding.getByName('utf-8');
 
   DeJson(Response Resp) {
-    ResultModel.FromJson(jsonDecode(Decoder.convert(Resp.bodyBytes)));
+    return ResultModel.FromJson(jsonDecode(Decoder.convert(Resp.bodyBytes)));
   }
 }

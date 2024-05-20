@@ -15,6 +15,7 @@ class LangHelper {
   String Network = '';
   String LogIn = '';
   String Error = '';
+  String Exit = '';
 
   LangHelper() {
     LangType = FileHelper().JsonRead(Key: 'lang');
@@ -31,6 +32,7 @@ class LangHelper {
       Network = 'Network';
       LogIn = 'Log In';
       Error = 'Error';
+      Exit = 'Exit';
     }
     if (LangType == 'cn') {
       Admin = '管理员';
@@ -43,6 +45,7 @@ class LangHelper {
       Network = '网络';
       LogIn = '登录';
       Error = '错误';
+      Exit = '退出';
     }
   }
 }

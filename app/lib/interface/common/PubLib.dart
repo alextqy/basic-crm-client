@@ -22,6 +22,7 @@ String AppTitle = FileHelper().JsonRead(Key: 'title');
 Color MainColor = Colors.white30;
 Color WidgetColor = Colors.white70;
 Color BorderColor = Colors.white54;
+double BorderCircular = 5;
 double BorderWidth = 2.5;
 double IconSize = 25;
 
@@ -64,8 +65,10 @@ IconButton SetIconButton({required Icon I, required void Function()? F}) {
   );
 }
 
-Widget SetTextField({
+TextField SetTextField({
+  required TextEditingController Controller,
   bool Enabled = true,
+  TextStyle Style = const TextStyle(),
   String HintText = '',
   TextStyle HintStyle = const TextStyle(),
   String LabelText = '',
@@ -80,10 +83,30 @@ Widget SetTextField({
   TextStyle SuffixStyle = const TextStyle(),
   String CounterText = '',
   TextStyle CounterStyle = const TextStyle(),
+  Icon PrefixIcon = const Icon(null, size: 0),
+  Icon SuffixIcon = const Icon(null, size: 0),
+  double BorderCircular = 0,
+  double BorderWidth = 0,
+  Color BorderColor = Colors.transparent,
+  double EnabledCircular = 0,
+  double EnabledWidth = 0,
+  Color EnabledColor = Colors.transparent,
+  double DisabledCircular = 0,
+  double DisabledWidth = 0,
+  Color DisabledColor = Colors.transparent,
+  double FocusedCircular = 0,
+  double FocusedWidth = 0,
+  Color FocusedColor = Colors.transparent,
 }) {
   return TextField(
+    /// 控制器
+    controller: Controller,
+
     /// 可编辑
     enabled: Enabled,
+
+    /// 输入字体
+    style: Style,
 
     /// 整体样式
     decoration: InputDecoration(
@@ -116,37 +139,36 @@ Widget SetTextField({
       counterStyle: CounterStyle,
 
       /// 输入框左侧图标
-      // prefixIcon: Icon(Icons.phone, size: 20, color: Colors.white),
+      prefixIcon: PrefixIcon,
 
       /// 输入框右侧图标
-      // suffixIcon: Icon(Icons.close, size: 20, color: Colors.white),
+      suffixIcon: SuffixIcon,
 
       /// 初始边框
       /// InputBorder.none 无下划线
-      /// OutlineInputBorder 上下左右 都有边框
       /// UnderlineInputBorder 只有下边框  默认使用的就是下边框
-      // border: OutlineInputBorder(
-      //   borderRadius: BorderRadius.all(Radius.circular(0)), // 圆角角度
-      //   borderSide: BorderSide(color: Colors.transparent, width: 0.0),
-      // ),
+      border: OutlineInputBorder(
+        borderRadius: BorderRadius.all(Radius.circular(BorderCircular)), // 圆角角度
+        borderSide: BorderSide(width: BorderWidth, color: BorderColor),
+      ),
 
       /// 输入边框
-      // enabledBorder: OutlineInputBorder(
-      //   borderRadius: BorderRadius.all(Radius.circular(0)), // 圆角角度
-      //   borderSide: BorderSide(color: Colors.transparent, width: 0.0),
-      // ),
+      enabledBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.all(Radius.circular(EnabledCircular)), // 圆角角度
+        borderSide: BorderSide(width: EnabledWidth, color: EnabledColor),
+      ),
 
       /// 失焦边框
-      // disabledBorder: OutlineInputBorder(
-      //   borderRadius: BorderRadius.all(Radius.circular(0)), // 圆角角度
-      //   borderSide: BorderSide(color: Colors.transparent, width: 0.0),
-      // ),
+      disabledBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.all(Radius.circular(DisabledCircular)), // 圆角角度
+        borderSide: BorderSide(width: DisabledWidth, color: DisabledColor),
+      ),
 
       /// 焦点边框
-      // focusedBorder: OutlineInputBorder(
-      //   borderRadius: BorderRadius.all(Radius.circular(0)), // 圆角角度
-      //   borderSide: BorderSide(color: Colors.transparent, width: 0.0),
-      // ),
+      focusedBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.all(Radius.circular(FocusedCircular)), // 圆角角度
+        borderSide: BorderSide(width: FocusedWidth, color: FocusedColor),
+      ),
     ),
   );
 }

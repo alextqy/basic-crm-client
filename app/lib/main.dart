@@ -103,6 +103,16 @@ class _StartPage extends State<StartPage> {
 
     SetConf();
 
+    @override
+    void initState() {
+      super.initState();
+    }
+
+    @override
+    void dispose() {
+      super.dispose();
+    }
+
     return Scaffold(
       body: Center(
         child: Column(
@@ -118,11 +128,11 @@ class _StartPage extends State<StartPage> {
                 style: TxStyle(),
                 decoration: InputDecoration(
                   enabledBorder: OutlineInputBorder(
-                    borderRadius: const BorderRadius.all(Radius.circular(5)),
+                    borderRadius: BorderRadius.all(Radius.circular(BorderCircular)),
                     borderSide: BorderSide(color: MainColor, width: BorderWidth),
                   ),
                   focusedBorder: OutlineInputBorder(
-                    borderRadius: const BorderRadius.all(Radius.circular(5)),
+                    borderRadius: BorderRadius.all(Radius.circular(BorderCircular)),
                     borderSide: BorderSide(color: BorderColor, width: BorderWidth),
                   ),
                   labelText: Lang.Account,
@@ -142,11 +152,11 @@ class _StartPage extends State<StartPage> {
                 obscureText: true,
                 decoration: InputDecoration(
                   enabledBorder: OutlineInputBorder(
-                    borderRadius: const BorderRadius.all(Radius.circular(5)),
+                    borderRadius: BorderRadius.all(Radius.circular(BorderCircular)),
                     borderSide: BorderSide(color: MainColor, width: BorderWidth),
                   ),
                   focusedBorder: OutlineInputBorder(
-                    borderRadius: const BorderRadius.all(Radius.circular(5)),
+                    borderRadius: BorderRadius.all(Radius.circular(BorderCircular)),
                     borderSide: BorderSide(color: BorderColor, width: BorderWidth),
                   ),
                   labelText: Lang.Password,
@@ -168,11 +178,11 @@ class _StartPage extends State<StartPage> {
                     style: TxStyle(),
                     decoration: InputDecoration(
                       enabledBorder: OutlineInputBorder(
-                        borderRadius: const BorderRadius.all(Radius.circular(5)),
+                        borderRadius: BorderRadius.all(Radius.circular(BorderCircular)),
                         borderSide: BorderSide(color: MainColor, width: BorderWidth),
                       ),
                       focusedBorder: OutlineInputBorder(
-                        borderRadius: const BorderRadius.all(Radius.circular(5)),
+                        borderRadius: BorderRadius.all(Radius.circular(BorderCircular)),
                         borderSide: BorderSide(color: BorderColor, width: BorderWidth),
                       ),
                       labelText: Lang.Network,
@@ -207,7 +217,7 @@ class _StartPage extends State<StartPage> {
                 width: 350,
                 alignment: Alignment.center,
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(5),
+                  borderRadius: BorderRadius.circular(BorderCircular),
                   color: MainColor,
                 ),
                 child: Text(Lang.LogIn, style: TxStyle()),

@@ -19,7 +19,7 @@ class SupplierApi extends BaseApi {
     Response Resp = await post(
       Uri.http(URL, '/supplier/new'),
       body: {
-        'Token': FileHelper().JsonRead(Key: 'Token'),
+        'Token': FileHelper().JsonRead(Key: 'token'),
         'Name': Name.toString(),
         'Email': Email.toString(),
         'Tel': Tel.toString(),
@@ -43,7 +43,7 @@ class SupplierApi extends BaseApi {
     Response Resp = await post(
       Uri.http(URL, '/supplier/list'),
       body: {
-        'Token': FileHelper().JsonRead(Key: 'Token'),
+        'Token': FileHelper().JsonRead(Key: 'token'),
         'Page': Page.toString(),
         'PageSize': PageSize.toString(),
         'Order': Order.toString(),
@@ -63,7 +63,7 @@ class SupplierApi extends BaseApi {
     Response Resp = await post(
       Uri.http(URL, '/supplier/all'),
       body: {
-        'Token': FileHelper().JsonRead(Key: 'Token'),
+        'Token': FileHelper().JsonRead(Key: 'token'),
         'Order': Order.toString(),
         'Stext': Stext.toString(),
       },
@@ -80,7 +80,7 @@ class SupplierApi extends BaseApi {
     Response Resp = await post(
       Uri.http(URL, '/supplier/data'),
       body: {
-        'Token': FileHelper().JsonRead(Key: 'Token'),
+        'Token': FileHelper().JsonRead(Key: 'token'),
         'ID': ID.toString(),
       },
       headers: PostHeaders,
@@ -96,7 +96,7 @@ class SupplierApi extends BaseApi {
     Response Resp = await post(
       Uri.http(URL, '/supplier/del'),
       body: {
-        'Token': FileHelper().JsonRead(Key: 'Token'),
+        'Token': FileHelper().JsonRead(Key: 'token'),
         'ID': ID.toString(),
       },
       headers: PostHeaders,

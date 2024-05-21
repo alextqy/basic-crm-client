@@ -1,16 +1,17 @@
 // ignore_for_file: non_constant_identifier_names, file_names, avoid_renaming_method_parameters, unused_element, no_leading_underscores_for_local_identifiers
 
-import 'package:flutter/material.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:app/common/File.dart';
-import 'package:app/common/Tools.dart';
-import 'package:app/interface/common/PubLib.dart';
-import 'package:app/notifier/AdminNotifier.dart';
+import 'package:app/interface/IndexPage.dart';
+import 'package:app/model/AdminModel.dart';
+import 'package:app/interface/common/ShowAlertDialog.dart';
 import 'package:app/notifier/ManagerNotifier.dart';
 import 'package:app/notifier/AfterServiceNotifier.dart';
-import 'package:app/interface/common/ShowAlertDialog.dart';
-import 'package:app/model/AdminModel.dart';
-import 'package:app/interface/IndexPage.dart';
+import 'package:app/notifier/AdminNotifier.dart';
+import 'package:app/interface/common/PubLib.dart';
+import 'package:app/common/File.dart';
+import 'package:app/common/Tools.dart';
+import 'package:app/common/Lang.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 void main() {
   runApp(const MainApp());
@@ -25,8 +26,16 @@ class MainApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: '',
       theme: ThemeData(
-        useMaterial3: false,
-        brightness: Brightness.dark,
+        useMaterial3: true,
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: Colors.transparent,
+          brightness: Brightness.dark,
+          background: Colors.black,
+        ),
+        textTheme: TextTheme(
+          titleLarge: TxStyle(),
+          displayLarge: TxStyle(),
+        ),
       ),
       home: const StartPage(),
     );
@@ -50,9 +59,9 @@ class _StartPage extends State<StartPage> {
         groupValue: SegmentedControlValue,
         thumbColor: MainColor,
         children: <int, Widget>{
-          0: Container(padding: const EdgeInsets.all(6), child: Text(Lang.Admin, style: TxStyle(FontSize: 13))),
-          1: Container(padding: const EdgeInsets.all(6), child: Text(Lang.Manager, style: TxStyle(FontSize: 13))),
-          2: Container(padding: const EdgeInsets.all(6), child: Text(Lang.AfterService, style: TxStyle(FontSize: 13))),
+          0: Container(padding: const EdgeInsets.all(6), child: Text(LangHelper().Admin, style: TxStyle(FontSize: 13))),
+          1: Container(padding: const EdgeInsets.all(6), child: Text(LangHelper().Manager, style: TxStyle(FontSize: 13))),
+          2: Container(padding: const EdgeInsets.all(6), child: Text(LangHelper().AfterService, style: TxStyle(FontSize: 13))),
         },
         onValueChanged: (Value) {
           setState(() {
@@ -76,27 +85,27 @@ class _StartPage extends State<StartPage> {
     NetworkController.text = FileHelper().JsonRead(Key: 'server');
 
     AdminListener() async {
-      ShowSnackBar(Context, Content: Lang.Loading, BackgroundColor: MainColor, Durn: 1);
+      ShowSnackBar(Context, Content: LangHelper().Loading, BackgroundColor: MainColor, Durn: 1);
       if (_AdminNotifier.OperationStatus == true) {
-        ShowSnackBar(Context, Content: Lang.Complete, BackgroundColor: MainColor);
+        ShowSnackBar(Context, Content: LangHelper().Complete, BackgroundColor: MainColor);
       } else {
         ShowSnackBar(Context, Content: _AdminNotifier.OperationMemo, BackgroundColor: MainColor);
       }
     }
 
     ManagerListener() async {
-      ShowSnackBar(Context, Content: Lang.Loading, BackgroundColor: MainColor, Durn: 1);
+      ShowSnackBar(Context, Content: LangHelper().Loading, BackgroundColor: MainColor, Durn: 1);
       if (_ManagerNotifier.OperationStatus == true) {
-        ShowSnackBar(Context, Content: Lang.Complete, BackgroundColor: MainColor);
+        ShowSnackBar(Context, Content: LangHelper().Complete, BackgroundColor: MainColor);
       } else {
         ShowSnackBar(Context, Content: _ManagerNotifier.OperationMemo, BackgroundColor: MainColor);
       }
     }
 
     AfterServiceListener() async {
-      ShowSnackBar(Context, Content: Lang.Loading, BackgroundColor: MainColor, Durn: 1);
+      ShowSnackBar(Context, Content: LangHelper().Loading, BackgroundColor: MainColor, Durn: 1);
       if (_AfterServiceNotifier.OperationStatus == true) {
-        ShowSnackBar(Context, Content: Lang.Complete, BackgroundColor: MainColor);
+        ShowSnackBar(Context, Content: LangHelper().Complete, BackgroundColor: MainColor);
       } else {
         ShowSnackBar(Context, Content: _AfterServiceNotifier.OperationMemo, BackgroundColor: MainColor);
       }
@@ -136,7 +145,7 @@ class _StartPage extends State<StartPage> {
                     borderRadius: BorderRadius.all(Radius.circular(BorderCircular)),
                     borderSide: BorderSide(color: BorderColor, width: BorderWidth),
                   ),
-                  labelText: Lang.Account,
+                  labelText: LangHelper().Account,
                   labelStyle: TxStyle(),
                 ),
               ),
@@ -160,7 +169,7 @@ class _StartPage extends State<StartPage> {
                     borderRadius: BorderRadius.all(Radius.circular(BorderCircular)),
                     borderSide: BorderSide(color: BorderColor, width: BorderWidth),
                   ),
-                  labelText: Lang.Password,
+                  labelText: LangHelper().Password,
                   labelStyle: TxStyle(),
                 ),
               ),
@@ -186,7 +195,7 @@ class _StartPage extends State<StartPage> {
                         borderRadius: BorderRadius.all(Radius.circular(BorderCircular)),
                         borderSide: BorderSide(color: BorderColor, width: BorderWidth),
                       ),
-                      labelText: Lang.Network,
+                      labelText: LangHelper().Network,
                       labelStyle: TxStyle(),
                     ),
                   ),
@@ -198,10 +207,8 @@ class _StartPage extends State<StartPage> {
                     ToolsHelper().ClentUDP(int.parse(FileHelper().JsonRead(Key: 'broadcast'))).then((Value) {
                       if (Value.isNotEmpty) {
                         if (FileHelper().JsonWrite(Key: 'server', Value: Value)) {
-                          setState(() {
-                            NetworkController.text = Value;
-                            ShowSnackBar(Context, Content: Lang.Complete, BackgroundColor: MainColor);
-                          });
+                          NetworkController.text = Value;
+                          ShowSnackBar(Context, Content: LangHelper().Complete, BackgroundColor: MainColor);
                         }
                       }
                     });
@@ -221,7 +228,7 @@ class _StartPage extends State<StartPage> {
                   borderRadius: BorderRadius.circular(BorderCircular),
                   color: MainColor,
                 ),
-                child: Text(Lang.LogIn, style: TxStyle()),
+                child: Text(LangHelper().Login, style: TxStyle()),
               ),
               onTap: () {
                 if (NetworkController.text.isNotEmpty) {
@@ -229,14 +236,14 @@ class _StartPage extends State<StartPage> {
                     URL: FileHelper().JsonRead(Key: 'server'),
                     Account: AccountController.text,
                     Password: PasswordController.text,
-                  ).then((value) {
-                    if (value.State) {
-                      AdminModel Admin = AdminModel.FromJson(value.Data);
+                  ).then((Value) {
+                    if (Value.State) {
+                      AdminModel Admin = AdminModel.FromJson(Value.Data);
                       FileHelper().JsonWrite(Key: 'account', Value: Admin.Account);
                       FileHelper().JsonWrite(Key: 'token', Value: Admin.Token);
                       Navigator.pushAndRemoveUntil(Context, MaterialPageRoute(builder: (Context) => const IndexPage()), (route) => false);
                     } else {
-                      ShowSnackBar(Context, Content: value.Message, BackgroundColor: MainColor);
+                      ShowSnackBar(Context, Content: Value.Message, BackgroundColor: MainColor);
                     }
                   });
                 }

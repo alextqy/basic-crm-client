@@ -1,6 +1,5 @@
 // ignore_for_file: non_constant_identifier_names, file_names
 
-import 'package:app/common/Lang.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:file_selector/file_selector.dart';
@@ -15,7 +14,6 @@ void SetConf() {
   }
 }
 
-LangHelper Lang = LangHelper();
 double ToolbarHeight = 37;
 String AppTitle = FileHelper().JsonRead(Key: 'title');
 

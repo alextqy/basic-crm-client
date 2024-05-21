@@ -13,9 +13,10 @@ class LangHelper {
   String Account = '';
   String Password = '';
   String Network = '';
-  String LogIn = '';
+  String Login = '';
   String Error = '';
   String Exit = '';
+  String Home = '';
 
   LangHelper() {
     LangType = FileHelper().JsonRead(Key: 'lang');
@@ -30,9 +31,11 @@ class LangHelper {
       Account = 'Account';
       Password = 'Password';
       Network = 'Network';
-      LogIn = 'Log In';
+      Login = 'Log in';
       Error = 'Error';
       Exit = 'Exit';
+      Home = 'Home';
+      Admin = 'Admin';
     }
     if (LangType == 'cn') {
       Admin = '管理员';
@@ -43,9 +46,11 @@ class LangHelper {
       Account = '账号';
       Password = '密码';
       Network = '网络';
-      LogIn = '登录';
+      Login = '登录';
       Error = '错误';
       Exit = '退出';
+      Home = '首页';
+      Admin = '管理员';
     }
   }
 }

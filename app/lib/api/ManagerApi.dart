@@ -19,7 +19,7 @@ class ManagerApi extends BaseApi {
     Response Resp = await post(
       Uri.http(URL, '/manager/new'),
       body: {
-        'Token': FileHelper().JsonRead(Key: 'Token'),
+        'Token': FileHelper().JsonRead(Key: 'token'),
         'Account': Account.toString(),
         'Password': Password.toString(),
         'Name': Name.toString(),
@@ -46,7 +46,7 @@ class ManagerApi extends BaseApi {
     Response Resp = await post(
       Uri.http(URL, '/manager/list'),
       body: {
-        'Token': FileHelper().JsonRead(Key: 'Token'),
+        'Token': FileHelper().JsonRead(Key: 'token'),
         'Page': Page.toString(),
         'PageSize': PageSize.toString(),
         'Order': Order.toString(),
@@ -72,7 +72,7 @@ class ManagerApi extends BaseApi {
     Response Resp = await post(
       Uri.http(URL, '/manager/all'),
       body: {
-        'Token': FileHelper().JsonRead(Key: 'Token'),
+        'Token': FileHelper().JsonRead(Key: 'token'),
         'Order': Order.toString(),
         'Stext': Stext.toString(),
         'Level': Level.toString(),
@@ -92,7 +92,7 @@ class ManagerApi extends BaseApi {
     Response Resp = await post(
       Uri.http(URL, '/manager/data'),
       body: {
-        'Token': FileHelper().JsonRead(Key: 'Token'),
+        'Token': FileHelper().JsonRead(Key: 'token'),
         'ID': ID.toString(),
       },
       headers: PostHeaders,
@@ -108,7 +108,7 @@ class ManagerApi extends BaseApi {
     Response Resp = await post(
       Uri.http(URL, '/manager/del'),
       body: {
-        'Token': FileHelper().JsonRead(Key: 'Token'),
+        'Token': FileHelper().JsonRead(Key: 'token'),
         'ID': ID.toString(),
       },
       headers: PostHeaders,
@@ -124,7 +124,7 @@ class ManagerApi extends BaseApi {
     Response Resp = await post(
       Uri.http(URL, '/manager/status'),
       body: {
-        'Token': FileHelper().JsonRead(Key: 'Token'),
+        'Token': FileHelper().JsonRead(Key: 'token'),
         'ID': ID.toString(),
       },
       headers: PostHeaders,
@@ -156,7 +156,7 @@ class ManagerApi extends BaseApi {
     Response Resp = await post(
       Uri.http(URL, '/manager/sign/out'),
       body: {
-        'Token': FileHelper().JsonRead(Key: 'Token'),
+        'Token': FileHelper().JsonRead(Key: 'token'),
       },
       headers: PostHeaders,
       encoding: PostEncoding,
@@ -174,7 +174,7 @@ class ManagerApi extends BaseApi {
     Response Resp = await post(
       Uri.http(URL, '/manager/update'),
       body: {
-        'Token': FileHelper().JsonRead(Key: 'Token'),
+        'Token': FileHelper().JsonRead(Key: 'token'),
         'Password': Password.toString(),
         'Name': Name.toString(),
         'Remark': Remark.toString(),

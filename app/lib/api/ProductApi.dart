@@ -18,7 +18,7 @@ class ProductApi extends BaseApi {
     Response Resp = await post(
       Uri.http(URL, '/product/new'),
       body: {
-        'Token': FileHelper().JsonRead(Key: 'Token'),
+        'Token': FileHelper().JsonRead(Key: 'token'),
         'ProductName': ProductName.toString(),
         'Price': Price.toString(),
         'Cost': Cost.toString(),
@@ -42,7 +42,7 @@ class ProductApi extends BaseApi {
     Response Resp = await post(
       Uri.http(URL, '/product/list'),
       body: {
-        'Token': FileHelper().JsonRead(Key: 'Token'),
+        'Token': FileHelper().JsonRead(Key: 'token'),
         'Page': Page.toString(),
         'PageSize': PageSize.toString(),
         'Order': Order.toString(),
@@ -64,7 +64,7 @@ class ProductApi extends BaseApi {
     Response Resp = await post(
       Uri.http(URL, '/product/all'),
       body: {
-        'Token': FileHelper().JsonRead(Key: 'Token'),
+        'Token': FileHelper().JsonRead(Key: 'token'),
         'Order': Order.toString(),
         'Stext': Stext.toString(),
         'Status': Status.toString(),
@@ -82,7 +82,7 @@ class ProductApi extends BaseApi {
     Response Resp = await post(
       Uri.http(URL, '/product/data'),
       body: {
-        'Token': FileHelper().JsonRead(Key: 'Token'),
+        'Token': FileHelper().JsonRead(Key: 'token'),
         'ID': ID.toString(),
       },
       headers: PostHeaders,
@@ -98,7 +98,7 @@ class ProductApi extends BaseApi {
     Response Resp = await post(
       Uri.http(URL, '/product/del'),
       body: {
-        'Token': FileHelper().JsonRead(Key: 'Token'),
+        'Token': FileHelper().JsonRead(Key: 'token'),
         'ID': ID.toString(),
       },
       headers: PostHeaders,

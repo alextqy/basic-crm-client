@@ -30,7 +30,7 @@ class AdminApi extends BaseApi {
     Response Resp = await post(
       Uri.http(URL, '/admin/sign/out'),
       body: {
-        'Token': FileHelper().JsonRead(Key: 'Token'),
+        'Token': FileHelper().JsonRead(Key: 'token'),
       },
       headers: PostHeaders,
       encoding: PostEncoding,
@@ -49,7 +49,7 @@ class AdminApi extends BaseApi {
     Response Resp = await post(
       Uri.http(URL, '/admin/new'),
       body: {
-        'Token': FileHelper().JsonRead(Key: 'Token'),
+        'Token': FileHelper().JsonRead(Key: 'token'),
         'Account': Account.toString(),
         'Password': Password.toString(),
         'Name': Name.toString(),
@@ -74,7 +74,7 @@ class AdminApi extends BaseApi {
     Response Resp = await post(
       Uri.http(URL, '/admin/list'),
       body: {
-        'Token': FileHelper().JsonRead(Key: 'Token'),
+        'Token': FileHelper().JsonRead(Key: 'token'),
         'Page': Page.toString(),
         'PageSize': PageSize.toString(),
         'Order': Order.toString(),
@@ -98,7 +98,7 @@ class AdminApi extends BaseApi {
     Response Resp = await post(
       Uri.http(URL, '/admin/all'),
       body: {
-        'Token': FileHelper().JsonRead(Key: 'Token'),
+        'Token': FileHelper().JsonRead(Key: 'token'),
         'Order': Order.toString(),
         'Stext': Stext.toString(),
         'Level': Level.toString(),
@@ -117,7 +117,7 @@ class AdminApi extends BaseApi {
     Response Resp = await post(
       Uri.http(URL, '/admin/data'),
       body: {
-        'Token': FileHelper().JsonRead(Key: 'Token'),
+        'Token': FileHelper().JsonRead(Key: 'token'),
         'ID': ID.toString(),
       },
       headers: PostHeaders,
@@ -133,7 +133,7 @@ class AdminApi extends BaseApi {
     Response Resp = await post(
       Uri.http(URL, '/admin/del'),
       body: {
-        'Token': FileHelper().JsonRead(Key: 'Token'),
+        'Token': FileHelper().JsonRead(Key: 'token'),
         'ID': ID.toString(),
       },
       headers: PostHeaders,
@@ -149,7 +149,7 @@ class AdminApi extends BaseApi {
     Response Resp = await post(
       Uri.http(URL, '/admin/status'),
       body: {
-        'Token': FileHelper().JsonRead(Key: 'Token'),
+        'Token': FileHelper().JsonRead(Key: 'token'),
         'ID': ID.toString(),
       },
       headers: PostHeaders,

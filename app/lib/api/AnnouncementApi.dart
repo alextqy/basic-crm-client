@@ -16,7 +16,7 @@ class AnnouncementApi extends BaseApi {
     Response Resp = await post(
       Uri.http(URL, '/announcement/new'),
       body: {
-        'Token': FileHelper().JsonRead(Key: 'Token'),
+        'Token': FileHelper().JsonRead(Key: 'token'),
         'Title': Title.toString(),
         'Content': Content.toString(),
         'ID': ID.toString(),
@@ -39,7 +39,7 @@ class AnnouncementApi extends BaseApi {
     Response Resp = await post(
       Uri.http(URL, '/announcement/list'),
       body: {
-        'Token': FileHelper().JsonRead(Key: 'Token'),
+        'Token': FileHelper().JsonRead(Key: 'token'),
         'Page': Page.toString(),
         'PageSize': PageSize.toString(),
         'Order': Order.toString(),
@@ -63,7 +63,7 @@ class AnnouncementApi extends BaseApi {
     Response Resp = await post(
       Uri.http(URL, '/announcement/all'),
       body: {
-        'Token': FileHelper().JsonRead(Key: 'Token'),
+        'Token': FileHelper().JsonRead(Key: 'token'),
         'Order': Order.toString(),
         'Stext': Stext.toString(),
         'AuthorID': AuthorID.toString(),
@@ -82,7 +82,7 @@ class AnnouncementApi extends BaseApi {
     Response Resp = await post(
       Uri.http(URL, '/announcement/data'),
       body: {
-        'Token': FileHelper().JsonRead(Key: 'Token'),
+        'Token': FileHelper().JsonRead(Key: 'token'),
         'ID': ID.toString(),
       },
       headers: PostHeaders,
@@ -98,7 +98,7 @@ class AnnouncementApi extends BaseApi {
     Response Resp = await post(
       Uri.http(URL, '/announcement/del'),
       body: {
-        'Token': FileHelper().JsonRead(Key: 'Token'),
+        'Token': FileHelper().JsonRead(Key: 'token'),
         'ID': ID.toString(),
       },
       headers: PostHeaders,
@@ -114,7 +114,7 @@ class AnnouncementApi extends BaseApi {
     Response Resp = await post(
       Uri.http(URL, '/announcement/display'),
       body: {
-        'Token': FileHelper().JsonRead(Key: 'Token'),
+        'Token': FileHelper().JsonRead(Key: 'token'),
         'ID': ID.toString(),
       },
       headers: PostHeaders,

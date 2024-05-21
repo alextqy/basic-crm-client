@@ -18,7 +18,7 @@ class SalesTargetApi extends BaseApi {
     Response Resp = await post(
       Uri.http(URL, '/sales/target/new'),
       body: {
-        'Token': FileHelper().JsonRead(Key: 'Token'),
+        'Token': FileHelper().JsonRead(Key: 'token'),
         'TargetName': TargetName.toString(),
         'ExpirationDate': ExpirationDate.toString(),
         'CustomerID': CustomerID.toString(),
@@ -43,7 +43,7 @@ class SalesTargetApi extends BaseApi {
     Response Resp = await post(
       Uri.http(URL, '/sales/target/list'),
       body: {
-        'Token': FileHelper().JsonRead(Key: 'Token'),
+        'Token': FileHelper().JsonRead(Key: 'token'),
         'Page': Page.toString(),
         'PageSize': PageSize.toString(),
         'Order': Order.toString(),
@@ -67,7 +67,7 @@ class SalesTargetApi extends BaseApi {
     Response Resp = await post(
       Uri.http(URL, '/sales/target/all'),
       body: {
-        'Token': FileHelper().JsonRead(Key: 'Token'),
+        'Token': FileHelper().JsonRead(Key: 'token'),
         'Order': Order.toString(),
         'Stext': Stext.toString(),
         'CustomerID': CustomerID.toString(),
@@ -86,7 +86,7 @@ class SalesTargetApi extends BaseApi {
     Response Resp = await post(
       Uri.http(URL, '/sales/target/data'),
       body: {
-        'Token': FileHelper().JsonRead(Key: 'Token'),
+        'Token': FileHelper().JsonRead(Key: 'token'),
         'ID': ID.toString(),
       },
       headers: PostHeaders,
@@ -102,7 +102,7 @@ class SalesTargetApi extends BaseApi {
     Response Resp = await post(
       Uri.http(URL, '/sales/target/del'),
       body: {
-        'Token': FileHelper().JsonRead(Key: 'Token'),
+        'Token': FileHelper().JsonRead(Key: 'token'),
         'ID': ID.toString(),
       },
       headers: PostHeaders,

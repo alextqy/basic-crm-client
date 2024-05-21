@@ -5,25 +5,40 @@ import 'package:app/common/Lang.dart';
 import 'package:app/interface/common/PubLib.dart';
 import 'package:app/interface/common/Menu.dart';
 
-class IndexPage extends StatefulWidget {
-  const IndexPage({super.key});
+class AdminListPage extends StatefulWidget {
+  const AdminListPage({super.key});
 
   @override
-  State<IndexPage> createState() => _IndexPage();
+  State<AdminListPage> createState() => _AdminListPage();
 }
 
-class _IndexPage extends State<IndexPage> {
+class _AdminListPage extends State<AdminListPage> {
   @override
   Widget build(BuildContext Context) {
+    @override
+    void initState() {
+      super.initState();
+    }
+
+    @override
+    void dispose() {
+      super.dispose();
+    }
+
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
         toolbarHeight: 50,
         backgroundColor: MainColor,
-        title: Text(LangHelper().Title, style: TxStyle(), maxLines: 1, overflow: TextOverflow.ellipsis),
+        title: Text(LangHelper().Admin, style: TxStyle(), maxLines: 1, overflow: TextOverflow.ellipsis),
       ),
       endDrawer: ActionMenu(Context),
-      body: const Center(),
+      body: const Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [],
+        ),
+      ),
     );
   }
 }

@@ -16,7 +16,7 @@ class CompanyApi extends BaseApi {
     Response Resp = await post(
       Uri.http(URL, '/company/new'),
       body: {
-        'Token': FileHelper().JsonRead(Key: 'Token'),
+        'Token': FileHelper().JsonRead(Key: 'token'),
         'CompanyName': CompanyName.toString(),
         'Remark': Remark.toString(),
         'ID': ID.toString(),
@@ -37,7 +37,7 @@ class CompanyApi extends BaseApi {
     Response Resp = await post(
       Uri.http(URL, '/company/list'),
       body: {
-        'Token': FileHelper().JsonRead(Key: 'Token'),
+        'Token': FileHelper().JsonRead(Key: 'token'),
         'Page': Page.toString(),
         'PageSize': PageSize.toString(),
         'Order': Order.toString(),
@@ -57,7 +57,7 @@ class CompanyApi extends BaseApi {
     Response Resp = await post(
       Uri.http(URL, '/company/all'),
       body: {
-        'Token': FileHelper().JsonRead(Key: 'Token'),
+        'Token': FileHelper().JsonRead(Key: 'token'),
         'Order': Order.toString(),
         'Stext': Stext.toString(),
       },
@@ -74,7 +74,7 @@ class CompanyApi extends BaseApi {
     Response Resp = await post(
       Uri.http(URL, '/company/data'),
       body: {
-        'Token': FileHelper().JsonRead(Key: 'Token'),
+        'Token': FileHelper().JsonRead(Key: 'token'),
         'ID': ID.toString(),
       },
       headers: PostHeaders,
@@ -90,7 +90,7 @@ class CompanyApi extends BaseApi {
     Response Resp = await post(
       Uri.http(URL, '/company/del'),
       body: {
-        'Token': FileHelper().JsonRead(Key: 'Token'),
+        'Token': FileHelper().JsonRead(Key: 'token'),
         'ID': ID.toString(),
       },
       headers: PostHeaders,

@@ -1,14 +1,22 @@
-// ignore_for_file: non_constant_identifier_names, file_names
+// ignore_for_file: non_constant_identifier_names, file_names, avoid_renaming_method_parameters, unused_element, no_leading_underscores_for_local_identifiers
 
-import 'package:flutter/material.dart';
+import 'dart:io';
+
+import 'package:app/notifier/AdminNotifier.dart';
+import 'package:app/main.dart';
+import 'package:app/interface/common/ShowAlertDialog.dart';
+import 'package:app/common/Lang.dart';
 import 'package:app/common/File.dart';
 import 'package:app/interface/common/PubLib.dart';
 import 'package:app/interface/common/Routes.dart';
+import 'package:flutter/material.dart';
 
 Drawer ActionMenu(BuildContext Context) {
+  final AdminNotifier _AdminNotifier = AdminNotifier();
+
   dynamic MenuHeader(BuildContext Context) {
     return Container(
-      color: Colors.black,
+      color: MainColor,
       height: 50,
       width: double.infinity,
       child: DrawerHeader(
@@ -22,7 +30,7 @@ Drawer ActionMenu(BuildContext Context) {
               Container(
                 padding: const EdgeInsets.all(5),
                 child: Text(
-                  FileHelper().JsonRead(Key: 'account'),
+                  FileHelper().JsonRead(Key: 'account').toUpperCase(),
                   style: TxStyle(),
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
@@ -31,9 +39,6 @@ Drawer ActionMenu(BuildContext Context) {
               const SizedBox(width: 10),
             ],
           ),
-          onTap: () {
-            Navigator.of(Context).push(Routes().Generate(Context, '/'));
-          },
         ),
       ),
     );
@@ -49,19 +54,35 @@ Drawer ActionMenu(BuildContext Context) {
               padding: const EdgeInsets.all(5),
               height: 35,
               color: MainColor,
-              child: Text(Lang.Exit, style: TxStyle(), maxLines: 1, overflow: TextOverflow.ellipsis),
+              child: Text(LangHelper().Exit, style: TxStyle(), maxLines: 1, overflow: TextOverflow.ellipsis),
             ),
           ),
         ],
       ),
-      onLongPress: () {},
-      onTap: () {},
+      onLongPress: () {
+        _AdminNotifier.AdminSignOut(URL: FileHelper().JsonRead(Key: 'server')).then((Value) {
+          if (Value.State) {
+            FileHelper().JsonWrite(Key: 'token', Value: '');
+            Navigator.pushAndRemoveUntil(Context, MaterialPageRoute(builder: (Context) => const StartPage()), (route) => false);
+          }
+        });
+      },
+      onTap: () {
+        _AdminNotifier.AdminSignOut(URL: FileHelper().JsonRead(Key: 'server')).then((Value) {
+          if (Value.State) {
+            FileHelper().JsonWrite(Key: 'token', Value: '');
+            exit(0);
+          } else {
+            ShowSnackBar(Context, Content: Value.Message, BackgroundColor: MainColor);
+          }
+        });
+      },
     );
   }
 
   return Drawer(
     width: ScreenSize(Context).width > 800 ? ScreenSize(Context).width * 0.2 : ScreenSize(Context).width * 0.45,
-    // backgroundColor: Colors.transparent,
+    backgroundColor: Colors.transparent,
     child: Column(
       children: [
         MenuHeader(Context),
@@ -72,17 +93,17 @@ Drawer ActionMenu(BuildContext Context) {
               ListTile(
                 horizontalTitleGap: 20,
                 leading: Icon(Icons.home, size: IconSize, color: WidgetColor),
-                title: Text('home', style: TxStyle(), maxLines: 1, overflow: TextOverflow.ellipsis),
+                title: Text(LangHelper().Home, style: TxStyle(), maxLines: 1, overflow: TextOverflow.ellipsis),
                 onTap: () {
                   Navigator.of(Context).push(Routes().Generate(Context, '/'));
                 },
               ),
               ListTile(
                 horizontalTitleGap: 20,
-                leading: Icon(Icons.cloud_upload, size: IconSize, color: WidgetColor),
-                title: Text('upload', style: TxStyle(), maxLines: 1, overflow: TextOverflow.ellipsis),
+                leading: Icon(Icons.admin_panel_settings, size: IconSize, color: WidgetColor),
+                title: Text(LangHelper().Admin, style: TxStyle(), maxLines: 1, overflow: TextOverflow.ellipsis),
                 onTap: () {
-                  Navigator.of(Context).push(Routes().Generate(Context, '/'));
+                  Navigator.of(Context).push(Routes().Generate(Context, '/admin/list'));
                 },
               ),
             ],

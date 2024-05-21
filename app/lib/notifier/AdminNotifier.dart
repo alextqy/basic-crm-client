@@ -12,25 +12,10 @@ class AdminNotifier extends BaseNotifier {
     return await adminApi.AdminSignIn(URL: URL, Account: Account, Password: Password);
   }
 
-  void AdminSignOut({
+  Future<ResultModel> AdminSignOut({
     required URL,
   }) async {
-    OperationStatus = false;
-    OperationMemo = '';
-    OperationData = Null;
-    try {
-      await adminApi.AdminSignOut(
-        URL: URL,
-      ).then((Value) {
-        OperationStatus = Value.State;
-        OperationMemo = Value.Message;
-        OperationData = Value.Data;
-      });
-    } catch (e) {
-      OperationMemo = e.toString();
-    } finally {
-      notifyListeners();
-    }
+    return await adminApi.AdminSignOut(URL: URL);
   }
 
   void AdminNew({

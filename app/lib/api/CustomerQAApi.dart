@@ -16,7 +16,7 @@ class CustomerQAApi extends BaseApi {
     Response Resp = await post(
       Uri.http(URL, '/customer/qa/new'),
       body: {
-        'Token': FileHelper().JsonRead(Key: 'Token'),
+        'Token': FileHelper().JsonRead(Key: 'token'),
         'Title': Title.toString(),
         'Content': Content.toString(),
         'ID': ID.toString(),
@@ -38,7 +38,7 @@ class CustomerQAApi extends BaseApi {
     Response Resp = await post(
       Uri.http(URL, '/customer/qa/list'),
       body: {
-        'Token': FileHelper().JsonRead(Key: 'Token'),
+        'Token': FileHelper().JsonRead(Key: 'token'),
         'Page': Page.toString(),
         'PageSize': PageSize.toString(),
         'Order': Order.toString(),
@@ -60,7 +60,7 @@ class CustomerQAApi extends BaseApi {
     Response Resp = await post(
       Uri.http(URL, '/customer/qa/all'),
       body: {
-        'Token': FileHelper().JsonRead(Key: 'Token'),
+        'Token': FileHelper().JsonRead(Key: 'token'),
         'Order': Order.toString(),
         'Stext': Stext.toString(),
         'Display': Display.toString(),
@@ -78,7 +78,7 @@ class CustomerQAApi extends BaseApi {
     Response Resp = await post(
       Uri.http(URL, '/customer/qa/data'),
       body: {
-        'Token': FileHelper().JsonRead(Key: 'Token'),
+        'Token': FileHelper().JsonRead(Key: 'token'),
         'ID': ID.toString(),
       },
       headers: PostHeaders,
@@ -94,7 +94,7 @@ class CustomerQAApi extends BaseApi {
     Response Resp = await post(
       Uri.http(URL, '/customer/qa/del'),
       body: {
-        'Token': FileHelper().JsonRead(Key: 'Token'),
+        'Token': FileHelper().JsonRead(Key: 'token'),
         'ID': ID.toString(),
       },
       headers: PostHeaders,
@@ -110,7 +110,7 @@ class CustomerQAApi extends BaseApi {
     Response Resp = await post(
       Uri.http(URL, '/customer/qa/display'),
       body: {
-        'Token': FileHelper().JsonRead(Key: 'Token'),
+        'Token': FileHelper().JsonRead(Key: 'token'),
         'ID': ID.toString(),
       },
       headers: PostHeaders,

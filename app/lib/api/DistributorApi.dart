@@ -22,7 +22,7 @@ class DistributorApi extends BaseApi {
     Response Resp = await post(
       Uri.http(URL, '/distributor/new'),
       body: {
-        'Token': FileHelper().JsonRead(Key: 'Token'),
+        'Token': FileHelper().JsonRead(Key: 'token'),
         'Name': Name.toString(),
         'Email': Email.toString(),
         'Tel': Tel.toString(),
@@ -53,7 +53,7 @@ class DistributorApi extends BaseApi {
     Response Resp = await post(
       Uri.http(URL, '/distributor/list'),
       body: {
-        'Token': FileHelper().JsonRead(Key: 'Token'),
+        'Token': FileHelper().JsonRead(Key: 'token'),
         'Page': Page.toString(),
         'PageSize': PageSize.toString(),
         'Order': Order.toString(),
@@ -81,7 +81,7 @@ class DistributorApi extends BaseApi {
     Response Resp = await post(
       Uri.http(URL, '/distributor/all'),
       body: {
-        'Token': FileHelper().JsonRead(Key: 'Token'),
+        'Token': FileHelper().JsonRead(Key: 'token'),
         'Order': Order.toString(),
         'Stext': Stext.toString(),
         'CompanyID': CompanyID.toString(),
@@ -102,7 +102,7 @@ class DistributorApi extends BaseApi {
     Response Resp = await post(
       Uri.http(URL, '/distributor/data'),
       body: {
-        'Token': FileHelper().JsonRead(Key: 'Token'),
+        'Token': FileHelper().JsonRead(Key: 'token'),
         'ID': ID.toString(),
       },
       headers: PostHeaders,
@@ -118,7 +118,7 @@ class DistributorApi extends BaseApi {
     Response Resp = await post(
       Uri.http(URL, '/distributor/del'),
       body: {
-        'Token': FileHelper().JsonRead(Key: 'Token'),
+        'Token': FileHelper().JsonRead(Key: 'token'),
         'ID': ID.toString(),
       },
       headers: PostHeaders,

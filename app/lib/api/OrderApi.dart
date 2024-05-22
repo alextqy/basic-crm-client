@@ -78,7 +78,7 @@ class OrderApi extends BaseApi {
       headers: PostHeaders,
       encoding: PostEncoding,
     ).timeout(Duration(seconds: Timeout));
-    return DeJson(Resp);
+    return DeJsonList(Resp);
   }
 
   Future<ResultModel> OrderAll({

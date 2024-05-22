@@ -1,5 +1,6 @@
 // ignore_for_file: non_constant_identifier_names, file_names
 
+import 'package:app/model/ResultListModel.dart';
 import 'package:app/model/ResultModel.dart';
 import 'package:app/notifier/BaseNotifier.dart';
 
@@ -49,7 +50,7 @@ class AdminNotifier extends BaseNotifier {
     }
   }
 
-  void AdminList({
+  Future<ResultListModel> AdminList({
     required URL,
     required Page,
     required PageSize,
@@ -58,28 +59,15 @@ class AdminNotifier extends BaseNotifier {
     required Level,
     required Status,
   }) async {
-    OperationStatus = false;
-    OperationMemo = '';
-    OperationData = Null;
-    try {
-      await adminApi.AdminList(
-        URL: URL,
-        Page: Page,
-        PageSize: PageSize,
-        Order: Order,
-        Stext: Stext,
-        Level: Level,
-        Status: Status,
-      ).then((Value) {
-        OperationStatus = Value.State;
-        OperationMemo = Value.Message;
-        OperationData = Value.Data;
-      });
-    } catch (e) {
-      OperationMemo = e.toString();
-    } finally {
-      notifyListeners();
-    }
+    return await adminApi.AdminList(
+      URL: URL,
+      Page: Page,
+      PageSize: PageSize,
+      Order: Order,
+      Stext: Stext,
+      Level: Level,
+      Status: Status,
+    );
   }
 
   void AdminAll({

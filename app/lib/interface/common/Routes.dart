@@ -12,7 +12,7 @@ class Routes {
       case '/':
         return MaterialPageRoute(builder: (Context) => const IndexPage());
       case '/admin/list':
-        return MaterialPageRoute(builder: (context) => const AdminListPage());
+        return MaterialPageRoute(builder: (Context) => const AdminListPage());
       default:
         return MaterialPageRoute(
           builder: (Context) => Scaffold(

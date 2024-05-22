@@ -3,6 +3,7 @@
 import 'dart:convert';
 import 'package:http/http.dart';
 import 'package:app/model/ResultModel.dart';
+import 'package:app/model/ResultListModel.dart';
 
 class BaseApi {
   Utf8Decoder Decoder = const Utf8Decoder();
@@ -24,5 +25,9 @@ class BaseApi {
 
   DeJson(Response Resp) {
     return ResultModel.FromJson(jsonDecode(Decoder.convert(Resp.bodyBytes)));
+  }
+
+  DeJsonList(Response Resp) {
+    return ResultListModel.FromJson(jsonDecode(Decoder.convert(Resp.bodyBytes)));
   }
 }

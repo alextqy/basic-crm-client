@@ -71,6 +71,16 @@ class _StartPage extends State<StartPage> {
   }
 
   @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     final AdminNotifier adminNotifier = AdminNotifier();
     final ManagerNotifier managerNotifier = ManagerNotifier();

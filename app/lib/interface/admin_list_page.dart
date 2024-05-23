@@ -3,8 +3,10 @@ import 'package:app/interface/common/menu.dart';
 import 'package:app/interface/common/pub_lib.dart';
 import 'package:app/common/file_helper.dart';
 import 'package:app/common/lang_helper.dart';
+import 'package:app/model/admin_model.dart';
 import 'package:app/notifier/admin_notifier.dart';
 import 'package:flutter/material.dart';
+import 'dart:convert';
 
 class AdminListPage extends StatefulWidget {
   const AdminListPage({super.key});
@@ -27,7 +29,10 @@ class _AdminListPage extends State<AdminListPage> {
       Status: 0,
     ).then((value) {
       // setState(() {
-      // var data = AdminModel().fromJsonList(jsonEncode(value.Data));
+      var data = AdminModel().fromJsonList(jsonEncode(value.Data));
+      for (var element in data) {
+        print(element.Account);
+      }
       // });
     });
   }

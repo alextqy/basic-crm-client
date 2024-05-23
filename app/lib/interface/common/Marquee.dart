@@ -1,27 +1,27 @@
-// ignore_for_file: non_constant_identifier_names, file_names, must_be_immutable, avoid_types_as_parameter_names, avoid_renaming_method_parameters
+// ignore_for_file: must_be_immutable
 
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:app/interface/common/PubLib.dart';
-import 'package:app/interface/common/Routes.dart';
+import 'package:app/interface/common/pub_lib.dart';
+import 'package:app/interface/common/routes.dart';
 
 class Marquee extends StatefulWidget {
-  late List<String> Data;
-  late String URL;
-  late int Interval; // 停留时间
-  late int SwitchingSpeed; // 切换速度
+  late List<String> data;
+  late String url;
+  late int interval; // 停留时间
+  late int switchingSpeed; // 切换速度
 
-  Marquee({required this.Data, this.URL = '', this.Interval = 3, this.SwitchingSpeed = 1, super.key});
+  Marquee({required this.data, this.url = '', this.interval = 3, this.switchingSpeed = 1, super.key});
 
   @override
   MarqueeState createState() => MarqueeState();
 }
 
 class MarqueeState extends State<Marquee> {
-  late PageController Controller;
-  late Timer T;
+  late PageController controller;
+  late Timer timer;
 
-  buildPageViewItemWidget(int Index) {
+  buildPageViewItemWidget(int index) {
     return Container(
       margin: const EdgeInsets.all(0),
       padding: const EdgeInsets.all(0),
@@ -29,9 +29,9 @@ class MarqueeState extends State<Marquee> {
       child: InkWell(
         splashColor: Colors.transparent,
         highlightColor: Colors.transparent,
-        child: Text(widget.Data[Index], style: TxStyle(), maxLines: 1, overflow: TextOverflow.ellipsis),
+        child: Text(widget.data[index], style: textStyle(), maxLines: 1, overflow: TextOverflow.ellipsis),
         onTap: () async {
-          Navigator.of(context).push(Routes().Generate(context, widget.URL, Data: widget.Data[Index]));
+          Navigator.of(context).push(Routes().Generate(context, widget.url, data: widget.data[index]));
         },
       ),
     );
@@ -39,37 +39,37 @@ class MarqueeState extends State<Marquee> {
 
   @override
   void initState() {
-    Controller = PageController();
+    controller = PageController();
 
-    T = Timer.periodic(Duration(seconds: widget.Interval), (Timer) {
-      if (Controller.page!.round() >= widget.Data.length) {
-        Controller.jumpToPage(0);
+    timer = Timer.periodic(Duration(seconds: widget.interval), (timer) {
+      if (controller.page!.round() >= widget.data.length) {
+        controller.jumpToPage(0);
       }
-      Controller.nextPage(duration: Duration(seconds: widget.SwitchingSpeed), curve: Curves.linear);
+      controller.nextPage(duration: Duration(seconds: widget.switchingSpeed), curve: Curves.linear);
     });
     super.initState();
   }
 
   @override
   void dispose() {
-    T.cancel();
-    Controller.dispose();
+    timer.cancel();
+    controller.dispose();
     super.dispose();
   }
 
   @override
-  Widget build(BuildContext Context) {
+  Widget build(BuildContext context) {
     return PageView.builder(
       scrollDirection: Axis.vertical,
-      controller: Controller,
-      itemBuilder: (BuildContext, Index) {
-        if (widget.Data.isNotEmpty && Index < widget.Data.length) {
-          return buildPageViewItemWidget(Index);
+      controller: controller,
+      itemBuilder: (context, index) {
+        if (widget.data.isNotEmpty && index < widget.data.length) {
+          return buildPageViewItemWidget(index);
         } else {
           return buildPageViewItemWidget(0);
         }
       },
-      itemCount: widget.Data.isNotEmpty ? widget.Data.length + 1 : 0,
+      itemCount: widget.data.isNotEmpty ? widget.data.length + 1 : 0,
     );
   }
 }

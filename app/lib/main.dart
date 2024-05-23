@@ -1,15 +1,13 @@
-// ignore_for_file: non_constant_identifier_names, file_names, avoid_renaming_method_parameters, unused_element, no_leading_underscores_for_local_identifiers
-
-import 'package:app/interface/IndexPage.dart';
-import 'package:app/model/AdminModel.dart';
-import 'package:app/interface/common/ShowAlertDialog.dart';
-import 'package:app/notifier/ManagerNotifier.dart';
-import 'package:app/notifier/AfterServiceNotifier.dart';
-import 'package:app/notifier/AdminNotifier.dart';
-import 'package:app/interface/common/PubLib.dart';
-import 'package:app/common/File.dart';
-import 'package:app/common/Tools.dart';
-import 'package:app/common/Lang.dart';
+import 'package:app/interface/common/show_alert_dialog.dart';
+import 'package:app/interface/index_page.dart';
+import 'package:app/interface/common/pub_lib.dart';
+import 'package:app/common/file_helper.dart';
+import 'package:app/common/tools_helper.dart';
+import 'package:app/common/lang_helper.dart';
+import 'package:app/notifier/manager_notifier.dart';
+import 'package:app/notifier/after_service_notifier.dart';
+import 'package:app/notifier/admin_notifier.dart';
+import 'package:app/model/admin_model.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -21,7 +19,7 @@ class MainApp extends StatelessWidget {
   const MainApp({super.key});
 
   @override
-  Widget build(BuildContext Context) {
+  Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: '',
@@ -33,8 +31,8 @@ class MainApp extends StatelessWidget {
           background: Colors.black,
         ),
         textTheme: TextTheme(
-          titleLarge: TxStyle(),
-          displayLarge: TxStyle(),
+          titleLarge: textStyle(),
+          displayLarge: textStyle(),
         ),
       ),
       home: const StartPage(),
@@ -50,22 +48,22 @@ class StartPage extends StatefulWidget {
 }
 
 class _StartPage extends State<StartPage> {
-  int SegmentedControlValue = 0;
+  int segmentedControlValue = 0;
 
-  Widget SegmentedControl() {
+  Widget segmentedControl() {
     return SizedBox(
       width: 350,
       child: CupertinoSlidingSegmentedControl(
-        groupValue: SegmentedControlValue,
-        thumbColor: MainColor,
+        groupValue: segmentedControlValue,
+        thumbColor: mainColor,
         children: <int, Widget>{
-          0: Container(padding: const EdgeInsets.all(6), child: Text(LangHelper().Admin, style: TxStyle(FontSize: 13))),
-          1: Container(padding: const EdgeInsets.all(6), child: Text(LangHelper().Manager, style: TxStyle(FontSize: 13))),
-          2: Container(padding: const EdgeInsets.all(6), child: Text(LangHelper().AfterService, style: TxStyle(FontSize: 13))),
+          0: Container(padding: const EdgeInsets.all(6), child: Text(LangHelper().admin, style: textStyle(fontSize: 13))),
+          1: Container(padding: const EdgeInsets.all(6), child: Text(LangHelper().manager, style: textStyle(fontSize: 13))),
+          2: Container(padding: const EdgeInsets.all(6), child: Text(LangHelper().afterService, style: textStyle(fontSize: 13))),
         },
-        onValueChanged: (Value) {
+        onValueChanged: (value) {
           setState(() {
-            SegmentedControlValue = Value!;
+            segmentedControlValue = value!;
           });
         },
       ),
@@ -73,55 +71,45 @@ class _StartPage extends State<StartPage> {
   }
 
   @override
-  Widget build(BuildContext Context) {
-    final AdminNotifier _AdminNotifier = AdminNotifier();
-    final ManagerNotifier _ManagerNotifier = ManagerNotifier();
-    final AfterServiceNotifier _AfterServiceNotifier = AfterServiceNotifier();
-    TextEditingController AccountController = TextEditingController();
-    TextEditingController PasswordController = TextEditingController();
-    TextEditingController NetworkController = TextEditingController();
+  Widget build(BuildContext context) {
+    final AdminNotifier adminNotifier = AdminNotifier();
+    final ManagerNotifier managerNotifier = ManagerNotifier();
+    final AfterServiceNotifier afterServiceNotifier = AfterServiceNotifier();
+    TextEditingController accountController = TextEditingController();
+    TextEditingController passwordController = TextEditingController();
+    TextEditingController networkController = TextEditingController();
 
-    AccountController.text = FileHelper().JsonRead(Key: 'account');
-    NetworkController.text = FileHelper().JsonRead(Key: 'server');
+    accountController.text = FileHelper().jsonRead(key: 'account');
+    networkController.text = FileHelper().jsonRead(key: 'server');
 
     AdminListener() async {
-      ShowSnackBar(Context, Content: LangHelper().Loading, BackgroundColor: MainColor, Durn: 1);
-      if (_AdminNotifier.OperationStatus == true) {
-        ShowSnackBar(Context, Content: LangHelper().Complete, BackgroundColor: MainColor);
+      ShowSnackBar(context, Content: LangHelper().loading, BackgroundColor: mainColor, Durn: 1);
+      if (adminNotifier.operationStatus == true) {
+        ShowSnackBar(context, Content: LangHelper().complete, BackgroundColor: mainColor);
       } else {
-        ShowSnackBar(Context, Content: _AdminNotifier.OperationMemo, BackgroundColor: MainColor);
+        ShowSnackBar(context, Content: adminNotifier.operationMemo, BackgroundColor: mainColor);
       }
     }
 
     ManagerListener() async {
-      ShowSnackBar(Context, Content: LangHelper().Loading, BackgroundColor: MainColor, Durn: 1);
-      if (_ManagerNotifier.OperationStatus == true) {
-        ShowSnackBar(Context, Content: LangHelper().Complete, BackgroundColor: MainColor);
+      ShowSnackBar(context, Content: LangHelper().loading, BackgroundColor: mainColor, Durn: 1);
+      if (managerNotifier.operationStatus == true) {
+        ShowSnackBar(context, Content: LangHelper().complete, BackgroundColor: mainColor);
       } else {
-        ShowSnackBar(Context, Content: _ManagerNotifier.OperationMemo, BackgroundColor: MainColor);
+        ShowSnackBar(context, Content: managerNotifier.operationMemo, BackgroundColor: mainColor);
       }
     }
 
     AfterServiceListener() async {
-      ShowSnackBar(Context, Content: LangHelper().Loading, BackgroundColor: MainColor, Durn: 1);
-      if (_AfterServiceNotifier.OperationStatus == true) {
-        ShowSnackBar(Context, Content: LangHelper().Complete, BackgroundColor: MainColor);
+      ShowSnackBar(context, Content: LangHelper().loading, BackgroundColor: mainColor, Durn: 1);
+      if (afterServiceNotifier.operationStatus == true) {
+        ShowSnackBar(context, Content: LangHelper().complete, BackgroundColor: mainColor);
       } else {
-        ShowSnackBar(Context, Content: _AfterServiceNotifier.OperationMemo, BackgroundColor: MainColor);
+        ShowSnackBar(context, Content: afterServiceNotifier.operationMemo, BackgroundColor: mainColor);
       }
     }
 
-    SetConf();
-
-    @override
-    void initState() {
-      super.initState();
-    }
-
-    @override
-    void dispose() {
-      super.dispose();
-    }
+    setConf();
 
     return Scaffold(
       body: Center(
@@ -133,20 +121,20 @@ class _StartPage extends State<StartPage> {
               width: 350,
               padding: const EdgeInsets.all(0),
               child: TextField(
-                controller: AccountController,
-                cursorColor: BorderColor,
-                style: TxStyle(),
+                controller: accountController,
+                cursorColor: borderColor,
+                style: textStyle(),
                 decoration: InputDecoration(
                   enabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(BorderCircular)),
-                    borderSide: BorderSide(color: MainColor, width: BorderWidth),
+                    borderRadius: BorderRadius.all(Radius.circular(borderCircular)),
+                    borderSide: BorderSide(color: mainColor, width: borderWidth),
                   ),
                   focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(BorderCircular)),
-                    borderSide: BorderSide(color: BorderColor, width: BorderWidth),
+                    borderRadius: BorderRadius.all(Radius.circular(borderCircular)),
+                    borderSide: BorderSide(color: borderColor, width: borderWidth),
                   ),
-                  labelText: LangHelper().Account,
-                  labelStyle: TxStyle(),
+                  labelText: LangHelper().account,
+                  labelStyle: textStyle(),
                 ),
               ),
             ),
@@ -156,21 +144,21 @@ class _StartPage extends State<StartPage> {
               width: 350,
               padding: const EdgeInsets.all(0),
               child: TextField(
-                controller: PasswordController,
-                cursorColor: BorderColor,
-                style: TxStyle(),
+                controller: passwordController,
+                cursorColor: borderColor,
+                style: textStyle(),
                 obscureText: true,
                 decoration: InputDecoration(
                   enabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(BorderCircular)),
-                    borderSide: BorderSide(color: MainColor, width: BorderWidth),
+                    borderRadius: BorderRadius.all(Radius.circular(borderCircular)),
+                    borderSide: BorderSide(color: mainColor, width: borderWidth),
                   ),
                   focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(BorderCircular)),
-                    borderSide: BorderSide(color: BorderColor, width: BorderWidth),
+                    borderRadius: BorderRadius.all(Radius.circular(borderCircular)),
+                    borderSide: BorderSide(color: borderColor, width: borderWidth),
                   ),
-                  labelText: LangHelper().Password,
-                  labelStyle: TxStyle(),
+                  labelText: LangHelper().password,
+                  labelStyle: textStyle(),
                 ),
               ),
             ),
@@ -183,32 +171,32 @@ class _StartPage extends State<StartPage> {
                   width: 300,
                   padding: const EdgeInsets.all(0),
                   child: TextField(
-                    controller: NetworkController,
-                    cursorColor: BorderColor,
-                    style: TxStyle(),
+                    controller: networkController,
+                    cursorColor: borderColor,
+                    style: textStyle(),
                     decoration: InputDecoration(
                       enabledBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(BorderCircular)),
-                        borderSide: BorderSide(color: MainColor, width: BorderWidth),
+                        borderRadius: BorderRadius.all(Radius.circular(borderCircular)),
+                        borderSide: BorderSide(color: mainColor, width: borderWidth),
                       ),
                       focusedBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(BorderCircular)),
-                        borderSide: BorderSide(color: BorderColor, width: BorderWidth),
+                        borderRadius: BorderRadius.all(Radius.circular(borderCircular)),
+                        borderSide: BorderSide(color: borderColor, width: borderWidth),
                       ),
-                      labelText: LangHelper().Network,
-                      labelStyle: TxStyle(),
+                      labelText: LangHelper().network,
+                      labelStyle: textStyle(),
                     ),
                   ),
                 ),
                 const SizedBox(width: 10),
-                SetIconButton(
-                  I: Icon(Icons.network_check, size: IconSize, color: WidgetColor),
-                  F: () {
-                    ToolsHelper().ClentUDP(int.parse(FileHelper().JsonRead(Key: 'broadcast'))).then((Value) {
-                      if (Value.isNotEmpty) {
-                        if (FileHelper().JsonWrite(Key: 'server', Value: Value)) {
-                          NetworkController.text = Value;
-                          ShowSnackBar(Context, Content: LangHelper().Complete, BackgroundColor: MainColor);
+                setIconButton(
+                  icon: Icon(Icons.network_check, size: iconSize, color: widgetColor),
+                  function: () {
+                    ToolsHelper().clentUDP(int.parse(FileHelper().jsonRead(key: 'broadcast'))).then((value) {
+                      if (value.isNotEmpty) {
+                        if (FileHelper().jsonWrite(key: 'server', value: value)) {
+                          networkController.text = value;
+                          ShowSnackBar(context, Content: LangHelper().complete, BackgroundColor: mainColor);
                         }
                       }
                     });
@@ -217,7 +205,7 @@ class _StartPage extends State<StartPage> {
               ],
             ),
             const SizedBox(height: 15),
-            SegmentedControl(),
+            segmentedControl(),
             const SizedBox(height: 15),
             InkWell(
               child: Container(
@@ -225,25 +213,25 @@ class _StartPage extends State<StartPage> {
                 width: 350,
                 alignment: Alignment.center,
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(BorderCircular),
-                  color: MainColor,
+                  borderRadius: BorderRadius.circular(borderCircular),
+                  color: mainColor,
                 ),
-                child: Text(LangHelper().Login, style: TxStyle()),
+                child: Text(LangHelper().login, style: textStyle()),
               ),
               onTap: () {
-                if (NetworkController.text.isNotEmpty) {
-                  _AdminNotifier.AdminSignIn(
-                    URL: FileHelper().JsonRead(Key: 'server'),
-                    Account: AccountController.text,
-                    Password: PasswordController.text,
-                  ).then((Value) {
-                    if (Value.State) {
-                      AdminModel Admin = AdminModel.FromJson(Value.Data);
-                      FileHelper().JsonWrite(Key: 'account', Value: Admin.Account);
-                      FileHelper().JsonWrite(Key: 'token', Value: Admin.Token);
-                      Navigator.pushAndRemoveUntil(Context, MaterialPageRoute(builder: (Context) => const IndexPage()), (route) => false);
+                if (networkController.text.isNotEmpty) {
+                  adminNotifier.AdminSignIn(
+                    URL: FileHelper().jsonRead(key: 'server'),
+                    Account: accountController.text,
+                    Password: passwordController.text,
+                  ).then((value) {
+                    if (value.State) {
+                      AdminModel adminModel = AdminModel.fromJson(value.Data);
+                      FileHelper().jsonWrite(key: 'account', value: adminModel.Account);
+                      FileHelper().jsonWrite(key: 'token', value: adminModel.Token);
+                      Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => const IndexPage()), (route) => false);
                     } else {
-                      ShowSnackBar(Context, Content: Value.Message, BackgroundColor: MainColor);
+                      ShowSnackBar(context, Content: value.Message, BackgroundColor: mainColor);
                     }
                   });
                 }

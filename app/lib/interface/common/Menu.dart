@@ -1,22 +1,22 @@
-// ignore_for_file: non_constant_identifier_names, file_names, avoid_renaming_method_parameters, unused_element, no_leading_underscores_for_local_identifiers
+// ignore_for_file: non_constant_identifier_names
 
 import 'dart:io';
 
-import 'package:app/notifier/AdminNotifier.dart';
+import 'package:app/notifier/admin_notifier.dart';
 import 'package:app/main.dart';
-import 'package:app/interface/common/ShowAlertDialog.dart';
-import 'package:app/common/Lang.dart';
-import 'package:app/common/File.dart';
-import 'package:app/interface/common/PubLib.dart';
-import 'package:app/interface/common/Routes.dart';
+import 'package:app/interface/common/show_alert_dialog.dart';
+import 'package:app/common/lang_helper.dart';
+import 'package:app/common/file_helper.dart';
+import 'package:app/interface/common/pub_lib.dart';
+import 'package:app/interface/common/routes.dart';
 import 'package:flutter/material.dart';
 
-Drawer ActionMenu(BuildContext Context) {
-  final AdminNotifier _AdminNotifier = AdminNotifier();
+Drawer ActionMenu(BuildContext context) {
+  final AdminNotifier adminNotifier = AdminNotifier();
 
-  dynamic MenuHeader(BuildContext Context) {
+  dynamic MenuHeader(BuildContext context) {
     return Container(
-      color: MainColor,
+      color: mainColor,
       height: 50,
       width: double.infinity,
       child: DrawerHeader(
@@ -30,8 +30,8 @@ Drawer ActionMenu(BuildContext Context) {
               Container(
                 padding: const EdgeInsets.all(5),
                 child: Text(
-                  FileHelper().JsonRead(Key: 'account').toUpperCase(),
-                  style: TxStyle(),
+                  FileHelper().jsonRead(key: 'account').toUpperCase(),
+                  style: textStyle(),
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
                 ),
@@ -44,7 +44,7 @@ Drawer ActionMenu(BuildContext Context) {
     );
   }
 
-  Widget MenuFooter(BuildContext Context) {
+  Widget MenuFooter(BuildContext context) {
     return InkWell(
       child: Row(
         children: [
@@ -53,27 +53,27 @@ Drawer ActionMenu(BuildContext Context) {
               alignment: Alignment.center,
               padding: const EdgeInsets.all(5),
               height: 35,
-              color: MainColor,
-              child: Text(LangHelper().Exit, style: TxStyle(), maxLines: 1, overflow: TextOverflow.ellipsis),
+              color: mainColor,
+              child: Text(LangHelper().exit, style: textStyle(), maxLines: 1, overflow: TextOverflow.ellipsis),
             ),
           ),
         ],
       ),
       onLongPress: () {
-        _AdminNotifier.AdminSignOut(URL: FileHelper().JsonRead(Key: 'server')).then((Value) {
-          if (Value.State) {
-            FileHelper().JsonWrite(Key: 'token', Value: '');
-            Navigator.pushAndRemoveUntil(Context, MaterialPageRoute(builder: (Context) => const StartPage()), (route) => false);
+        adminNotifier.AdminSignOut(URL: FileHelper().jsonRead(key: 'server')).then((value) {
+          if (value.State) {
+            FileHelper().jsonWrite(key: 'token', value: '');
+            Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => const StartPage()), (route) => false);
           }
         });
       },
       onTap: () {
-        _AdminNotifier.AdminSignOut(URL: FileHelper().JsonRead(Key: 'server')).then((Value) {
-          if (Value.State) {
-            FileHelper().JsonWrite(Key: 'token', Value: '');
+        adminNotifier.AdminSignOut(URL: FileHelper().jsonRead(key: 'server')).then((value) {
+          if (value.State) {
+            FileHelper().jsonWrite(key: 'token', value: '');
             exit(0);
           } else {
-            ShowSnackBar(Context, Content: Value.Message, BackgroundColor: MainColor);
+            ShowSnackBar(context, Content: value.Message, BackgroundColor: mainColor);
           }
         });
       },
@@ -81,35 +81,35 @@ Drawer ActionMenu(BuildContext Context) {
   }
 
   return Drawer(
-    width: ScreenSize(Context).width > 800 ? ScreenSize(Context).width * 0.2 : ScreenSize(Context).width * 0.45,
+    width: screenSize(context).width > 800 ? screenSize(context).width * 0.2 : screenSize(context).width * 0.45,
     backgroundColor: Colors.transparent,
     child: Column(
       children: [
-        MenuHeader(Context),
+        MenuHeader(context),
         Expanded(
           child: ListView(
             padding: const EdgeInsets.all(0),
             children: [
               ListTile(
                 horizontalTitleGap: 20,
-                leading: Icon(Icons.home, size: IconSize, color: WidgetColor),
-                title: Text(LangHelper().Home, style: TxStyle(), maxLines: 1, overflow: TextOverflow.ellipsis),
+                leading: Icon(Icons.home, size: iconSize, color: widgetColor),
+                title: Text(LangHelper().home, style: textStyle(), maxLines: 1, overflow: TextOverflow.ellipsis),
                 onTap: () {
-                  Navigator.of(Context).push(Routes().Generate(Context, '/'));
+                  Navigator.of(context).push(Routes().Generate(context, '/'));
                 },
               ),
               ListTile(
                 horizontalTitleGap: 20,
-                leading: Icon(Icons.admin_panel_settings, size: IconSize, color: WidgetColor),
-                title: Text(LangHelper().Admin, style: TxStyle(), maxLines: 1, overflow: TextOverflow.ellipsis),
+                leading: Icon(Icons.admin_panel_settings, size: iconSize, color: widgetColor),
+                title: Text(LangHelper().admin, style: textStyle(), maxLines: 1, overflow: TextOverflow.ellipsis),
                 onTap: () {
-                  Navigator.of(Context).push(Routes().Generate(Context, '/admin/list'));
+                  Navigator.of(context).push(Routes().Generate(context, '/admin/list'));
                 },
               ),
             ],
           ),
         ),
-        MenuFooter(Context),
+        MenuFooter(context),
       ],
     ),
   );
